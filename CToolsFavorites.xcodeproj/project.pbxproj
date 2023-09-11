@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E55361074E243CCA8A979DD /* Pods_CToolsFavorites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBAB564253AF296DE4DC1B9 /* Pods_CToolsFavorites.framework */; };
 		D89BA03F2AAF450E0045D812 /* CToolsFavoritesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */; };
 		D89BA0412AAF450E0045D812 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BA0402AAF450E0045D812 /* ContentView.swift */; };
 		D89BA0432AAF45100045D812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89BA0422AAF45100045D812 /* Assets.xcassets */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62C7ABB180BC1517BCE50052 /* Pods-CToolsFavorites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CToolsFavorites.release.xcconfig"; path = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.release.xcconfig"; sourceTree = "<group>"; };
+		6BBAB564253AF296DE4DC1B9 /* Pods_CToolsFavorites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CToolsFavorites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C7DA665F2047F7268A4A7C9 /* Pods-CToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CToolsFavorites.debug.xcconfig"; path = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.debug.xcconfig"; sourceTree = "<group>"; };
 		D89BA03B2AAF450E0045D812 /* CToolsFavorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CToolsFavorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CToolsFavoritesApp.swift; sourceTree = "<group>"; };
 		D89BA0402AAF450E0045D812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E55361074E243CCA8A979DD /* Pods_CToolsFavorites.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		687C125E2CBD6BFD4AA94A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BBAB564253AF296DE4DC1B9 /* Pods_CToolsFavorites.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D89BA0322AAF450E0045D812 = {
 			isa = PBXGroup;
 			children = (
 				D89BA03D2AAF450E0045D812 /* CToolsFavorites */,
 				D89BA03C2AAF450E0045D812 /* Products */,
+				E02BB937A7CE5D9536B7B96F /* Pods */,
+				687C125E2CBD6BFD4AA94A74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +104,16 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		E02BB937A7CE5D9536B7B96F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C7DA665F2047F7268A4A7C9 /* Pods-CToolsFavorites.debug.xcconfig */,
+				62C7ABB180BC1517BCE50052 /* Pods-CToolsFavorites.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D89BA0492AAF45100045D812 /* Build configuration list for PBXNativeTarget "CToolsFavorites" */;
 			buildPhases = (
+				AD3DECBEDB6FFAF5C3AE02F6 /* [CP] Check Pods Manifest.lock */,
 				D89BA0372AAF450E0045D812 /* Sources */,
 				D89BA0382AAF450E0045D812 /* Frameworks */,
 				D89BA0392AAF450E0045D812 /* Resources */,
+				409CB524D3190A95EE5E9189 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		409CB524D3190A95EE5E9189 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD3DECBEDB6FFAF5C3AE02F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CToolsFavorites-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D89BA0372AAF450E0045D812 /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		D89BA04A2AAF45100045D812 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7DA665F2047F7268A4A7C9 /* Pods-CToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +385,7 @@
 		};
 		D89BA04B2AAF45100045D812 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62C7ABB180BC1517BCE50052 /* Pods-CToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

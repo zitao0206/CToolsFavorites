@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Favorites
 
 struct ContentView: View {
     var body: some View {
@@ -14,6 +15,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            SimpleAlertView()
         }
         .padding()
     }

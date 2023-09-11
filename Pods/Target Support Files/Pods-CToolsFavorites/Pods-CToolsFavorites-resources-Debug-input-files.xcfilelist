@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Images.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Videos.bundle

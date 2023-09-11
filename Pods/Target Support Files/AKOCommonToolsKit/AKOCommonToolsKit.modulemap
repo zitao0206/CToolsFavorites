@@ -1,0 +1,6 @@
+framework module AKOCommonToolsKit {
+  umbrella header "AKOCommonToolsKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
