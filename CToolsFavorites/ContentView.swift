@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Favorites
+import ToolsFavorites
 
 struct ContentView: View {
     var body: some View {

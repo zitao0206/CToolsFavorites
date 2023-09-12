@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint Favorites.podspec' to ensure this is a
+# Be sure to run `pod lib lint ToolsFavorites.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Favorites'
+  s.name             = 'ToolsFavorites'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Favorites.'
+  s.summary          = 'A short description of ToolsFavorites.'
   s.homepage         = 'https://github.com/zitao0206/CToolsFavorites'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zitao0206' => '634376133@qq.com' }

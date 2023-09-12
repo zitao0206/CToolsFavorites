@@ -19,7 +19,7 @@ project 'CToolsFavorites.xcodeproj'
 
 
 target 'CToolsFavorites' do
-  pod 'Favorites', :path => './LocalPods/Favorites'
+  pod 'ToolsFavorites', :path => './LocalPods/ToolsFavorites'
 
   pod 'AKOCommonToolsKit', '0.0.31'
   
@@ -29,7 +29,7 @@ post_install do |installer|
   installer.pod_target_subprojects.flat_map { |project| project.targets }.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['ENABLE_BITCODE'] = 'NO'
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
     end
   end
 end

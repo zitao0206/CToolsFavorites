@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double FavoritesVersionNumber;
-FOUNDATION_EXPORT const unsigned char FavoritesVersionString[];
+FOUNDATION_EXPORT double ToolsFavoritesVersionNumber;
+FOUNDATION_EXPORT const unsigned char ToolsFavoritesVersionString[];
 

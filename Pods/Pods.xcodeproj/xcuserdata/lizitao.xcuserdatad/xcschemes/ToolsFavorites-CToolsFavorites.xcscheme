@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "33C46094588C6BEA399B1343B551E9EE"
-               BuildableName = "CToolsFavorites-Images.bundle"
-               BlueprintName = "Favorites-CToolsFavorites-Images"
+               BlueprintIdentifier = "42FF0B0E5CEEECEA02B8E6B80E70954F"
+               BuildableName = "CToolsFavorites.bundle"
+               BlueprintName = "ToolsFavorites-CToolsFavorites"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

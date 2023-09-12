@@ -97,14 +97,14 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Images.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Videos.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites-Images.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites-Videos.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Images.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Favorites/CToolsFavorites-Videos.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites-Images.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ToolsFavorites/CToolsFavorites-Videos.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

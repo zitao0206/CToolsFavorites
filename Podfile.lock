@@ -1,13 +1,13 @@
 PODS:
   - AKOCommonToolsKit (0.0.31)
-  - Favorites (0.1.0):
+  - Masonry (1.1.0)
+  - ToolsFavorites (0.1.0):
     - AKOCommonToolsKit
     - Masonry
-  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AKOCommonToolsKit (= 0.0.31)
-  - Favorites (from `./LocalPods/Favorites`)
+  - ToolsFavorites (from `./LocalPods/ToolsFavorites`)
 
 SPEC REPOS:
   https://github.com/zitao0206/MDSpecs.git:
@@ -16,14 +16,14 @@ SPEC REPOS:
     - Masonry
 
 EXTERNAL SOURCES:
-  Favorites:
-    :path: "./LocalPods/Favorites"
+  ToolsFavorites:
+    :path: "./LocalPods/ToolsFavorites"
 
 SPEC CHECKSUMS:
   AKOCommonToolsKit: 2b62669cc9704a200defd16b5c06a33404f47f24
-  Favorites: 2d912cde23ad7e6e25abbaec8e71e93d4acc10e7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ToolsFavorites: 533ff20a809b17d50b43cf3c8cebec8db33147f4
 
-PODFILE CHECKSUM: fd9c8b4c3147e862d75205b22578e674476fa761
+PODFILE CHECKSUM: 26e5a5c683f3f40f906c571c29867e2432635f02
 
 COCOAPODS: 1.11.3
