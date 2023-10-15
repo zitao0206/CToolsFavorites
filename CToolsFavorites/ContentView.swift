@@ -8,6 +8,17 @@
 import SwiftUI
 import ToolsFavorites
 
+/*
+ ideas:
+ 
+ 1. 时间计算器，随便输入两个日期时间，可以计算时间差；设置一个时间，每天帮你计算倒计时；
+ 
+ 2. 安全二维码，扫描一下，翻译出二维码链接；
+ 
+ 3.
+ 
+ */
+
 struct ContentView: View {
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
     let titles = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"]
@@ -24,7 +35,8 @@ struct ContentView: View {
             }
             .padding()
             .padding()
-            .navigationTitle("All Inboxes")
+            .navigationTitle("Tools Favorites")
+            .background(Color.yellow)
         }
     }
     
@@ -32,12 +44,12 @@ struct ContentView: View {
 
 struct DetailView: View {
     let text: String
-    @Environment(\.presentationMode) var presentationMode // 获取presentationMode
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         Text("Detail Page for \(text)")
-            .navigationBarTitle(text) // 设置详情页标题
-            .navigationBarBackButtonHidden(true) //隐藏默认的返回按钮
-            .navigationBarItems(leading: // 添加自定义返回按钮
+            .navigationBarTitle(text)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
@@ -53,7 +65,7 @@ struct GridItemView: View {
 
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(Color.blue)
+            .foregroundColor(Color.indigo.opacity(0.3))
             .frame(height: 90)
             .overlay(
                 Text(title)
@@ -66,5 +78,6 @@ struct GridItemView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .background(Color.yellow)
     }
 }
