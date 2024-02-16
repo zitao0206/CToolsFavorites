@@ -26,52 +26,181 @@ public struct NumberSystemConversionDetailView: View {
     public var body: some View {
         VStack {
             Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
+                .font(.system(size: 15))
+                .bold()
                 .padding()
                 .onChange(of: formatEnabled) { newValue in
                     updateFormattedValues()
                 }
+                .padding(.bottom, 20) // 减少底部间距
             
-            Text("Decimal")
+            HStack(alignment: .bottom, spacing: 10) {
+                
+                Spacer().frame(width: 10)
+                Text("Decimal")
+                    .foregroundColor(.black.opacity(0.3))
+                    .font(.system(size: 14))
+                    .padding(.top, 10) // 向下移动
+                
+                Spacer()
+                
+                Button {
+                    if let clipboardValue = UIPasteboard.general.string {
+                        decimalValue = clipboardValue
+                    }
+                } label: {
+                    Text("Paste")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+                
+                Button {
+                    UIPasteboard.general.string = decimalValue
+                } label: {
+                    Text("Copy")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+            
+                Spacer().frame(width: 10)
+            }
+            .padding(.bottom, -10) // 减少底部间距
+
             TextField("Decimal", text: $decimalValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .onChange(of: decimalValue) { newValue in
-                    if formatEnabled {
-                        decimalValue = formatDecimalValue(newValue)
-                    }
+                    decimalValue = formatDecimalValue(newValue)
                 }
-          
+
             
-            Text("Binary")
+            HStack(alignment: .bottom, spacing: 10) {
+                Spacer().frame(width: 10)
+                
+                Text("Binary")
+                    .foregroundColor(.black.opacity(0.3))
+                    .font(.system(size: 14))
+                    .padding(.top, 10) // 向下移动
+                
+                Spacer()
+                
+                Button {
+                    if let clipboardValue = UIPasteboard.general.string {
+                        binaryValue = clipboardValue
+                    }
+                } label: {
+                    Text("Paste")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+                
+                Button {
+                    UIPasteboard.general.string = binaryValue
+                } label: {
+                    Text("Copy")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+            }
+            .padding(.bottom, -10) // 减少底部间距
+
             TextField("Binary", text: $binaryValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .onChange(of: binaryValue) { newValue in
-                    if formatEnabled {
-                        binaryValue = formatBinaryValue(newValue)
-                    }
+                    binaryValue = formatBinaryValue(newValue)
                 }
             
-            Text("Hexadecimal")
+            HStack(alignment: .bottom, spacing: 10) {
+                Spacer().frame(width: 10)
+                
+                Text("Hexadecimal")
+                    .foregroundColor(.black.opacity(0.3))
+                    .font(.system(size: 14))
+                    .padding(.top, 10) // Move downwards
+                
+                Spacer()
+                
+                Button {
+                    if let clipboardValue = UIPasteboard.general.string {
+                        hexadecimalValue = clipboardValue
+                    }
+                } label: {
+                    Text("Paste")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+                
+                Button {
+                    UIPasteboard.general.string = hexadecimalValue
+                } label: {
+                    Text("Copy")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+            }
+            .padding(.bottom, -10) // Reduce bottom spacing
+            
             TextField("Hexadecimal", text: $hexadecimalValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .onChange(of: hexadecimalValue) { newValue in
-                    if formatEnabled {
-                        hexadecimalValue = formatHexadecimalValue(newValue)
-                    }
+                 hexadecimalValue = formatHexadecimalValue(newValue)
                 }
             
-            Text("Octal")
+            HStack(alignment: .bottom, spacing: 10) {
+                Spacer().frame(width: 10)
+                
+                Text("Octal")
+                    .foregroundColor(.black.opacity(0.3))
+                    .font(.system(size: 14))
+                    .padding(.top, 10) // Move downwards
+                
+                Spacer()
+                
+                Button {
+                    if let clipboardValue = UIPasteboard.general.string {
+                        octalValue = clipboardValue
+                    }
+                } label: {
+                    Text("Paste")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+                
+                Button {
+                    UIPasteboard.general.string = octalValue
+                } label: {
+                    Text("Copy")
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(.bordered)
+                
+                Spacer().frame(width: 10)
+            }
+            .padding(.bottom, -10) // Reduce bottom spacing
+            
             TextField("Octal", text: $octalValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .onChange(of: octalValue) { newValue in
-                    if formatEnabled {
-                        octalValue = formatOctalValue(newValue)
-                    }
+                  octalValue = formatOctalValue(newValue)
                 }
+
         }
+        .padding(.top, -140) // 减少顶部间距
         .navigationBarTitle(text, displayMode: .automatic)
         .font(.system(size: 10))
         .navigationBarBackButtonHidden(true)
@@ -104,16 +233,16 @@ public struct NumberSystemConversionDetailView: View {
         .onChange(of: octalValue) { newValue in
             decimalValue = formatDecimalValue(convertOctalToDecimal(newValue))
             binaryValue = formatBinaryValue(convertOctalToBinary(newValue))
-            hexadecimalValue = formatOctalValue(convertOctalToHexadecimal(newValue))
+            hexadecimalValue = formatHexadecimalValue(convertOctalToHexadecimal(newValue))
         }
 
     }
     
     private func updateFormattedValues() {
-        decimalValue = formatBinaryValue(decimalValue)
+        decimalValue = formatDecimalValue(decimalValue)
         binaryValue = formatBinaryValue(binaryValue)
-        hexadecimalValue = formatBinaryValue(hexadecimalValue)
-        octalValue = formatBinaryValue(octalValue)
+        hexadecimalValue = formatHexadecimalValue(hexadecimalValue)
+        octalValue = formatOctalValue(octalValue)
     }
 
 }
@@ -122,8 +251,33 @@ public struct NumberSystemConversionDetailView: View {
 // number format
 extension NumberSystemConversionDetailView {
     
+    func isAllZeroString(_ binaryString: String) -> Bool {
+        // 使用正则表达式检查字符串是否只包含 0 和 1
+        let regex = #"^[0]+$"#
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        let res = predicate.evaluate(with: binaryString)
+        
+        return res
+    }
+    
+    func isValidDecimalString(_ octalString: String) -> Bool {
+        // 使用正则表达式检查字符串是否只包含十进制字符
+        let regex = #"^[0-9]+$"#
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        return predicate.evaluate(with: octalString)
+    }
+    
     private func formatDecimalValue(_ value: String) -> String {
+        
         let cleanedValue = value.replacingOccurrences(of: ",", with: "") // 移除逗号
+        
+        if cleanedValue.count <= 0 {
+            return cleanedValue
+        }
+        
+        if cleanedValue.count > 0 && (!isValidDecimalString(cleanedValue) || isAllZeroString(cleanedValue)){
+            return "0"
+        }
         
         if !formatEnabled {
             return cleanedValue
@@ -132,15 +286,34 @@ extension NumberSystemConversionDetailView {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.locale = Locale(identifier: "en_US")
-        guard let intValue = Int(cleanedValue),
-              let formattedValue = formatter.string(from: NSNumber(value: intValue)) else {
-            return ""
+        guard let intValue = Int(cleanedValue), let formattedValue = formatter.string(from: NSNumber(value: intValue)) else {
+            return "0"
         }
         return formattedValue
     }
+
+    
+    func isValidBinaryString(_ binaryString: String) -> Bool {
+        // 使用正则表达式检查字符串是否只包含 0 和 1
+        let regex = #"^[01]+$"#
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        let res = predicate.evaluate(with: binaryString)
+        
+        return res
+    }
     
     private func formatBinaryValue(_ value: String) -> String {
+       
         let cleanedValue = value.replacingOccurrences(of: " ", with: "") // 移除空格
+        
+        if cleanedValue.count <= 0 {
+            return cleanedValue
+        }
+
+        if cleanedValue.count > 0 && (!isValidBinaryString(cleanedValue) || isAllZeroString(cleanedValue)){
+            return "0"
+        }
+        
         
         if !formatEnabled {
             return cleanedValue
@@ -158,8 +331,23 @@ extension NumberSystemConversionDetailView {
         return formattedValue
     }
 
+    func isValidHexString(_ hexString: String) -> Bool {
+        // 使用正则表达式检查字符串是否只包含十六进制字符
+        let regex = #"^[0-9A-Fa-f]+$"#
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        return predicate.evaluate(with: hexString)
+    }
+    
     private func formatHexadecimalValue(_ value: String) -> String {
         let cleanedValue = value.replacingOccurrences(of: " ", with: "") // 移除空格
+        
+        if cleanedValue.count <= 0 {
+            return cleanedValue
+        }
+        
+        if cleanedValue.count > 0 && (!isValidHexString(cleanedValue) || isAllZeroString(cleanedValue)){
+            return "0"
+        }
         
         if !formatEnabled {
             return cleanedValue
@@ -177,9 +365,26 @@ extension NumberSystemConversionDetailView {
         return formattedValue
     }
     
+    
+    func isValidOctalString(_ octalString: String) -> Bool {
+        // 使用正则表达式检查字符串是否只包含八进制字符
+        let regex = #"^[0-7]+$"#
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        return predicate.evaluate(with: octalString)
+    }
+
+    
     private func formatOctalValue(_ value: String) -> String {
         
         let cleanedValue = value.replacingOccurrences(of: " ", with: "") // 移除空格
+        
+        if cleanedValue.count <= 0 {
+            return cleanedValue
+        }
+        
+        if cleanedValue.count > 0 && (!isValidOctalString(cleanedValue) || isAllZeroString(cleanedValue)) {
+            return "0"
+        }
         
         if !formatEnabled {
             return cleanedValue
@@ -208,7 +413,6 @@ extension NumberSystemConversionDetailView {
         let cleanedValue = value.replacingOccurrences(of: "[, ]", with: "", options: .regularExpression)
 
         guard let decimalValue = Int(cleanedValue) else {
-            // 输入的值无效，返回空字符串
             return ""
         }
         
@@ -219,9 +423,7 @@ extension NumberSystemConversionDetailView {
     
     private func convertDecimalToHexadecimal(_ value: String) -> String {
         let cleanedValue = value.replacingOccurrences(of: "[, ]", with: "", options: .regularExpression)
-        // 确保输入值是非负的整数
         guard let decimalValue = Int(cleanedValue), decimalValue >= 0 else {
-            // 输入的值无效，返回空字符串
             return ""
         }
         
@@ -248,7 +450,7 @@ extension NumberSystemConversionDetailView {
         // Convert binary string to decimal
         guard let decimalValue = Int(cleanedValue, radix: 2) else {
             // Invalid input, return empty string
-            return ""
+            return "0"
         }
         // Convert decimal value back to string
         return String(decimalValue)
@@ -259,7 +461,7 @@ extension NumberSystemConversionDetailView {
         // Convert binary string to decimal
         guard let decimalValue = Int(cleanedValue, radix: 2) else {
             // Invalid input, return empty string
-            return ""
+            return "0"
         }
         // Convert decimal value to hexadecimal string
         let hexadecimalValue = String(decimalValue, radix: 16)
@@ -271,7 +473,7 @@ extension NumberSystemConversionDetailView {
         // Convert binary string to decimal
         guard let decimalValue = Int(cleanedValue, radix: 2) else {
             // Invalid input, return empty string
-            return ""
+            return "0"
         }
         // Convert decimal value to octal string
         let octalValue = String(decimalValue, radix: 8)
