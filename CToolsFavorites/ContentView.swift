@@ -25,7 +25,8 @@ import AKOCommonToolsKit
 struct ContentView: View {
     
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
-    @State private var titles = ["Number System Conversion", "Date Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion"]
+    @State private var titles = ["Number System Conversion", "Date Conversion", "QR Code Tools", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion", "Num Sys Conversion"]
+    @State private var imageTypes = ["number.square.fill", "calendar.badge.plus", "qrcode.viewfinder", "calendar", "calendar", "calendar", "calendar", "calendar"]
     
     init() {
         let appearance = UINavigationBarAppearance()
@@ -42,7 +43,7 @@ struct ContentView: View {
                 LazyVGrid(columns: gridItems, spacing: 15) { //垂直间距
                     ForEach(0..<6, id: \.self) { index in
                         NavigationLink(destination: destinationView(for: index, title: titles[index])) {
-                           GridItemView(title: titles[index])
+                           GridItemView(imageType: imageTypes[index], title: titles[index])
                                .padding(.horizontal, 20)
                         }
                     }
@@ -57,11 +58,13 @@ struct ContentView: View {
 }
 
 struct GridItemView: View {
+    let imageType: String
     let title: String
+    
 
     var body: some View {
         VStack {
-            Image(systemName: "number.square.fill") // 这里使用了一个示例图标，你可以替换为你想要的图标名称
+            Image(systemName: imageType) // 这里使用了一个示例图标，你可以替换为你想要的图标名称
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50, height: 50)
@@ -81,6 +84,8 @@ private func destinationView(for index: Int, title: String) -> some View {
     switch index {
     case 0:
         return AnyView(NumberSystemConversionDetailView(text: title))
+    case 2:
+        return AnyView(QRCodeToolsDetailView(text: title))
     default:
         return AnyView(DetailView(text: title))
     }
