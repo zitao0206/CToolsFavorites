@@ -2,10 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
 		<string>launch01.webp</string>
 	</dict>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.</string>
 </dict>
 </plist>

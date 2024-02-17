@@ -1,5 +1,5 @@
 //
-//  NumberSystemConversionDetailView.swift
+//  QRCodeReaderDetailView.swift
 //  ToolsFavorites
 //
 //  Created by zitao0206 on 2024/2/15.
@@ -9,7 +9,7 @@ import SwiftUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
 
-public struct QRCodeToolsDetailView: View {
+public struct QRCodeReaderDetailView: View {
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var translatedResult: String?
@@ -80,7 +80,7 @@ public struct QRCodeToolsDetailView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.bottom, 100) // 
+            .padding(.bottom, 100) 
  
         }
         .padding()
@@ -185,7 +185,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 
-extension QRCodeToolsDetailView {
+extension QRCodeReaderDetailView {
     
     
 }
