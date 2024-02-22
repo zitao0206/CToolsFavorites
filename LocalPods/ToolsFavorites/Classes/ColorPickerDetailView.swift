@@ -24,7 +24,6 @@ public struct ColorPickerDetailView: View {
         VStack {
             ColorPickerContentViewControllerWrapper()
         }
-          .padding()
 
         .navigationBarTitle(text, displayMode: .automatic)
         .font(.system(size: 10))
@@ -45,52 +44,44 @@ public struct ColorPickerDetailView: View {
 }
  
 
-class ColorPickerContentViewController: UIViewController, ColorPickerViewDelegate {
+class ColorPickerContentViewController: UIViewController, EFColorSelectionViewControllerDelegate {
     
-    lazy var colorPickerView: ColorPickerView = {
-        let colorPicker = ColorPickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        colorPicker.delegate = self // 设置委托对象
-        return colorPicker
-    }()
-      
+    let colorSelectionController = EFColorSelectionViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorPickerView.delegate = self
-            
-        view.backgroundColor = .green
-        self.view.addSubview(colorPickerView)
+        self.addChild(colorSelectionController)
+        
+        self.preferredContentSize = colorSelectionController.view.systemLayoutSizeFitting(
+            UIView.layoutFittingCompressedSize
+        )
+
+        colorSelectionController.isColorTextFieldHidden = false
+        colorSelectionController.delegate = self
+        colorSelectionController.color = UIColor.white
+        
+ 
+        self.view.addSubview(colorSelectionController.view)
+        
     }
+    
+    
+    // MARK:- EFColorSelectionViewControllerDelegate
+    func colorViewController(_ colorViewCntroller: EFColorSelectionViewController, didChangeColor color: UIColor) {
+
+
+        print("New color: " + color.debugDescription)
+    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-      
-        let centerX = view.bounds.width / 2
-        let centerY = view.bounds.height / 2
-        let colorPickerWidth: CGFloat = 200
-        let colorPickerHeight: CGFloat = 200
-        let colorPickerX = centerX - colorPickerWidth / 2
-        let colorPickerY = 0//centerY - colorPickerHeight / 2
-        colorPickerView.frame = CGRect(x: colorPickerX, y: CGFloat(colorPickerY), width: colorPickerWidth, height: colorPickerHeight)
-    }
-
-    
-    // -- ColorPickerViewDelegate
-     
-    func colorPickerWillBeginDragging(_ colorPicker: ColorPickerView) {
-        
-    }
-    
-    func colorPickerDidEndDagging(_ colorPicker: ColorPickerView) {
-        
-    }
-    
-    func colorPickerDidSelectColor(_ colorPicker: ColorPickerView) {
-         // Can get the selected color from the color picker
-         let color = colorPicker.selectedColor
+        colorSelectionController.view.frame = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: view.bounds.width, height: view.bounds.height)
     }
 }
+    
 
 struct ColorPickerContentViewControllerWrapper: UIViewControllerRepresentable {
  

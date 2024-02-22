@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "ColorPicker.h"
 
 FOUNDATION_EXPORT double ToolsFavoritesVersionNumber;
 FOUNDATION_EXPORT const unsigned char ToolsFavoritesVersionString[];
