@@ -61,8 +61,8 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
     
     lazy var hexLabel : UILabel = {
         let label = UILabel()
-        label.text = "Hex Color #: "
-        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.text = "HexColor："
+        label.font = UIFont.systemFont(ofSize: 13.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -73,7 +73,7 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
         textField.placeholder = UIColor.white.colorCode
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.addTarget(self, action: #selector(didChange(textField:)), for: .editingChanged)
+        textField.addTarget(self, action: #selector(hexColorTextDidChange(textField:)), for: .editingChanged)
         textField.delegate = self
 
         let notification = NotificationCenter.default
@@ -96,7 +96,7 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
     
     
     // MARK:- UITextField Action
-    @objc func didChange(textField: UITextField) {
+    @objc func hexColorTextDidChange(textField: UITextField) {
         
         // Retrieve the inputted characters
         guard let newText = textField.text else {
@@ -109,10 +109,21 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
         if newText.count != colorCodeLength {
             return
         }
-         
-        self.color = UIColor(hex: newText, alpha: 1.0)
-        
+        self.color = UIColor(hex: newText, alpha: color.cgColor.alpha)
     }
+    
+    @objc func opacityTextFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        // Assuming opacity value ranges from 0.0 to 1.0
+        guard let opacity = Float(text), opacity >= 0.0, opacity <= 1.0 else {
+            // Handle invalid input
+            return
+        }
+        // Update the opacity of the color
+        let currentColor = color.withAlphaComponent(CGFloat(opacity))
+        self.color = currentColor
+    }
+    
     
     // MARK:- Keyboard Notification
     @objc func keyboardWillShow(_ notification: Notification?) {
@@ -137,6 +148,26 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
             }
         }
     }
+    
+    lazy var opacityLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Opacity: "
+        label.font = UIFont.systemFont(ofSize: 13.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    lazy var opacityTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "1.0"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(opacityTextFieldDidChange(_:)), for: .editingChanged)
+        textField.delegate = self
+        
+        return textField
+    }()
+    
     override public func loadView() {
         let parentView = UIView() // 创建一个父视图
         parentView.backgroundColor = .white // 可选：设置父视图的背景颜色
@@ -150,6 +181,9 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
         
         parentView.addSubview(hexLabel)
         parentView.addSubview(hexColorTextField)
+        
+        parentView.addSubview(opacityLabel)
+        parentView.addSubview(opacityTextField)
         // 将colorSelectionView添加为父视图的子视图
         parentView.addSubview(colorSelectionView)
 
@@ -171,23 +205,37 @@ public class EFColorSelectionViewController: UIViewController, UITextFieldDelega
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20), // 修改此处的常量值来调整左边距
-            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20), // 修改此处的常量值来调整右边距
-            segmentControl.heightAnchor.constraint(equalToConstant: 44) // Adjust the height as needed
+            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            segmentControl.heightAnchor.constraint(equalToConstant: 44)
         ])
         
         NSLayoutConstraint.activate([
             hexLabel.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 20),
             hexLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            hexLabel.widthAnchor.constraint(equalToConstant: 100) // Adjust the height as needed
+            hexLabel.widthAnchor.constraint(equalToConstant: 70)
         ])
         NSLayoutConstraint.activate([
             hexColorTextField.centerYAnchor.constraint(equalTo: hexLabel.centerYAnchor, constant: 0),
-            hexColorTextField.leadingAnchor.constraint(equalTo: hexLabel.trailingAnchor, constant: 5), // 调整间距
-            hexColorTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            hexColorTextField.leadingAnchor.constraint(equalTo: hexLabel.trailingAnchor, constant: 5),
+            hexColorTextField.widthAnchor.constraint(equalToConstant: 80)
         ])
         
-//        navigationItem.titleView = segmentControl
+        NSLayoutConstraint.activate([
+            opacityTextField.centerYAnchor.constraint(equalTo: opacityLabel.centerYAnchor, constant: 0),
+            opacityTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            opacityTextField.widthAnchor.constraint(equalToConstant: 80)
+        ])
+        
+      
+        NSLayoutConstraint.activate([
+            opacityLabel.centerYAnchor.constraint(equalTo: hexLabel.centerYAnchor, constant: 0),
+            opacityLabel.trailingAnchor.constraint(equalTo: opacityTextField.leadingAnchor, constant: -5),
+            opacityLabel.widthAnchor.constraint(equalToConstant: 60)
+        ])
+       
+        
+        //navigationItem.titleView = segmentControl
 
         colorSelectionView.setSelectedIndex(index: .RGB, animated: false)
         colorSelectionView.delegate = self
