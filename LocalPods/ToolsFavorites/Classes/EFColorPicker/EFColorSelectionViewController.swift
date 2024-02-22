@@ -42,7 +42,7 @@ public enum EFColorSelectionMode: Int {
     func colorViewController(_ colorViewCntroller: EFColorSelectionViewController, didChangeColor color: UIColor)
 }
 
-public class EFColorSelectionViewController: UIViewController {
+public class EFColorSelectionViewController: UIViewController, UITextFieldDelegate {
 
     // The controller's delegate. Controller notifies a delegate on color change.
     public weak var delegate: EFColorSelectionViewControllerDelegate?
@@ -58,6 +58,71 @@ public class EFColorSelectionViewController: UIViewController {
     }
     let colorSelectionView = EFColorSelectionView(frame: UIScreen.main.bounds)
     let segmentControl = UISegmentedControl(items: [NSLocalizedString("RGB", comment: ""), NSLocalizedString("HSB", comment: "")])
+    
+    lazy var hexLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Hex Color #: "
+        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    
+    lazy var hexColorTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = UIColor.white.colorCode
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(didChange(textField:)), for: .editingChanged)
+        textField.delegate = self
+
+        let notification = NotificationCenter.default
+        notification.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { [weak self] notification in
+            self?.keyboardWillShow(notification)
+        }
+        notification.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { [weak self] notification in
+            self?.keyboardWillHide(notification)
+        }
+        
+        return textField
+    }()
+
+    
+    private var isKeyboardShown: Bool = false
+    private var previousText = UIColor.white.colorCode
+    
+    private let colorCodeLength = 6
+    private let colorCodeCharacterSet = CharacterSet(charactersIn: "0123456789abcdef")
+    
+    
+    // MARK:- UITextField Action
+    @objc func didChange(textField: UITextField) {
+        
+        // Retrieve the inputted characters
+        guard let newText = textField.text else {
+            return
+        }
+        if !colorCodeCharacterSet.isSuperset(of: CharacterSet(charactersIn: newText.lowercased())) {
+            textField.text = previousText
+            return
+        }
+        if newText.count != colorCodeLength {
+            return
+        }
+         
+        self.color = UIColor(hex: newText, alpha: 1.0)
+        
+    }
+    
+    // MARK:- Keyboard Notification
+    @objc func keyboardWillShow(_ notification: Notification?) {
+        isKeyboardShown = true
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification?) {
+        isKeyboardShown = false
+    }
+
     // Whether colorTextField will hide, default is `true`
     public var isColorTextFieldHidden: Bool {
         get {
@@ -78,9 +143,13 @@ public class EFColorSelectionViewController: UIViewController {
 
         // 设置colorSelectionView的frame，使其充满父视图
 //        colorSelectionView.frame = parentView.bounds
-        colorSelectionView.frame = CGRect(x: 0, y: parentView.bounds.origin.y + 50, width: parentView.bounds.width, height: parentView.bounds.height)
+        colorSelectionView.frame = CGRect(x: 0, y: parentView.bounds.origin.y + 100, width: parentView.bounds.width, height: parentView.bounds.height)
         colorSelectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        
+        parentView.addSubview(segmentControl)
+        
+        parentView.addSubview(hexLabel)
+        parentView.addSubview(hexColorTextField)
         // 将colorSelectionView添加为父视图的子视图
         parentView.addSubview(colorSelectionView)
 
@@ -91,8 +160,6 @@ public class EFColorSelectionViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(segmentControl)
         
         segmentControl.addTarget(
             self,
@@ -108,7 +175,18 @@ public class EFColorSelectionViewController: UIViewController {
             segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20), // 修改此处的常量值来调整右边距
             segmentControl.heightAnchor.constraint(equalToConstant: 44) // Adjust the height as needed
         ])
-
+        
+        NSLayoutConstraint.activate([
+            hexLabel.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 20),
+            hexLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            hexLabel.widthAnchor.constraint(equalToConstant: 100) // Adjust the height as needed
+        ])
+        NSLayoutConstraint.activate([
+            hexColorTextField.centerYAnchor.constraint(equalTo: hexLabel.centerYAnchor, constant: 0),
+            hexColorTextField.leadingAnchor.constraint(equalTo: hexLabel.trailingAnchor, constant: 5), // 调整间距
+            hexColorTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
 //        navigationItem.titleView = segmentControl
 
         colorSelectionView.setSelectedIndex(index: .RGB, animated: false)
@@ -145,6 +223,7 @@ public class EFColorSelectionViewController: UIViewController {
 }
 extension EFColorSelectionViewController: EFColorViewDelegate {
     public func colorView(_ colorView: EFColorView, didChangeColor color: UIColor) {
+        hexColorTextField.text = color.colorCode
         delegate?.colorViewController(self, didChangeColor: color)
     }
 }

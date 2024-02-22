@@ -28,9 +28,9 @@ import UIKit
 
 public class EFRGBView: UIView, EFColorView {
 
-    let EFColorSampleViewHeight: CGFloat = 30.0
-    let EFViewMargin: CGFloat = 20.0
-    let EFSliderViewMargin: CGFloat = 30.0
+    let EFColorSampleViewHeight: CGFloat = 40.0
+    let EFViewMargin: CGFloat = 15.0
+    let EFSliderViewMargin: CGFloat = 20.0
     let EFRGBColorComponentsSize: Int = 3
 
     private let colorSample: UIView = {
