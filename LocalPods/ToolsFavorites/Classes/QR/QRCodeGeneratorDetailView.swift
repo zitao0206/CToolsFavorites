@@ -6,24 +6,19 @@
 //
 
 import SwiftUI
+import AKOCommonToolsKit
 import CoreImage
 import CoreImage.CIFilterBuiltins
 import Photos
 
-
 public struct QRCodeGeneratorDetailView: View {
+    
     @State private var qrCodeImage: UIImage?
     @State private var userInput: String = ""
     @State var showAlert: Bool = false
     @State var saveErrorInfo: String = ""
-    
-    public init(text: String) {
-        self.text = text
-    }
-    
-    let text: String
-    @Environment(\.presentationMode) var presentationMode
-    
+     
+
     public var body: some View {
  
         VStack {
@@ -39,7 +34,6 @@ public struct QRCodeGeneratorDetailView: View {
                       .foregroundColor(.black)
                 }
                 .buttonStyle(.bordered)
-                .padding(.top, -125) // Add some spacing
                 
                 Button {
                     UIPasteboard.general.string = userInput
@@ -48,20 +42,19 @@ public struct QRCodeGeneratorDetailView: View {
                         .foregroundColor(.black)
                 }
                 .buttonStyle(.bordered)
-                .padding(.top, -125) // Add some spacing
             
                 Spacer().frame(width: 10)
             }
                 
             TextField("Enter text...", text: $userInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.top, -100) // Add some spacing
+                .frame(width: UIDevice.ako.screenWidth - 20)
                 .onChange(of: userInput) { newValue in
                     userInput = newValue
                 }
             
-         
-                
+            Spacer().frame(height: 20)
+            
             Button("Generate QR Code") {
                 if let data = generateQRCode(from: userInput) {
                     if let codeImage = UIImage(data: data) {
@@ -70,7 +63,6 @@ public struct QRCodeGeneratorDetailView: View {
                 }
             }
             .buttonStyle(.bordered)
-            .padding(.top, -40) // Add some spacing
             .disabled(userInput.isEmpty)
             
             ZStack {
@@ -83,15 +75,13 @@ public struct QRCodeGeneratorDetailView: View {
                     PlaceholderEmptyView()
                 }
             }
-            .padding(.top, 0) // Add some spacing
-            
+ 
             Button("Save to Photo Library") {
                 if let qrCodeImage = qrCodeImage {
                     saveImageToAlbum(qrCodeImage)
                 }
             }
             .buttonStyle(.bordered)
-            .padding(.top, 30) // Add some spacing
             .disabled(qrCodeImage == nil) // Disable button if qrCodeImage is nil
             .alert(isPresented: $showAlert, content: {
                 if saveErrorInfo.isEmpty {
@@ -110,22 +100,7 @@ public struct QRCodeGeneratorDetailView: View {
             })
 
         }
- 
-        .padding()
-        .navigationBarTitle(text, displayMode: .automatic)
-        .font(.system(size: 10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
-        .onAppear {
-
-        }
+        Spacer()
     }
     
     private func generateQRCode(from string: String) -> Data? {
@@ -184,11 +159,3 @@ struct PlaceholderEmptyView: View {
         .padding()
     }
 }
-
-
-
-extension QRCodeGeneratorDetailView {
-    
-    
-}
-

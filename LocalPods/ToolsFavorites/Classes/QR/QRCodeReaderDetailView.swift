@@ -14,13 +14,7 @@ public struct QRCodeReaderDetailView: View {
     @State private var selectedImage: UIImage?
     @State private var translatedResult: String?
     
-    public init(text: String) {
-        self.text = text
-    }
-    
-    let text: String
-    @Environment(\.presentationMode) var presentationMode
-    
+   
     public var body: some View {
         VStack {
             Button {
@@ -33,6 +27,7 @@ public struct QRCodeReaderDetailView: View {
                     .bold()
             }
             .buttonStyle(.bordered)
+            
             ZStack {
                 if let image = selectedImage {
                   Image(uiImage: image)
@@ -82,21 +77,6 @@ public struct QRCodeReaderDetailView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.bottom, 100) 
  
-        }
-        .padding()
-        .navigationBarTitle(text, displayMode: .automatic)
-        .font(.system(size: 10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
-        .onAppear {
-            // Any additional setup logic
         }
     }
     

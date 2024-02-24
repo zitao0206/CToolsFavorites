@@ -25,8 +25,8 @@ import AKOCommonToolsKit
 struct ContentView: View {
     
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
-    @State private var titles = ["Number System Conversion", "Date Calculation", "QR Code Reader", "QR Code Generator", "Color Picker", "Num Sys Conversion"]
-    @State private var imageTypes = ["number.square.fill", "calendar.badge.plus", "qrcode.viewfinder", "qrcode", "sun.min", "calendar"]
+    @State private var titles = ["Number System Conversion", "Date Calculation", "QR Code", "Color Picker", "Others", "Others"]
+    @State private var imageTypes = ["number.square.fill", "calendar.badge.plus", "qrcode", "sun.min", "pencil", "pencil"]
     
     init() {
         let appearance = UINavigationBarAppearance()
@@ -87,10 +87,8 @@ private func destinationView(for index: Int, title: String) -> some View {
     case 1:
         return AnyView(DateCalculationDetailView(text: title))
     case 2:
-        return AnyView(QRCodeReaderDetailView(text: title))
+        return AnyView(QRCodeDetailView(text: title))
     case 3:
-        return AnyView(QRCodeGeneratorDetailView(text: title))
-    case 4:
         return AnyView(ColorPickerDetailView(text: title))
     default:
         return AnyView(DemoDetailView(text: title))
