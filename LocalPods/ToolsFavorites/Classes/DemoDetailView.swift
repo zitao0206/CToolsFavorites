@@ -34,9 +34,7 @@ class VideoDownloader {
 }
 
 public struct DemoDetailView: View {
-    
-    
- 
+
     @State private var urlString = ""
     
     let text: String
