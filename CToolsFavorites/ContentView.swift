@@ -9,53 +9,70 @@ import SwiftUI
 import ToolsFavorites
 import AKOCommonToolsKit
 
-/*
- ideas:
- 
- 1. 进制的转换，二进制是多少等等
- 
- 2.日期转换器：
- 
- 时间计算器，随便输入两个日期时间，可以计算时间差；设置一个时间，每天帮你计算倒计时；
- 
- 3. 安全二维码，扫描一下，翻译出二维码链接；
- 
- */
-
 struct ContentView: View {
     
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
-    @State private var titles = ["Number System Conversion", "Date Calculation", "QR Code", "Color Picker", "Others", "Others"]
-    @State private var imageTypes = ["number.square.fill", "calendar.badge.plus", "qrcode", "sun.min", "pencil", "pencil"]
     
-    init() {
-        let appearance = UINavigationBarAppearance()
-        appearance.largeTitleTextAttributes = [
-            .foregroundColor: UIColor.black, // 设置导航标题颜色为白色
-            .font: UIFont.systemFont(ofSize: 24, weight: .bold) // 设置导航字体大小和粗细
-        ]
-        UINavigationBar.appearance().standardAppearance = appearance
-    }
+    @State private var toolItems: [ToolItem] = [
+        ToolItem(title: "Base Conversion", imageType: "number.square.fill"),
+        ToolItem(title: "Date Calculation", imageType: "calendar.badge.plus"),
+        ToolItem(title: "QR Code", imageType: "qrcode"),
+        ToolItem(title: "Color Picker", imageType: "sun.min"),
+        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
+        ToolItem(title: "Others", imageType: "pencil")
+    ]
+
+    private func contentViewForToolItem(_ toolItem: ToolItem) -> some View {
+          switch toolItem.title {
+          case "Base Conversion":
+              return AnyView(NumberSystemConversionDetailView(item: toolItem))
+          case "Date Calculation":
+              return AnyView(DateCalculationDetailView(item: toolItem))
+          case "QR Code":
+              return AnyView(QRCodeDetailView(item: toolItem))
+          case "Color Picker":
+              return AnyView(ColorPickerDetailView(item: toolItem))
+          case "Online Program":
+              return AnyView(OnlineProgramDetailView(item: toolItem))
+          default:
+              return AnyView(DemoDetailView(item: toolItem))
+          }
+      }
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 15) { //垂直间距
-                    ForEach(0..<6, id: \.self) { index in
-                        NavigationLink(destination: destinationView(for: index, title: titles[index])) {
-                           GridItemView(imageType: imageTypes[index], title: titles[index])
-                               .padding(.horizontal, 20)
+                    ForEach(toolItems.indices, id: \.self) { index in
+                        NavigationLink(destination: contentViewForToolItem(toolItems[index])) {
+                            GridItemView(imageType: toolItems[index].imageType, title: toolItems[index].title)
+                                .padding(.horizontal, 20)
                         }
                     }
                 }
             }
             .padding()
-            .padding()
             .navigationBarTitle("Dev Tools Favorites", displayMode: .automatic)
+            .onReceive(NotificationCenter.default.publisher(for: .moveItemToFirstNotification)) { notification in
+                if let intValue = notification.object as? Int {
+                    self.moveItemToFirst(intValue)
+                }
+            }
         }
     }
     
+    private func moveItemToFirst(_ index: Int) {
+        guard index != 0 && index < toolItems.count else { return }
+//        devTools.insert(devTools.remove(at: index), at: 0)
+//        // Update UserDefaults
+//        let titles = devTools.map { $0.title }
+//        let imageTypes = devTools.map { $0.imageType }
+//        UserDefaults.standard.set(titles, forKey: "cachedTitles")
+//        UserDefaults.standard.set(imageTypes, forKey: "cachedImageTypes")
+    }
 }
+
+
 
 struct GridItemView: View {
     let imageType: String
@@ -80,20 +97,21 @@ struct GridItemView: View {
 }
 
 
-private func destinationView(for index: Int, title: String) -> some View {
-    switch index {
-    case 0:
-        return AnyView(NumberSystemConversionDetailView(text: title))
-    case 1:
-        return AnyView(DateCalculationDetailView(text: title))
-    case 2:
-        return AnyView(QRCodeDetailView(text: title))
-    case 3:
-        return AnyView(ColorPickerDetailView(text: title))
-    default:
-        return AnyView(DemoDetailView(text: title))
-    }
-}
+//private func destinationView(for index: Int, title: String) -> some View {
+//    
+//    switch index {
+//    case 0:
+//        return AnyView(NumberSystemConversionDetailView(text: title, index: index))
+//    case 1:
+//        return AnyView(DateCalculationDetailView(text: title, index: index))
+//    case 2:
+//        return AnyView(QRCodeDetailView(text: title, index: index))
+//    case 3:
+//        return AnyView(ColorPickerDetailView(text: title, index: index))
+//    default:
+//        return AnyView(DemoDetailView(text: title, index: index))
+//    }
+//}
 
 struct DetailView: View {
     let text: String

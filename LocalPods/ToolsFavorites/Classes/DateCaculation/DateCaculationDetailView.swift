@@ -10,17 +10,17 @@ import SwiftUI
 
 public struct DateCalculationDetailView: View {
     
+    let item: ToolItem
+    
+    public init(item: ToolItem) {
+        self.item = item
+    }
+    
     @State private var selectedOption = 0
     
     let options = ["Date Difference", "Date Calculate"]
     
     @Environment(\.presentationMode) var presentationMode
-    
-    let text : String
-
-    public init(text: String) {
-        self.text = text
-    }
     
     public var body: some View {
         VStack {
@@ -38,7 +38,7 @@ public struct DateCalculationDetailView: View {
                 DateAddCalculationDetailView()
             }
         }
-        .navigationBarTitle(text, displayMode: .automatic)
+        .navigationBarTitle(item.title, displayMode: .automatic)
         .font(.system(size: 14))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -49,6 +49,9 @@ public struct DateCalculationDetailView: View {
                     .foregroundColor(.black)
             }
         )
+        .onAppear {
+//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
+        }
     }
 }
 

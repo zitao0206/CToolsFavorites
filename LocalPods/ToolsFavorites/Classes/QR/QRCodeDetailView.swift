@@ -9,16 +9,16 @@ import SwiftUI
 import Foundation
 
 public struct QRCodeDetailView: View {
+    
+    let item: ToolItem
+    
+    public init(item: ToolItem) {
+        self.item = item
+    }
    
     @State private var selectedOption = 0
     
     let options = ["QR Code Generator", "QR Code Reader"]
-    
-    let text: String
-    
-    public init(text: String) {
-        self.text = text
-    }
     
     @Environment(\.presentationMode) var presentationMode
 
@@ -40,7 +40,7 @@ public struct QRCodeDetailView: View {
             }
         }
 
-        .navigationBarTitle(text, displayMode: .automatic)
+        .navigationBarTitle(item.title, displayMode: .automatic)
         .font(.system(size: 10))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -52,7 +52,7 @@ public struct QRCodeDetailView: View {
             }
         )
         .onAppear {
-            // Any additional setup logic
+//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
         }
     }
     

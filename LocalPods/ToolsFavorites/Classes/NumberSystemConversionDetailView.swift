@@ -9,6 +9,12 @@ import SwiftUI
 
 public struct NumberSystemConversionDetailView: View {
     
+    let item: ToolItem
+    
+    public init(item: ToolItem) {
+        self.item = item
+    }
+    
     @State private var formatEnabled = true // 添加一个开关状
     @State private var decimalValue: String = ""
     @State private var decimalFormatValue: String = ""
@@ -16,11 +22,6 @@ public struct NumberSystemConversionDetailView: View {
     @State private var hexadecimalValue: String = ""
     @State private var octalValue: String = ""
     
-    public init(text: String) {
-        self.text = text
-    }
-    
-    let text: String
     @Environment(\.presentationMode) var presentationMode
     
     public var body: some View {
@@ -201,7 +202,7 @@ public struct NumberSystemConversionDetailView: View {
 
         }
         .padding(.top, -140) // 减少顶部间距
-        .navigationBarTitle(text, displayMode: .automatic)
+        .navigationBarTitle(item.title, displayMode: .automatic)
         .font(.system(size: 10))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -214,6 +215,7 @@ public struct NumberSystemConversionDetailView: View {
         )
         .onAppear {
             updateFormattedValues()
+//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
         }
         .onChange(of: decimalValue) { newValue in
             binaryValue = formatBinaryValue(convertDecimalToBinary(newValue))
@@ -235,6 +237,7 @@ public struct NumberSystemConversionDetailView: View {
             binaryValue = formatBinaryValue(convertOctalToBinary(newValue))
             hexadecimalValue = formatHexadecimalValue(convertOctalToHexadecimal(newValue))
         }
+        
 
     }
     

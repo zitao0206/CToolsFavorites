@@ -10,11 +10,12 @@ import UIKit
 
 public struct ColorPickerDetailView: View {
    
-    public init(text: String) {
-        self.text = text
+    let item: ToolItem
+    
+    public init(item: ToolItem) {
+        self.item = item
     }
     
-    let text: String
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -25,7 +26,7 @@ public struct ColorPickerDetailView: View {
             ColorPickerContentViewControllerWrapper()
         }
 
-        .navigationBarTitle(text, displayMode: .automatic)
+        .navigationBarTitle(item.title, displayMode: .automatic)
         .font(.system(size: 10))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -37,7 +38,7 @@ public struct ColorPickerDetailView: View {
             }
         )
         .onAppear {
-            // Any additional setup logic
+            
         }
     }
     
