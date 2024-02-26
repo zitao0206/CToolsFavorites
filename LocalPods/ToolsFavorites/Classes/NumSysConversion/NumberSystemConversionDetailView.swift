@@ -202,17 +202,7 @@ public struct NumberSystemConversionDetailView: View {
 
         }
         .padding(.top, -140) // 减少顶部间距
-        .navigationBarTitle(item.title, displayMode: .automatic)
-        .font(.system(size: 10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
+        .commmonNavigationBar(title: item.title, displayMode: .automatic)
         .onAppear {
             updateFormattedValues()
 //            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)

@@ -25,17 +25,7 @@ public struct OnlineProgramDetailView: View {
             WebView(urlString: $urlString)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
-        .navigationBarTitle(item.title, displayMode: .inline)
-        .font(.system(size: 10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
+        .commmonNavigationBar(title: item.title, displayMode: .inline)
         .onAppear {
         }
     }

@@ -9,19 +9,6 @@ import SwiftUI
 import AVKit
 import Photos
 
-extension Notification.Name {
-    public static let moveItemToFirstNotification = Notification.Name("MoveItemToFirstNotification")
-}
-
-public struct ToolItem {
-    public let title: String
-    public let imageType: String
-    
-    public init(title: String, imageType: String) {
-        self.title = title
-        self.imageType = imageType
-    }
-}
 
 
 public struct DemoDetailView: View {

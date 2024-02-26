@@ -19,7 +19,7 @@ struct ContentView: View {
         ToolItem(title: "QR Code", imageType: "qrcode"),
         ToolItem(title: "Color Picker", imageType: "sun.min"),
         ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
-        ToolItem(title: "Others", imageType: "pencil")
+        ToolItem(title: "Quick Query", imageType: "q.circle")
     ]
 
     private func contentViewForToolItem(_ toolItem: ToolItem) -> some View {
@@ -34,6 +34,8 @@ struct ContentView: View {
               return AnyView(ColorPickerDetailView(item: toolItem))
           case "Online Program":
               return AnyView(OnlineProgramDetailView(item: toolItem))
+          case "Quick Query":
+              return AnyView(QuickQueryDetailView(item: toolItem))
           default:
               return AnyView(DemoDetailView(item: toolItem))
           }

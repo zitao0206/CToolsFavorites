@@ -25,18 +25,7 @@ public struct ColorPickerDetailView: View {
         VStack {
             ColorPickerContentViewControllerWrapper()
         }
-
-        .navigationBarTitle(item.title, displayMode: .automatic)
-        .font(.system(size: 10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
+        .commmonNavigationBar(title: item.title, displayMode: .automatic)
         .onAppear {
             
         }

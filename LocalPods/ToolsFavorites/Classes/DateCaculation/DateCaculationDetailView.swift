@@ -38,17 +38,7 @@ public struct DateCalculationDetailView: View {
                 DateAddCalculationDetailView()
             }
         }
-        .navigationBarTitle(item.title, displayMode: .automatic)
-        .font(.system(size: 14))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
-            }
-        )
+        .commmonNavigationBar(title: item.title, displayMode: .automatic)
         .onAppear {
 //            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
         }

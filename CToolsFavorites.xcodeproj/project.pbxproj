@@ -22,6 +22,8 @@
 		62C7ABB180BC1517BCE50052 /* Pods-CToolsFavorites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CToolsFavorites.release.xcconfig"; path = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.release.xcconfig"; sourceTree = "<group>"; };
 		6BBAB564253AF296DE4DC1B9 /* Pods_CToolsFavorites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CToolsFavorites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7DA665F2047F7268A4A7C9 /* Pods-CToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CToolsFavorites.debug.xcconfig"; path = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.debug.xcconfig"; sourceTree = "<group>"; };
+		D8026B2D2B8CD13E0070C541 /* CToolsFavorites.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CToolsFavorites.entitlements; sourceTree = "<group>"; };
+		D84A8B082B8CD37F00227365 /* CToolsFavoritesDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CToolsFavoritesDebug.entitlements; sourceTree = "<group>"; };
 		D89BA03B2AAF450E0045D812 /* CToolsFavorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CToolsFavorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CToolsFavoritesApp.swift; sourceTree = "<group>"; };
 		D89BA0402AAF450E0045D812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 		D89BA03D2AAF450E0045D812 /* CToolsFavorites */ = {
 			isa = PBXGroup;
 			children = (
+				D84A8B082B8CD37F00227365 /* CToolsFavoritesDebug.entitlements */,
+				D8026B2D2B8CD13E0070C541 /* CToolsFavorites.entitlements */,
 				D89BA0532AAF458B0045D812 /* Info.plist */,
 				D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */,
 				D89BA04C2AAF45640045D812 /* Resource */,
@@ -110,7 +114,6 @@
 				7C7DA665F2047F7268A4A7C9 /* Pods-CToolsFavorites.debug.xcconfig */,
 				62C7ABB180BC1517BCE50052 /* Pods-CToolsFavorites.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -360,12 +363,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CToolsFavorites/CToolsFavoritesDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CToolsFavorites/Preview Content\"";
+				DEVELOPMENT_TEAM = 688B74985L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CToolsFavorites/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -375,8 +383,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zitao.li0206.CToolsFavorites;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zitao.CToolsFavorites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,12 +398,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = CToolsFavorites/CToolsFavorites.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CToolsFavorites/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CToolsFavorites/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to save pictures to your photo album, you need to obtain photo permissions. If you refuse to authorize the provision, you will not be able to use the above functions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -406,6 +419,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zitao.li0206.CToolsFavorites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
