@@ -78,7 +78,7 @@ public struct QRCodeGeneratorDetailView: View {
  
             Button("Save to Photo Library") {
                 if let qrCodeImage = qrCodeImage {
-                    saveImageToAlbum(qrCodeImage)
+                    ImageUtility.saveImageToAlbum(qrCodeImage)
                 }
             }
             .buttonStyle(.bordered)
@@ -118,24 +118,6 @@ public struct QRCodeGeneratorDetailView: View {
 
         return nil
     }
-     
-    func saveImageToAlbum(_ image: UIImage) {
-        PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAsset(from: image)
-        }) { (success, error) in
-            if success {
-                print("The image has been saved to the album.")
-                saveErrorInfo = ""
-                showAlert.toggle()
-            } else {
-                print("Save failed：\(error?.localizedDescription ?? "")")
-                saveErrorInfo = "Save failed：\(error?.localizedDescription ?? "")"
-                showAlert.toggle()
-            }
-        }
-    }
-    
-    
 
 }
 

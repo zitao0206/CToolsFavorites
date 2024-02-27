@@ -39,7 +39,7 @@ struct ContentView: View {
           default:
               return AnyView(DemoDetailView(item: toolItem))
           }
-      }
+    }
     
     var body: some View {
         NavigationView {

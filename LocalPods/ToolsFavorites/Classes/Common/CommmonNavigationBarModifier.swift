@@ -1,26 +1,11 @@
 //
-//  QRCodeReaderDetailView.swift
+//  CommmonNavigationBarModifier.swift
 //  ToolsFavorites
 //
-//  Created by zitao0206 on 2024/2/15.
+//  Created by lizitao on 2024-02-27.
 //
 
 import SwiftUI
-
-extension Notification.Name {
-    public static let moveItemToFirstNotification = Notification.Name("MoveItemToFirstNotification")
-}
-
-public struct ToolItem {
-    public let title: String
-    public let imageType: String
-    
-    public init(title: String, imageType: String) {
-        self.title = title
-        self.imageType = imageType
-    }
-}
-
 
 struct NavigationBarModifier: ViewModifier {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -43,16 +28,9 @@ struct NavigationBarModifier: ViewModifier {
     }
 }
 
+
 extension View {
     func commmonNavigationBar(title: String, displayMode: NavigationBarItem.TitleDisplayMode) -> some View {
         self.modifier(NavigationBarModifier(title: title, displayMode: displayMode))
     }
 }
-
-
-
-
-
-
- 
-
