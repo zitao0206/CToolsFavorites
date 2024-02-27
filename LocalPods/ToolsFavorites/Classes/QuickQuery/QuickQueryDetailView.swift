@@ -126,10 +126,20 @@ public struct PowerOfTwoTableDetailView: View {
         
         ScrollView {
             VStack {
-                if let image = loadImage(named: "poweroftwotable") {
-                    image
+                if let image = ImageUtility.loadImage(named: "poweroftwotable") {
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .contextMenu {
+                            Button(action: {
+                                if let image = ImageUtility.loadImage(named: "poweroftwotable") {
+                                    ImageUtility.saveImageToAlbum(image)
+                                }
+                            }) {
+                                Text("Save to Photos")
+                                Image(systemName: "square.and.arrow.down")
+                            }
+                        }
                 } else {
                     Text("Failed to load image")
                 }
@@ -138,16 +148,5 @@ public struct PowerOfTwoTableDetailView: View {
         }
         .commmonNavigationBar(title: title, displayMode: .automatic)
         
-    }
-
-    private func loadImage(named imageName: String) -> Image? {
-        guard let imageBundlePath = Bundle.main.path(forResource: "CToolsFavorites-Images", ofType: "bundle"),
-              let imageBundle = Bundle(path: imageBundlePath),
-              let imageURL = imageBundle.url(forResource: imageName, withExtension: "png"),
-              let imageData = try? Data(contentsOf: imageURL),
-              let uiImage = UIImage(data: imageData) else {
-            return nil
-        }
-        return Image(uiImage: uiImage)
     }
 }
