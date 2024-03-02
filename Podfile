@@ -9,7 +9,7 @@ install! 'cocoapods',
          :warn_for_multiple_pod_sources => false,
          :preserve_pod_file_structure => true
 
-platform :ios, '15.0'
+platform :ios, '17.0'
 inhibit_all_warnings!
 use_frameworks! :linkage => :static
 

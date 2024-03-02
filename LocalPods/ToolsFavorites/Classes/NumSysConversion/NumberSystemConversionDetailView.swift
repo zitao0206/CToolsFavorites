@@ -28,7 +28,7 @@ public struct NumberSystemConversionDetailView: View {
         VStack {
             Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
                 .font(.system(size: 15))
-//                .bold()
+                .bold()
                 .padding()
                 .onChange(of: formatEnabled) { newValue in
                     updateFormattedValues()
