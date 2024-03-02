@@ -40,9 +40,6 @@
     "MapKit"
   ],
   "dependencies": {
-    "MarkdownKit": [
-
-    ],
     "AKOCommonToolsKit": [
 
     ],

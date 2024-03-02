@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 #  s.public_header_files = 'CToolsFavorites/Classes/**/*.h'
 #  s.prefix_header_file = 'CToolsFavorites.pch'
   s.frameworks = 'UIKit', 'Foundation', 'MapKit'
-  s.dependency 'MarkdownKit'
+#  s.dependency 'MarkdownKit'
   s.dependency 'AKOCommonToolsKit'
   s.dependency 'Masonry'
 #  s.dependency 'SVProgressHUD'

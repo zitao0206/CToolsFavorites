@@ -1,10 +1,8 @@
 PODS:
   - AKOCommonToolsKit (0.0.31)
-  - MarkdownKit (1.7.1)
   - Masonry (1.1.0)
   - ToolsFavorites (0.1.0):
     - AKOCommonToolsKit
-    - MarkdownKit
     - Masonry
 
 DEPENDENCIES:
@@ -15,7 +13,6 @@ SPEC REPOS:
   https://github.com/zitao0206/MDSpecs.git:
     - AKOCommonToolsKit
   trunk:
-    - MarkdownKit
     - Masonry
 
 EXTERNAL SOURCES:
@@ -24,9 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AKOCommonToolsKit: 2b62669cc9704a200defd16b5c06a33404f47f24
-  MarkdownKit: 0b15195c63cf3e39387949c4bdeccde0055e252a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  ToolsFavorites: 502f7622f6dd35f65c6e4741224a7288b5666d47
+  ToolsFavorites: 4d9702b6eeb6a49c15155d915ab4a58c3bfbbc4d
 
 PODFILE CHECKSUM: 014533ec9dcebaeda079abd9d5b2387ba422d2e4
 
