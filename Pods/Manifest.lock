@@ -9,7 +9,6 @@ PODS:
 
 DEPENDENCIES:
   - AKOCommonToolsKit (= 0.0.31)
-  - MarkdownKit
   - ToolsFavorites (from `./LocalPods/ToolsFavorites`)
 
 SPEC REPOS:
@@ -29,6 +28,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ToolsFavorites: 06863dee8381812d194998db9f41f43cb2f3f4fb
 
-PODFILE CHECKSUM: 562800071cece23f7ac03be81cd960c525b41c7d
+PODFILE CHECKSUM: 1118f9e22634c6733da16dcd310257106d79fb00
 
 COCOAPODS: 1.11.3
