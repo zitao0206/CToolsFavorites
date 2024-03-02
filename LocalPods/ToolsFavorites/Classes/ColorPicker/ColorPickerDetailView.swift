@@ -60,15 +60,6 @@ class ColorPickerContentViewController: UIViewController, EFColorSelectionViewCo
     // MARK:- EFColorSelectionViewControllerDelegate
     func colorViewController(_ colorViewCntroller: EFColorSelectionViewController, didChangeColor color: UIColor) {
 
-
-        print("New color: " + color.debugDescription)
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-//            // 在10秒后执行的代码块
-//            print("10秒后执行的操作")
-//            self.colorSelectionController.color = UIColor.white
-//        }
-
     }
 
     

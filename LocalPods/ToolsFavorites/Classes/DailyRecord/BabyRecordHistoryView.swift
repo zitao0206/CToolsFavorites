@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BabyRecordHistoryView: View {
     
-    @Binding var selectedTab: Int
+//    @Binding var selectedTab: Int
     
     @State private var feedingRecords: [Date: [FeedingRecord]] = [:]
     
@@ -24,11 +24,13 @@ struct BabyRecordHistoryView: View {
                     }
                 }
             }
-            .padding(.bottom, 5) 
+            .padding(.bottom, 5)
         }
         .onAppear {
             loadFeedingRecords()
         }
+        .commmonNavigationBar(title: "History", displayMode: .inline)
+  
     }
     
     private func loadFeedingRecords() {

@@ -9,7 +9,7 @@ install! 'cocoapods',
          :warn_for_multiple_pod_sources => false,
          :preserve_pod_file_structure => true
 
-platform :ios, '16.0'
+platform :ios, '15.0'
 inhibit_all_warnings!
 use_frameworks! :linkage => :static
 
@@ -31,7 +31,7 @@ post_install do |installer|
   installer.pod_target_subprojects.flat_map { |project| project.targets }.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['ENABLE_BITCODE'] = 'NO'
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
     end
   end
 end

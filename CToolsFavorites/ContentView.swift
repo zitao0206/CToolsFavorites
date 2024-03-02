@@ -18,9 +18,9 @@ struct ContentView: View {
         ToolItem(title: "Date Calculation", imageType: "calendar.badge.plus"),
         ToolItem(title: "QR Code", imageType: "qrcode"),
         ToolItem(title: "Color Picker", imageType: "sun.min"),
-        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
+//        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
         ToolItem(title: "Quick Query", imageType: "q.circle"),
-        ToolItem(title: "Daily Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+        ToolItem(title: "Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
     ]
 
     private func contentViewForToolItem(_ toolItem: ToolItem) -> some View {
@@ -33,11 +33,11 @@ struct ContentView: View {
               return AnyView(QRCodeDetailView(item: toolItem))
           case "Color Picker":
               return AnyView(ColorPickerDetailView(item: toolItem))
-          case "Online Program":
-              return AnyView(OnlineProgramDetailView(item: toolItem))
+//          case "Online Program":
+//              return AnyView(OnlineProgramDetailView(item: toolItem))
           case "Quick Query":
               return AnyView(QuickQueryDetailView(item: toolItem))
-          case "Daily Record":
+          case "Amount Record":
               return AnyView(BabyRecordDetailView(item: toolItem))
           default:
               return AnyView(DemoDetailView(item: toolItem))
@@ -47,7 +47,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: gridItems, spacing: 15) { //垂直间距
+                LazyVGrid(columns: gridItems, spacing: 15) {
                     ForEach(toolItems.indices, id: \.self) { index in
                         NavigationLink(destination: contentViewForToolItem(toolItems[index])) {
                             GridItemView(imageType: toolItems[index].imageType, title: toolItems[index].title)
@@ -86,7 +86,7 @@ struct GridItemView: View {
 
     var body: some View {
         VStack {
-            Image(systemName: imageType) // 这里使用了一个示例图标，你可以替换为你想要的图标名称
+            Image(systemName: imageType)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50, height: 50)
@@ -95,7 +95,7 @@ struct GridItemView: View {
                 .font(.system(size: 12))
         }
         .padding()
-        .frame(width: (UIDevice.ako.screenWidth - 80)/2.0, height: 120) // 调整整体高度以适应图标和文本
+        .frame(width: (UIDevice.ako.screenWidth - 80)/2.0, height: 120)
         .background(Color.black.opacity(0.1))
         .cornerRadius(10)
     }

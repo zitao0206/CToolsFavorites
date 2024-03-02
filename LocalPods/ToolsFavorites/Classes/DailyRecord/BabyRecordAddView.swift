@@ -20,7 +20,7 @@ struct NewFeedingRecord {
 
 struct BabyRecordAddView: View {
     
-    @Binding var selectedTab: Int
+//    @Binding var selectedTab: Int
     
     @State private var feedingRecords: [Date: [FeedingRecord]] = [:]
     @State private var newRecord: NewFeedingRecord = NewFeedingRecord(time: Date(), amount: 0)
@@ -28,11 +28,13 @@ struct BabyRecordAddView: View {
     @State private var showAlert = false
     @State private var alertMessage = "Amount must be greater than 0 ！！！"
     
+    @FocusState private var isTextFieldFocused: Bool
+    
     var body: some View {
     
         VStack {
             
-            Spacer().frame(height: 30)
+            Spacer().frame(height: 10)
             
             VStack {
                 
@@ -57,41 +59,50 @@ struct BabyRecordAddView: View {
                 
                 HStack {
                     Text("Amount:")
-                        .padding(.trailing, 10)  
-                        .padding(.leading, 20)
+                        .padding(.trailing, 10)
+                        .padding(.leading, 5)
                     TextField("amount", text: Binding<String>(
-                        get: { "\(newRecord.amount)" },
-                        set: {
-                            if let value = NumberFormatter().number(from: $0) {
-                                newRecord.amount = value.intValue
+                            get: { "\(newRecord.amount)" },
+                            set: {
+                                if let value = NumberFormatter().number(from: $0) {
+                                    newRecord.amount = value.intValue
+                                }
                             }
-                        }
-                    ), onCommit: {
+                        ))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .focused($isTextFieldFocused)
+                        .padding(.trailing, 80)
+
+                }
+                
+                Spacer().frame(height: 30)
+                HStack {
+                    Button(action: {
+                        isTextFieldFocused = false
                         addFeedingRecord()
-                    })
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.numberPad)
-                    .padding(.trailing, 20)
+                    }) {
+                        Text("Add Record")
+                            .font(.system(size: 15))
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                    }
+                    .frame(width: 160, height: 20)
+                    Spacer().frame(width: 20)
+                    NavigationLink(destination: BabyRecordHistoryView()) {
+                        Text("History")
+                            .foregroundColor(.black)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
                 }
-                
-                Spacer().frame(height: 20)
-                
-                Button(action: {
-                    addFeedingRecord()
-                }) {
-                    Text("Add Record")
-                        .font(.system(size: 16))
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-                .frame(width: 300, height: 50)
             }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("Confirm")))
             }
- 
+            
+            Spacer().frame(height: 30)
+            
             List {
                 Section(header: Text("Today's amount (\(totalAmountToday)ml)").bold().foregroundColor(Color.blue)) {  
                     ForEach(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []], id: \.time) { record in
@@ -100,7 +111,6 @@ struct BabyRecordAddView: View {
                     .onDelete(perform: deleteItems)
                 }
             }
-            .padding(.bottom, 10)
            
             
         }

@@ -18,21 +18,7 @@ public struct BabyRecordDetailView: View {
     }
      
     public var body: some View {
-        TabView (selection: $selectedTab) {
-            BabyRecordAddView(selectedTab: $selectedTab)
-                .tabItem {
-                    Image(systemName: "pencil.tip.crop.circle.badge.plus")
-                    Text("Add")
-                }
-                .tag(0)
-            
-            BabyRecordHistoryView(selectedTab: $selectedTab)
-                .tabItem {
-                    Image(systemName: "list.clipboard")
-                    Text("History")
-                }
-                .tag(1)
-        }
+        BabyRecordAddView()
         .commmonNavigationBar(title: item.title, displayMode: .automatic)
   
     }
