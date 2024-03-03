@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct DateCalculationDetailView: View {
     
     let item: ToolItem
@@ -23,24 +22,23 @@ public struct DateCalculationDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     public var body: some View {
-        VStack {
-            Picker("Select Option", selection: $selectedOption) {
-                ForEach(0 ..< options.count) {
-                    Text(self.options[$0])
+        ScrollView {
+            VStack {
+                Picker("Select Option", selection: $selectedOption) {
+                    ForEach(0 ..< options.count) {
+                        Text(self.options[$0])
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                if selectedOption == 0 {
+                    DateDifferenceDetailView()
+                } else {
+                    DateAddCalculationDetailView()
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-            
-            if selectedOption == 0 {
-                DateDifferenceDetailView()
-            } else {
-                DateAddCalculationDetailView()
-            }
-        }
-        .commmonNavigationBar(title: item.title, displayMode: .automatic)
-        .onAppear {
-//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
+            .commmonNavigationBar(title: item.title, displayMode: .automatic)
         }
     }
 }

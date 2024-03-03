@@ -25,189 +25,189 @@ public struct NumberSystemConversionDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     public var body: some View {
-        VStack {
-            Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
-                .font(.system(size: 15))
-                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                .bold()
-                .padding()
-                .onChange(of: formatEnabled) { newValue in
-                    updateFormattedValues()
-                }
-                .padding(.bottom, 20) // 减少底部间距
-            
-            HStack(alignment: .bottom, spacing: 10) {
-                
-                Spacer().frame(width: 10)
-                Text("Decimal")
-                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
-                    .font(.system(size: 14))
-                    .padding(.top, 10) // 向下移动
-                
-                Spacer()
-                
-                Button {
-                    if let clipboardValue = UIPasteboard.general.string {
-                        decimalValue = clipboardValue
+        ScrollView {
+            VStack {
+                Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
+                    .font(.system(size: 15))
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    .bold()
+                    .padding()
+                    .onChange(of: formatEnabled) { newValue in
+                        updateFormattedValues()
                     }
-                } label: {
-                    Text("Paste")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                }
-                .buttonStyle(.bordered)
+                    .padding(.bottom, 20) // 减少底部间距
                 
-                Spacer().frame(width: 10)
-                
-                Button {
-                    UIPasteboard.general.string = decimalValue
-                } label: {
-                    Text("Copy")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                }
-                .buttonStyle(.bordered)
-            
-                Spacer().frame(width: 10)
-            }
-            .padding(.bottom, -10) // 减少底部间距
-
-            TextField("Decimal", text: $decimalValue)
-                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .onChange(of: decimalValue) { newValue in
-                    decimalValue = formatDecimalValue(newValue)
-                }
-
-            
-            HStack(alignment: .bottom, spacing: 10) {
-                Spacer().frame(width: 10)
-                
-                Text("Binary")
-                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
-                    .font(.system(size: 14))
-                    .padding(.top, 10) // 向下移动
-                
-                Spacer()
-                
-                Button {
-                    if let clipboardValue = UIPasteboard.general.string {
-                        binaryValue = clipboardValue
+                HStack(alignment: .bottom, spacing: 10) {
+                    
+                    Spacer().frame(width: 10)
+                    Text("Decimal")
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
+                        .font(.system(size: 14))
+                        .padding(.top, 10) // 向下移动
+                    
+                    Spacer()
+                    
+                    Button {
+                        if let clipboardValue = UIPasteboard.general.string {
+                            decimalValue = clipboardValue
+                        }
+                    } label: {
+                        Text("Paste")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                     }
-                } label: {
-                    Text("Paste")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                }
-                .buttonStyle(.bordered)
-                
-                Spacer().frame(width: 10)
-                
-                Button {
-                    UIPasteboard.general.string = binaryValue
-                } label: {
-                    Text("Copy")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                }
-                .buttonStyle(.bordered)
-                
-                Spacer().frame(width: 10)
-            }
-            .padding(.bottom, -10) // 减少底部间距
-
-            TextField("Binary", text: $binaryValue)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .onChange(of: binaryValue) { newValue in
-                    binaryValue = formatBinaryValue(newValue)
-                }
-            
-            HStack(alignment: .bottom, spacing: 10) {
-                Spacer().frame(width: 10)
-                
-                Text("Hexadecimal")
-                    .foregroundColor(.black.opacity(0.3))
-                    .font(.system(size: 14))
-                    .padding(.top, 10) // Move downwards
-                
-                Spacer()
-                
-                Button {
-                    if let clipboardValue = UIPasteboard.general.string {
-                        hexadecimalValue = clipboardValue
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
+                    
+                    Button {
+                        UIPasteboard.general.string = decimalValue
+                    } label: {
+                        Text("Copy")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                     }
-                } label: {
-                    Text("Paste")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
                 }
-                .buttonStyle(.bordered)
+                .padding(.bottom, -10) // 减少底部间距
                 
-                Spacer().frame(width: 10)
-                
-                Button {
-                    UIPasteboard.general.string = hexadecimalValue
-                } label: {
-                    Text("Copy")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                }
-                .buttonStyle(.bordered)
-                
-                Spacer().frame(width: 10)
-            }
-            .padding(.bottom, -10) // Reduce bottom spacing
-            
-            TextField("Hexadecimal", text: $hexadecimalValue)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .onChange(of: hexadecimalValue) { newValue in
-                 hexadecimalValue = formatHexadecimalValue(newValue)
-                }
-            
-            HStack(alignment: .bottom, spacing: 10) {
-                Spacer().frame(width: 10)
-                
-                Text("Octal")
-                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
-                    .font(.system(size: 14))
-                    .padding(.top, 10) // Move downwards
-                
-                Spacer()
-                
-                Button {
-                    if let clipboardValue = UIPasteboard.general.string {
-                        octalValue = clipboardValue
+                TextField("Decimal", text: $decimalValue)
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .onChange(of: decimalValue) { newValue in
+                        decimalValue = formatDecimalValue(newValue)
                     }
-                } label: {
-                    Text("Paste")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                
+                
+                HStack(alignment: .bottom, spacing: 10) {
+                    Spacer().frame(width: 10)
+                    
+                    Text("Binary")
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
+                        .font(.system(size: 14))
+                        .padding(.top, 10) // 向下移动
+                    
+                    Spacer()
+                    
+                    Button {
+                        if let clipboardValue = UIPasteboard.general.string {
+                            binaryValue = clipboardValue
+                        }
+                    } label: {
+                        Text("Paste")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
+                    
+                    Button {
+                        UIPasteboard.general.string = binaryValue
+                    } label: {
+                        Text("Copy")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
                 }
-                .buttonStyle(.bordered)
+                .padding(.bottom, -10) // 减少底部间距
                 
-                Spacer().frame(width: 10)
+                TextField("Binary", text: $binaryValue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .onChange(of: binaryValue) { newValue in
+                        binaryValue = formatBinaryValue(newValue)
+                    }
                 
-                Button {
-                    UIPasteboard.general.string = octalValue
-                } label: {
-                    Text("Copy")
-                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                HStack(alignment: .bottom, spacing: 10) {
+                    Spacer().frame(width: 10)
+                    
+                    Text("Hexadecimal")
+                        .foregroundColor(.black.opacity(0.3))
+                        .font(.system(size: 14))
+                        .padding(.top, 10) // Move downwards
+                    
+                    Spacer()
+                    
+                    Button {
+                        if let clipboardValue = UIPasteboard.general.string {
+                            hexadecimalValue = clipboardValue
+                        }
+                    } label: {
+                        Text("Paste")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
+                    
+                    Button {
+                        UIPasteboard.general.string = hexadecimalValue
+                    } label: {
+                        Text("Copy")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
                 }
-                .buttonStyle(.bordered)
+                .padding(.bottom, -10) // Reduce bottom spacing
                 
-                Spacer().frame(width: 10)
+                TextField("Hexadecimal", text: $hexadecimalValue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .onChange(of: hexadecimalValue) { newValue in
+                        hexadecimalValue = formatHexadecimalValue(newValue)
+                    }
+                
+                HStack(alignment: .bottom, spacing: 10) {
+                    Spacer().frame(width: 10)
+                    
+                    Text("Octal")
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
+                        .font(.system(size: 14))
+                        .padding(.top, 10) // Move downwards
+                    
+                    Spacer()
+                    
+                    Button {
+                        if let clipboardValue = UIPasteboard.general.string {
+                            octalValue = clipboardValue
+                        }
+                    } label: {
+                        Text("Paste")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
+                    
+                    Button {
+                        UIPasteboard.general.string = octalValue
+                    } label: {
+                        Text("Copy")
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer().frame(width: 10)
+                }
+                .padding(.bottom, -10) // Reduce bottom spacing
+                
+                TextField("Octal", text: $octalValue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .onChange(of: octalValue) { newValue in
+                        octalValue = formatOctalValue(newValue)
+                    }
+                
             }
-            .padding(.bottom, -10) // Reduce bottom spacing
-            
-            TextField("Octal", text: $octalValue)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .onChange(of: octalValue) { newValue in
-                  octalValue = formatOctalValue(newValue)
-                }
-
+            .commmonNavigationBar(title: item.title, displayMode: .automatic)
         }
-        .padding(.top, -140) // 减少顶部间距
-        .commmonNavigationBar(title: item.title, displayMode: .automatic)
         .onAppear {
             updateFormattedValues()
-//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
         }
         .onChange(of: decimalValue) { newValue in
             binaryValue = formatBinaryValue(convertDecimalToBinary(newValue))

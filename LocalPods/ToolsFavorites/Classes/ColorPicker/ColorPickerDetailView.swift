@@ -22,10 +22,12 @@ public struct ColorPickerDetailView: View {
     @State private var selectedColor: UIColor = .white
     
     public var body: some View {
-        VStack {
-            ColorPickerContentViewControllerWrapper()
+        ScrollView {
+            VStack {
+                ColorPickerContentViewControllerWrapper()
+            }
+            .commmonNavigationBar(title: item.title, displayMode: .automatic)
         }
-        .commmonNavigationBar(title: item.title, displayMode: .automatic)
     }
     
 }

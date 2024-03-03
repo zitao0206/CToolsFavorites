@@ -23,25 +23,23 @@ public struct QRCodeDetailView: View {
     @Environment(\.presentationMode) var presentationMode
 
     public var body: some View {
-        
-        VStack {
-            Picker("Select Option", selection: $selectedOption) {
-                ForEach(0 ..< options.count) {
-                    Text(self.options[$0])
+        ScrollView {
+            VStack {
+                Picker("Select Option", selection: $selectedOption) {
+                    ForEach(0 ..< options.count) {
+                        Text(self.options[$0])
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                if selectedOption == 0 {
+                    QRCodeGeneratorDetailView()
+                } else {
+                    QRCodeReaderDetailView()
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-            
-            if selectedOption == 0 {
-                QRCodeGeneratorDetailView()
-            } else {
-                QRCodeReaderDetailView()
-            }
-        }
-        .commmonNavigationBar(title: item.title, displayMode: .automatic)
-        .onAppear {
-//            NotificationCenter.default.post(name: .moveItemToFirstNotification, object: self.index)
+            .commmonNavigationBar(title: item.title, displayMode: .automatic)
         }
     }
     

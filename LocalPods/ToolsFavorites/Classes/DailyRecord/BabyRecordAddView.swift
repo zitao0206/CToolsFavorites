@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedingRecord: Identifiable, Codable {
     let id = UUID()
     let time: Date
-    let amount: Int // 奶量，单位为毫升
+    let amount: Int
 }
 
 struct NewFeedingRecord {
@@ -20,8 +20,7 @@ struct NewFeedingRecord {
 
 struct BabyRecordAddView: View {
     
-//    @Binding var selectedTab: Int
-    
+ 
     @State private var feedingRecords: [Date: [FeedingRecord]] = [:]
     @State private var newRecord: NewFeedingRecord = NewFeedingRecord(time: Date(), amount: 0)
     
@@ -94,8 +93,13 @@ struct BabyRecordAddView: View {
                     NavigationLink(destination: BabyRecordHistoryView()) {
                         Text("History")
                             .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                            .padding()
+                            .background(DarkMode.isDarkMode ? .white.opacity(0.3) : .black.opacity(0.3))
+                            .frame(width: 70, height: 40)
+                            .cornerRadius(8)
                     }
                     .buttonStyle(BorderlessButtonStyle())
+                    
                 }
             }
             .alert(isPresented: $showAlert) {
@@ -112,12 +116,11 @@ struct BabyRecordAddView: View {
                     .onDelete(perform: deleteItems)
                 }
             }
-           
-            
-        }
+        } 
         .onAppear {
             loadFeedingRecords()
         }
+       
     }
     
     
@@ -132,7 +135,7 @@ struct BabyRecordAddView: View {
             let date = Calendar.current.startOfDay(for: newRecord.time)
             
             if var records = feedingRecords[date] {
-                records.insert(record, at: 0) // 将新记录插入到数组的开头位置
+                records.insert(record, at: 0)
                 feedingRecords[date] = records
             } else {
                 feedingRecords[date] = [record]
@@ -169,17 +172,20 @@ struct BabyRecordAddView: View {
     }
 
 
-    
     private func loadFeedingRecords() {
         if let data = UserDefaults.standard.data(forKey: "feedingRecords") {
             do {
                 let decoder = JSONDecoder()
                 feedingRecords = try decoder.decode([Date: [FeedingRecord]].self, from: data)
+               
+                print(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []])
+                
             } catch {
                 print("Error decoding feeding records: \(error.localizedDescription)")
             }
         }
     }
+    
     
     private func saveFeedingRecords() {
         do {

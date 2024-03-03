@@ -38,6 +38,8 @@ struct BabyRecordHistoryView: View {
             do {
                 let decoder = JSONDecoder()
                 feedingRecords = try decoder.decode([Date: [FeedingRecord]].self, from: data)
+                print(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []])
+                
             } catch {
                 print("Error decoding feeding records: \(error.localizedDescription)")
             }

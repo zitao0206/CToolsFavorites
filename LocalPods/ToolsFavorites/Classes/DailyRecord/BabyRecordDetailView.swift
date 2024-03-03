@@ -20,7 +20,6 @@ public struct BabyRecordDetailView: View {
     public var body: some View {
         BabyRecordAddView()
         .commmonNavigationBar(title: item.title, displayMode: .automatic)
-  
     }
     
    
