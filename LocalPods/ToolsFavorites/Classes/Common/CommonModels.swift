@@ -21,6 +21,14 @@ public struct ToolItem {
     }
 }
 
+public struct DarkMode {
+    public static var isDarkMode: Bool {
+        let dark = UIApplication.shared.windows.first?.rootViewController?.traitCollection.userInterfaceStyle == .dark
+        return dark
+    }
+}
+
+
 
  
 

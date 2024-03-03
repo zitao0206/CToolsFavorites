@@ -28,6 +28,7 @@ public struct NumberSystemConversionDetailView: View {
         VStack {
             Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
                 .font(.system(size: 15))
+                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 .bold()
                 .padding()
                 .onChange(of: formatEnabled) { newValue in
@@ -39,7 +40,7 @@ public struct NumberSystemConversionDetailView: View {
                 
                 Spacer().frame(width: 10)
                 Text("Decimal")
-                    .foregroundColor(.black.opacity(0.3))
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
                     .font(.system(size: 14))
                     .padding(.top, 10) // 向下移动
                 
@@ -51,7 +52,7 @@ public struct NumberSystemConversionDetailView: View {
                     }
                 } label: {
                     Text("Paste")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -61,7 +62,7 @@ public struct NumberSystemConversionDetailView: View {
                     UIPasteboard.general.string = decimalValue
                 } label: {
                     Text("Copy")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
             
@@ -70,6 +71,7 @@ public struct NumberSystemConversionDetailView: View {
             .padding(.bottom, -10) // 减少底部间距
 
             TextField("Decimal", text: $decimalValue)
+                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
                 .onChange(of: decimalValue) { newValue in
@@ -81,7 +83,7 @@ public struct NumberSystemConversionDetailView: View {
                 Spacer().frame(width: 10)
                 
                 Text("Binary")
-                    .foregroundColor(.black.opacity(0.3))
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
                     .font(.system(size: 14))
                     .padding(.top, 10) // 向下移动
                 
@@ -93,7 +95,7 @@ public struct NumberSystemConversionDetailView: View {
                     }
                 } label: {
                     Text("Paste")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -103,7 +105,7 @@ public struct NumberSystemConversionDetailView: View {
                     UIPasteboard.general.string = binaryValue
                 } label: {
                     Text("Copy")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -134,7 +136,7 @@ public struct NumberSystemConversionDetailView: View {
                     }
                 } label: {
                     Text("Paste")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -144,7 +146,7 @@ public struct NumberSystemConversionDetailView: View {
                     UIPasteboard.general.string = hexadecimalValue
                 } label: {
                     Text("Copy")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -163,7 +165,7 @@ public struct NumberSystemConversionDetailView: View {
                 Spacer().frame(width: 10)
                 
                 Text("Octal")
-                    .foregroundColor(.black.opacity(0.3))
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.3))
                     .font(.system(size: 14))
                     .padding(.top, 10) // Move downwards
                 
@@ -175,7 +177,7 @@ public struct NumberSystemConversionDetailView: View {
                     }
                 } label: {
                     Text("Paste")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -185,7 +187,7 @@ public struct NumberSystemConversionDetailView: View {
                     UIPasteboard.general.string = octalValue
                 } label: {
                     Text("Copy")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 

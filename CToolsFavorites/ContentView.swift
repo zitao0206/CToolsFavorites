@@ -11,6 +11,7 @@ import AKOCommonToolsKit
 
 struct ContentView: View {
     
+
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
     
     @State private var toolItems: [ToolItem] = [
@@ -80,10 +81,10 @@ struct ContentView: View {
 
 
 struct GridItemView: View {
+  
     let imageType: String
     let title: String
     
-
     var body: some View {
         VStack {
             Image(systemName: imageType)
@@ -91,12 +92,13 @@ struct GridItemView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50, height: 50)
             Text(title)
-                .foregroundColor(.black)
+                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 .font(.system(size: 12))
         }
         .padding()
         .frame(width: (UIDevice.ako.screenWidth - 80)/2.0, height: 120)
         .background(Color.black.opacity(0.1))
+        .background(DarkMode.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.1))
         .cornerRadius(10)
     }
 }

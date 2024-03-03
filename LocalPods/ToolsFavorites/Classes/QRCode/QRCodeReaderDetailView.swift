@@ -22,7 +22,7 @@ public struct QRCodeReaderDetailView: View {
                 translatedResult = nil
             } label: {
                 Text("Clear")
-                    .foregroundColor(.black)
+                    .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                     .font(.system(size: 15))
                     .bold()
             }
@@ -64,7 +64,7 @@ public struct QRCodeReaderDetailView: View {
                             UIPasteboard.general.string = translatedResult
                         } label: {
                             Text("Copy")
-                                .foregroundColor(.black)
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                                 .font(.system(size: 14))
                         }
                         .buttonStyle(.bordered)

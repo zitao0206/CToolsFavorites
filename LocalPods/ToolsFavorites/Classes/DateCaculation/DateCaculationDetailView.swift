@@ -66,16 +66,19 @@ public struct DateDifferenceDetailView: View {
                     
                     Text("Y")
                     TextField("Year", text: $beforeYear)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 80)
                 
                     Text("M")
                     TextField("Month", text: $beforeMonth)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 60)
                     
                     Text("D")
                     TextField("Day", text: $beforeDay)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 60)
                     
@@ -100,16 +103,19 @@ public struct DateDifferenceDetailView: View {
                     
                     Text("Y")
                     TextField("Year", text: $afterYear)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 80)
                     
                     Text("M")
                     TextField("Month", text: $afterMonth)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 60)
                     
                     Text("D")
                     TextField("Day", text: $afterDay)
+                        .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 60)
                     
@@ -214,16 +220,19 @@ public struct DateAddCalculationDetailView: View {
                 
                 Text("Y")
                 TextField("Year", text: $year)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 80)
             
                 Text("M")
                 TextField("Month", text: $month)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 60)
                 
                 Text("D")
                 TextField("Day", text: $day)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 60)
                 
@@ -250,6 +259,7 @@ public struct DateAddCalculationDetailView: View {
                 Spacer().frame(height: 20)
 
                 TextField("Duration", text: $duration)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 80)
                 

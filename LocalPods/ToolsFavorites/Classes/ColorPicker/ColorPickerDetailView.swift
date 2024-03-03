@@ -26,9 +26,6 @@ public struct ColorPickerDetailView: View {
             ColorPickerContentViewControllerWrapper()
         }
         .commmonNavigationBar(title: item.title, displayMode: .automatic)
-        .onAppear {
-            
-        }
     }
     
 }
@@ -50,7 +47,7 @@ class ColorPickerContentViewController: UIViewController, EFColorSelectionViewCo
         colorSelectionController.isColorTextFieldHidden = false
         colorSelectionController.delegate = self
         colorSelectionController.color = UIColor.white
-        
+        colorSelectionController.view.backgroundColor = DarkMode.isDarkMode ? UIColor.black : UIColor.white
  
         self.view.addSubview(colorSelectionController.view)
         

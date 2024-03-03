@@ -30,8 +30,8 @@ public struct QRCodeGeneratorDetailView: View {
                       userInput = clipboardValue
                   }
                 } label: {
-                  Text("Paste")
-                      .foregroundColor(.black)
+                    Text("Paste")
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
                 
@@ -39,11 +39,11 @@ public struct QRCodeGeneratorDetailView: View {
                     UIPasteboard.general.string = userInput
                 } label: {
                     Text("Copy")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
                 .buttonStyle(.bordered)
             
-                Spacer().frame(width: 10)
+                Spacer().frame(width: 30)
             }
                 
             TextField("Enter text...", text: $userInput)
@@ -53,7 +53,7 @@ public struct QRCodeGeneratorDetailView: View {
                     userInput = newValue
                 }
             
-            Spacer().frame(height: 20)
+            Spacer().frame(height: 30)
             
             Button("Generate QR Code") {
                 if let data = generateQRCode(from: userInput) {
@@ -65,6 +65,8 @@ public struct QRCodeGeneratorDetailView: View {
             .buttonStyle(.bordered)
             .disabled(userInput.isEmpty)
             
+            Spacer().frame(height: 30)
+            
             ZStack {
                 if let qrCodeImage = qrCodeImage {
                     Image(uiImage: qrCodeImage)
@@ -75,7 +77,9 @@ public struct QRCodeGeneratorDetailView: View {
                     PlaceholderEmptyView()
                 }
             }
- 
+            
+            Spacer().frame(height: 30)
+            
             Button("Save to Photo Library") {
                 if let qrCodeImage = qrCodeImage {
                     ImageUtility.saveImageToAlbum(qrCodeImage)

@@ -70,6 +70,7 @@ struct BabyRecordAddView: View {
                             }
                         ))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
                         .focused($isTextFieldFocused)
                         .padding(.trailing, 80)
 
@@ -92,7 +93,7 @@ struct BabyRecordAddView: View {
                     Spacer().frame(width: 20)
                     NavigationLink(destination: BabyRecordHistoryView()) {
                         Text("History")
-                            .foregroundColor(.black)
+                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                     }
                     .buttonStyle(BorderlessButtonStyle())
                 }

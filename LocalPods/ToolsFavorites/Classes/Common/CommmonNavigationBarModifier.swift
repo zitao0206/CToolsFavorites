@@ -22,7 +22,7 @@ struct NavigationBarModifier: ViewModifier {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "arrow.left")
-                        .foregroundColor(.black)
+                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
             )
     }

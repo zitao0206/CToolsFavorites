@@ -19,15 +19,15 @@ public struct QuickQueryDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
+    let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
     @State private var items: [String] = [
         "iPhone Devices",
         "Power of 2 Table",
-        "Color Value Table",
-        "QR Code",
-        "Color Picker",
-        "Online Program",
-        "Quick Query",
+//        "Color Value Table",
+//        "QR Code",
+//        "Color Picker",
+//        "Online Program",
+//        "Quick Query",
     ]
     
     public var body: some View {
@@ -42,23 +42,21 @@ public struct QuickQueryDetailView: View {
                         }
                         .frame(height: 50) // 设置每个项目的高度为 50
                         .padding(.horizontal, 10) // 设置左右间距
-                        .background(Color.white)
+                        .background(DarkMode.isDarkMode ? .white.opacity(0.3) : .black.opacity(0.3))
                         .overlay(
                             RoundedRectangle(cornerRadius: 0)
                                 .stroke(Color.blue, lineWidth: 1) // 右侧边框线
                         )
                         .alignmentGuide(.leading) { _ in 0 } // 将文本居中
+                        .cornerRadius(10)
                     }
                 }
             }
         }
         .padding(.horizontal, 20) // 设置整个列表左右间距
-
         Spacer()
         .commmonNavigationBar(title: item.title, displayMode: .automatic)
-        .onAppear {
-            // Additional logic on appear if needed
-        }
+       
     }
 }
 
