@@ -15,13 +15,18 @@ struct ContentView: View {
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
     
     @State private var toolItems: [ToolItem] = [
+        
         ToolItem(title: "Base Conversion", imageType: "number.square.fill"),
         ToolItem(title: "Date Calculation", imageType: "calendar.badge.plus"),
+        
         ToolItem(title: "QR Code", imageType: "qrcode"),
         ToolItem(title: "Color Picker", imageType: "sun.min"),
+    
+  
 //        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
-        ToolItem(title: "Quick Query", imageType: "q.circle"),
         ToolItem(title: "Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+        ToolItem(title: "Quick Query", imageType: "q.circle"),
+      
     ]
 
     private func contentViewForToolItem(_ toolItem: ToolItem) -> some View {
@@ -58,7 +63,7 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .navigationBarTitle("Dev Tools Favorites", displayMode: .automatic)
+            .navigationBarTitle("Favorite Tools", displayMode: .automatic)
             .onReceive(NotificationCenter.default.publisher(for: .moveItemToFirstNotification)) { notification in
                 if let intValue = notification.object as? Int {
                     self.moveItemToFirst(intValue)

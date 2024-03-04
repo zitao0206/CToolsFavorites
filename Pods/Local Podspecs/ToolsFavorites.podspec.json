@@ -15,7 +15,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "17.0"
+    "ios": "16.0"
   },
   "pod_target_xcconfig": {
     "GCC_PREPROCESSOR_DEFINITIONS": "__CUI_MODULE_NAME__=\\\"CToolsFavorites\\\" CUI_MODULE_NAME=@\\\"CToolsFavorites\\\""
