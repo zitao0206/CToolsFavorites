@@ -46,7 +46,8 @@ public struct QRCodeReaderDetailView: View {
                         
                 }
             }
-            .padding(.bottom, -100) // Reduce bottom spacing
+            
+            Spacer().frame(height: 30)
             
             VStack {
                 Text("Output")
