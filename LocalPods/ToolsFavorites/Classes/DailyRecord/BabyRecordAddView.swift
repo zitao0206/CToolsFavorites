@@ -149,6 +149,7 @@ struct BabyRecordAddView: View {
     }
     
     private func deleteItems(offsets: IndexSet) {
+        
         withAnimation {
        
             for index in offsets {
@@ -162,7 +163,6 @@ struct BabyRecordAddView: View {
                 if records.isEmpty {
                     feedingRecords.removeValue(forKey: date)
                 } else {
-                
                     feedingRecords[date] = records
                 }
             }
