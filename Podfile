@@ -11,8 +11,8 @@ install! 'cocoapods',
 
 platform :ios, '16.0'
 inhibit_all_warnings!
-use_frameworks! :linkage => :static
-
+#use_frameworks! :linkage => :static
+use_frameworks! 
 
 workspace 'CToolsFavorites.xcworkspace'
 project 'CToolsFavorites.xcodeproj'
