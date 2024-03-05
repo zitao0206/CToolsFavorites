@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-class DateUtillity {
-    static func formattedDateToMMDD(_ date: Date) -> String {
+public class DateUtillity {
+    public static func formattedDateToMMDD(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: date)
     }
     
-    static func formattedDateToHHMM(_ date: Date) -> String {
+    public static func formattedDateToHHMM(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)

@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct FeedingRecord: Identifiable, Codable {
-    let id = UUID()
+struct AmountRecord: Identifiable, Codable {
+    let id = UUID().uuidString
     let time: Date
     let amount: Int
 }
 
-struct NewFeedingRecord {
+struct NewAmountRecord {
     var time: Date
     var amount: Int
 }
@@ -21,8 +21,8 @@ struct NewFeedingRecord {
 struct BabyRecordAddView: View {
     
  
-    @State private var feedingRecords: [Date: [FeedingRecord]] = [:]
-    @State private var newRecord: NewFeedingRecord = NewFeedingRecord(time: Date(), amount: 0)
+    @State private var amountRecords: [Date: [AmountRecord]] = [:]
+    @State private var newRecord: NewAmountRecord = NewAmountRecord(time: Date(), amount: 0)
     
     @State private var showAlert = false
     @State private var alertMessage = "Amount must be greater than 0 ！！！"
@@ -110,7 +110,7 @@ struct BabyRecordAddView: View {
             
             List {
                 Section(header: Text("Today's amount (\(totalAmountToday)ml)").bold().foregroundColor(Color.blue)) {  
-                    ForEach(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []], id: \.time) { record in
+                    ForEach(amountRecords[Calendar.current.startOfDay(for: Date()), default: []], id: \.time) { record in
                         Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
                     }
                     .onDelete(perform: deleteItems)
@@ -118,34 +118,35 @@ struct BabyRecordAddView: View {
             }
         } 
         .onAppear {
-            loadFeedingRecords()
+            loadRecordsFromCloudKit()
         }
        
     }
     
     
     private func addFeedingRecord() {
+        
         withAnimation {
             if newRecord.amount <= 0 {
                 showAlert = true
                 return
             }
             
-            let record = FeedingRecord(time: newRecord.time, amount: newRecord.amount)
+            let recordItem = AmountRecord(time: newRecord.time, amount: newRecord.amount)
             let date = Calendar.current.startOfDay(for: newRecord.time)
             
-            if var records = feedingRecords[date] {
-                records.insert(record, at: 0)
-                feedingRecords[date] = records
+            if var records = amountRecords[date] {
+                records.insert(recordItem, at: 0)
+                amountRecords[date] = records
             } else {
-                feedingRecords[date] = [record]
+                amountRecords[date] = [recordItem]
             }
+            
+            CloudKitManager.saveRecord(item: recordItem)
         }
 
-        saveFeedingRecords()
-        
         // reset
-        newRecord = NewFeedingRecord(time: Date(), amount: 0)
+        newRecord = NewAmountRecord(time: Date(), amount: 0)
     }
     
     private func deleteItems(offsets: IndexSet) {
@@ -154,52 +155,56 @@ struct BabyRecordAddView: View {
        
             for index in offsets {
              
-                let date = Array(feedingRecords.keys)[index]
+                let date = Array(amountRecords.keys)[index]
            
-                var records = feedingRecords[date] ?? []
+                var records = amountRecords[date] ?? []
             
-                records.remove(at: index)
+               let item = records.remove(at: index)
            
                 if records.isEmpty {
-                    feedingRecords.removeValue(forKey: date)
+                    amountRecords.removeValue(forKey: date)
                 } else {
-                    feedingRecords[date] = records
+                    amountRecords[date] = records
                 }
-            }
-    
-            saveFeedingRecords()
-        }
-    }
-
-
-    private func loadFeedingRecords() {
-        if let data = UserDefaults.standard.data(forKey: "feedingRecords") {
-            do {
-                let decoder = JSONDecoder()
-                feedingRecords = try decoder.decode([Date: [FeedingRecord]].self, from: data)
-               
-                print(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []])
                 
-            } catch {
-                print("Error decoding feeding records: \(error.localizedDescription)")
+                CloudKitManager.deleteRecord(recordID: item.id)
             }
+    
         }
     }
     
-    
-    private func saveFeedingRecords() {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(feedingRecords)
-            UserDefaults.standard.set(data, forKey: "feedingRecords")
-        } catch {
-            print("Error encoding feeding records: \(error.localizedDescription)")
-        }
+    private func loadRecordsFromCloudKit() {
+        
+        CloudKitManager.fetchRecords { records, error in
+             if let error = error {
+                 print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
+             } else if let records = records {
+                 print("YES fetching feeding records from CloudKit: \(records)")
+                 
+                 var groupedRecords: [Date: [AmountRecord]] = [:]
+                      
+                      for record in records {
+                          let date = Calendar.current.startOfDay(for: record.time)
+                          
+                          if var existingRecords = groupedRecords[date] {
+                              existingRecords.append(record)
+                              groupedRecords[date] = existingRecords
+                          } else {
+                              groupedRecords[date] = [record]
+                          }
+                      }
+                      
+                      // Update amountRecords state variable with grouped records
+                      DispatchQueue.main.async {
+                          self.amountRecords = groupedRecords
+                      }
+             }
+         }
     }
     
     private var totalAmountToday: Int {
         let today = Calendar.current.startOfDay(for: Date())
-        return feedingRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
+        return amountRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
     }
     
     

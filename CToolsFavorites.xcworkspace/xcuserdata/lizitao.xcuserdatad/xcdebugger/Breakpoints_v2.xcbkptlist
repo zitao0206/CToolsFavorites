@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "037D8915-6B6C-470A-9371-0B0E38247576"
-            shouldBeEnabled = "Yes"
+            uuid = "6907E8B2-3797-4E96-8F55-0EA21A63BE95"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LocalPods/ToolsFavorites/Classes/DailyRecord/BabyRecordAddView.swift"
+            filePath = "LocalPods/ToolsFavorites/Classes/DailyRecord/CloudKitManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "loadFeedingRecords()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchRecords(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

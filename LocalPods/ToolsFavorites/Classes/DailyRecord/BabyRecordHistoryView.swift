@@ -11,7 +11,7 @@ struct BabyRecordHistoryView: View {
     
 //    @Binding var selectedTab: Int
     
-    @State private var feedingRecords: [Date: [FeedingRecord]] = [:]
+    @State private var amountRecords: [Date: [AmountRecord]] = [:]
     
     var body: some View {
         VStack {
@@ -27,32 +27,48 @@ struct BabyRecordHistoryView: View {
             .padding(.bottom, 5)
         }
         .onAppear {
-            loadFeedingRecords()
+            loadRecords()
         }
         .commmonNavigationBar(title: "History", displayMode: .inline)
   
     }
     
-    private func loadFeedingRecords() {
-        if let data = UserDefaults.standard.data(forKey: "feedingRecords") {
-            do {
-                let decoder = JSONDecoder()
-                feedingRecords = try decoder.decode([Date: [FeedingRecord]].self, from: data)
-                print(feedingRecords[Calendar.current.startOfDay(for: Date()), default: []])
-                
-            } catch {
-                print("Error decoding feeding records: \(error.localizedDescription)")
-            }
-        }
+    private func loadRecords() {
+        
+        CloudKitManager.fetchRecords { records, error in
+             if let error = error {
+                 print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
+             } else if let records = records {
+                 print("YES fetching feeding records from CloudKit: \(records)")
+                 
+                 var groupedRecords: [Date: [AmountRecord]] = [:]
+                      
+                      for record in records {
+                          let date = Calendar.current.startOfDay(for: record.time)
+                          
+                          if var existingRecords = groupedRecords[date] {
+                              existingRecords.append(record)
+                              groupedRecords[date] = existingRecords
+                          } else {
+                              groupedRecords[date] = [record]
+                          }
+                      }
+                      
+                      // Update amountRecords state variable with grouped records
+                      DispatchQueue.main.async {
+                          self.amountRecords = groupedRecords
+                      }
+             }
+         }
     }
     
-    private var sortedFeedings: [(key: Date, value: [FeedingRecord])] {
-        return feedingRecords.sorted(by: { $0.key > $1.key })
+    private var sortedFeedings: [(key: Date, value: [AmountRecord])] {
+        return amountRecords.sorted(by: { $0.key > $1.key })
     }
     
     private var totalAmountToday: Int {
         let today = Calendar.current.startOfDay(for: Date())
-        return feedingRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
+        return amountRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
     }
   
 }
