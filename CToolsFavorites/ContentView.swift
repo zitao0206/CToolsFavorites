@@ -24,7 +24,7 @@ struct ContentView: View {
     
   
 //        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
-        ToolItem(title: "Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+        ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
         ToolItem(title: "Quick Query", imageType: "q.circle"),
       
     ]
@@ -43,7 +43,7 @@ struct ContentView: View {
 //              return AnyView(OnlineProgramDetailView(item: toolItem))
           case "Quick Query":
               return AnyView(QuickQueryDetailView(item: toolItem))
-          case "Amount Record":
+          case "Daily Amount Record":
               return AnyView(AmountRecordDetailView(item: toolItem))
           default:
               return AnyView(DemoDetailView(item: toolItem))
