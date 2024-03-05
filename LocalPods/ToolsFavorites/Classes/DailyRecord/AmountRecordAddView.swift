@@ -116,9 +116,12 @@ struct AmountRecordAddView: View {
 
                 }
                 
-                Spacer().frame(height: 20)
+                Spacer().frame(height: 30)
                 
                 HStack {
+                    
+//                    Spacer().frame(width: 10)
+                    
                     Button(action: {
                         isTextFieldFocused = false
                         addFeedingRecord()
@@ -128,17 +131,19 @@ struct AmountRecordAddView: View {
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
-                            .cornerRadius(8)
+                            .cornerRadius(10)
                     }
                     .frame(width: 160, height: 20)
-                    Spacer().frame(width: 20)
+                    .padding(.leading, 50)
+                    .padding(.trailing, 30)
+                    
                     NavigationLink(destination: BabyRecordHistoryView()) {
                         Text("History")
                             .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                             .padding()
                             .background(DarkMode.isDarkMode ? .white.opacity(0.3) : .black.opacity(0.3))
-                            .frame(width: 70, height: 40)
                             .cornerRadius(8)
+                            .padding(.trailing, 75)
                     }
                     .buttonStyle(BorderlessButtonStyle())
                     
