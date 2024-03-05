@@ -10,18 +10,18 @@
 		03EA2C91BF533C5951A8BC5E09766668 /* EFColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D44D83C4113F85783C4EA9AF30A3DC /* EFColorUtils.swift */; };
 		04FA67A96CB9AC999E8FA1E34CDECE5B /* AKOCommonToolsKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F3F2F09CF821A997BA132A8FEFBECC /* AKOCommonToolsKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0663F5078C7A987CE58D798A204FB2A5 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FB555682A28310EC1B0D89A5F12A16 /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		10C6C5BE375944DB22C1E23905CAF51B /* BabyRecordAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8163AEEFB1E4F726477082EAA4F89 /* BabyRecordAddView.swift */; };
+		10C6C5BE375944DB22C1E23905CAF51B /* AmountRecordAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8163AEEFB1E4F726477082EAA4F89 /* AmountRecordAddView.swift */; };
 		1C2D2FC6C77F7AAAED4B87171CD2FA90 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C6DB7A05F6BD2DDB41616511044BD66 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EDA1FC87005EF14E125B187B2BE0E40 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D2DFF6FB507B7FCC9304EE722FAD8F9 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBE2B31F0923CC79829D78FC81CD05E /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD6B934D8B7FF670191DC98E02712E3 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201E0335F9BFDCB70488A906625EB953 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DDEF30FD05CBEE8A2E5269FAD4959D5 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21DE60E4117F9473CE94C59834B53B90 /* BabyRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1063542D805D32EA8FCDC458CEB2161 /* BabyRecordHistoryView.swift */; };
+		21DE60E4117F9473CE94C59834B53B90 /* AmountRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1063542D805D32EA8FCDC458CEB2161 /* AmountRecordHistoryView.swift */; };
 		2816619D1391ED806AE25E31C8944137 /* EFColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E587818FDF2243E4F3495814DC183DB /* EFColorSelectionView.swift */; };
 		30D2381A6AE80A7769893EF1E326F6C5 /* EFHSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811458CE725AD9B88EF7ED586578FACB /* EFHSBView.swift */; };
 		3161B8C6D7089BB4FC338155375991A4 /* DateCaculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1A73B0AD3F75E3F9AD38CA59EB668 /* DateCaculationDetailView.swift */; };
 		32B625B27DA49D3638587B2166050CA1 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B9392BFABC1E76AB9AAB2DB4D5AE6A /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C6B3BC8456D36E19C8EFE1D545D0C29 /* QRCodeReaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68F40ED5A4493F6896E65E80099FE8 /* QRCodeReaderDetailView.swift */; };
-		3EBEB39FAE9BB00CBB20DC69BACAC2FE /* BabyRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A67C324D9B5935CD8E850E51045D15 /* BabyRecordDetailView.swift */; };
+		3EBEB39FAE9BB00CBB20DC69BACAC2FE /* AmountRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A67C324D9B5935CD8E850E51045D15 /* AmountRecordDetailView.swift */; };
 		442E189FC808DF5A16E2167E5F17F721 /* NSArray+functional.h in Headers */ = {isa = PBXBuildFile; fileRef = 17C63B748E2D12AAB3D519CA0498EDC7 /* NSArray+functional.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		485581CAF7A7A5CB9070BCAA08D932FE /* alliphonedevicesinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = F49FB806E1D6EC6B9F8B709599C05062 /* alliphonedevicesinfo.png */; };
 		4A08C0B51B0338F27AF043F779296050 /* EFControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213B21BC5E5B35C8B13D9DA0E29666E /* EFControl.swift */; };
@@ -167,7 +167,7 @@
 		0C8FA431C4804AB0463E73BCC37B3A65 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		12AE8AEC4AB8099470A40829AC99C258 /* NSBundle+AKOBundle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AKOBundle.h"; path = "AKOCommonToolsKit/Classes/NSBundle+AKOBundle.h"; sourceTree = "<group>"; };
 		163D24020784FF396FCFF155E9645494 /* AKOCommonToolsKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AKOCommonToolsKit-Info.plist"; sourceTree = "<group>"; };
-		16A67C324D9B5935CD8E850E51045D15 /* BabyRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BabyRecordDetailView.swift; sourceTree = "<group>"; };
+		16A67C324D9B5935CD8E850E51045D15 /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
 		179ACB0942AD1268646FB629CFE041FB /* NSURL+Ext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Ext.m"; path = "AKOCommonToolsKit/Classes/NSURL+Ext.m"; sourceTree = "<group>"; };
 		17C63B748E2D12AAB3D519CA0498EDC7 /* NSArray+functional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+functional.h"; sourceTree = "<group>"; };
 		198AD1F76356ACA85E0808548B495A62 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		8D2DFF6FB507B7FCC9304EE722FAD8F9 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		8DDEF30FD05CBEE8A2E5269FAD4959D5 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		98C1A73B0AD3F75E3F9AD38CA59EB668 /* DateCaculationDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateCaculationDetailView.swift; sourceTree = "<group>"; };
-		98E8163AEEFB1E4F726477082EAA4F89 /* BabyRecordAddView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BabyRecordAddView.swift; sourceTree = "<group>"; };
+		98E8163AEEFB1E4F726477082EAA4F89 /* AmountRecordAddView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordAddView.swift; sourceTree = "<group>"; };
 		99FF4D5163782C4799D64C4365DE6460 /* DateUtillity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateUtillity.swift; sourceTree = "<group>"; };
 		9A7C0BF99DF5D607E4AB084F455210A1 /* AKOCommonToolsKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AKOCommonToolsKit-prefix.pch"; sourceTree = "<group>"; };
 		9B0341A9B7ED552793412BDCC010BF16 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		A68D94F55FC6F588887746C5C2B58A20 /* OSFCommonMacroDefines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OSFCommonMacroDefines.swift; sourceTree = "<group>"; };
 		A6D44D83C4113F85783C4EA9AF30A3DC /* EFColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorUtils.swift; sourceTree = "<group>"; };
 		AF4ABD8FC09547625CE10B7A0B8A15BE /* Sequence+General.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Sequence+General.swift"; sourceTree = "<group>"; };
-		B1063542D805D32EA8FCDC458CEB2161 /* BabyRecordHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BabyRecordHistoryView.swift; sourceTree = "<group>"; };
+		B1063542D805D32EA8FCDC458CEB2161 /* AmountRecordHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordHistoryView.swift; sourceTree = "<group>"; };
 		B320789F348118A5B699BF76E031863D /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		B657F7CE03A6B20065F4B8360E3FE2BD /* ToolsFavorites */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ToolsFavorites; path = ToolsFavorites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80C0012E3582860C2FAA4F48A0F53A9 /* AKOCommonToolsKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AKOCommonToolsKit.debug.xcconfig; sourceTree = "<group>"; };
@@ -612,9 +612,9 @@
 		B3C75E599792EC6AF0AB4CCBB1CC73E6 /* DailyRecord */ = {
 			isa = PBXGroup;
 			children = (
-				98E8163AEEFB1E4F726477082EAA4F89 /* BabyRecordAddView.swift */,
-				16A67C324D9B5935CD8E850E51045D15 /* BabyRecordDetailView.swift */,
-				B1063542D805D32EA8FCDC458CEB2161 /* BabyRecordHistoryView.swift */,
+				98E8163AEEFB1E4F726477082EAA4F89 /* AmountRecordAddView.swift */,
+				16A67C324D9B5935CD8E850E51045D15 /* AmountRecordDetailView.swift */,
+				B1063542D805D32EA8FCDC458CEB2161 /* AmountRecordHistoryView.swift */,
 				F4FFB0B29A00020FCA89A5E19D572C22 /* CloudKitManager.swift */,
 			);
 			name = DailyRecord;
@@ -1093,9 +1093,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10C6C5BE375944DB22C1E23905CAF51B /* BabyRecordAddView.swift in Sources */,
-				3EBEB39FAE9BB00CBB20DC69BACAC2FE /* BabyRecordDetailView.swift in Sources */,
-				21DE60E4117F9473CE94C59834B53B90 /* BabyRecordHistoryView.swift in Sources */,
+				10C6C5BE375944DB22C1E23905CAF51B /* AmountRecordAddView.swift in Sources */,
+				3EBEB39FAE9BB00CBB20DC69BACAC2FE /* AmountRecordDetailView.swift in Sources */,
+				21DE60E4117F9473CE94C59834B53B90 /* AmountRecordHistoryView.swift in Sources */,
 				738FBC6A5F4C3BCE498755EF57280C27 /* CloudKitManager.swift in Sources */,
 				9052E4EA1607AB44F53F4501084224EE /* ColorPickerDetailView.swift in Sources */,
 				585551C2CD01DE6E4D5B7BAF2796B7C3 /* CommmonNavigationBarModifier.swift in Sources */,

@@ -18,14 +18,17 @@ struct NewAmountRecord {
     var amount: Int
 }
 
-struct BabyRecordAddView: View {
+struct AmountRecordAddView: View {
     
- 
     @State private var amountRecords: [Date: [AmountRecord]] = [:]
     @State private var newRecord: NewAmountRecord = NewAmountRecord(time: Date(), amount: 0)
     
-    @State private var showAlert = false
-    @State private var alertMessage = "Amount must be greater than 0 ！！！"
+    @State private var showAmountAlert = false
+    @State private var showContainerAlert = false
+    @State private var amountAlertMessage = "Amount must be greater than 0 ！！！"
+    @State private var containerAlertMessage = "Please configure your data container with the help of the developer before entering this page again, otherwise you will not be able to use this feature."
+    
+    @AppStorage("containerIdentifier") private var containerIdentifier: String = ""
     
     @FocusState private var isTextFieldFocused: Bool
     
@@ -36,19 +39,54 @@ struct BabyRecordAddView: View {
             Spacer().frame(height: 10)
             
             VStack {
+                HStack {
+                   Text("Container:")
+                        .padding(.leading, 5)
+                        .padding(.trailing, 10)
+                    
+                   TextField("Container Identifier", text: $containerIdentifier)
+                       .textFieldStyle(RoundedBorderTextFieldStyle())
+                       .foregroundColor(.white.opacity(0.5))
+                       .keyboardType(.default)
+                       .padding(.leading, 0)
+                       .padding(.trailing, 5)
+                    
+                    Button {
+                         if let clipboardContent = UIPasteboard.general.string {
+                             containerIdentifier = clipboardContent
+                         }
+                     } label: {
+                         Image(systemName: "doc.on.clipboard")
+                             .foregroundColor(.blue)
+                     }
+                    .padding(.leading, 5)
+                    .padding(.trailing, 45)
+                }
+                
+                Spacer().frame(height: 20)
                 
                 HStack {
+                    Spacer().frame(width: 7)
+                    
                     Text("Time:")
-                        .padding(.trailing, 10)
                         .padding(.leading, 20)
+                        .padding(.trailing, 10)
+                     
                     
                     DatePicker("", selection: $newRecord.time, displayedComponents: .date)
                         .labelsHidden()
                         .padding(.trailing, 20)
+                        .onAppear() {
+                            newRecord.time = Date()
+                        }
+                    
                     
                     DatePicker("", selection: $newRecord.time, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .padding(.trailing, 10)
+                        .onAppear() {
+                            newRecord.time = Date()
+                        }
                    
                     Spacer()
                 }
@@ -57,11 +95,14 @@ struct BabyRecordAddView: View {
                 Spacer().frame(height: 20)
                 
                 HStack {
+                    
+                    Spacer().frame(width: 7)
+                    
                     Text("Amount:")
                         .padding(.trailing, 10)
                         .padding(.leading, 5)
                     TextField("amount", text: Binding<String>(
-                            get: { "\(newRecord.amount)" },
+                        get: { newRecord.amount > 0 ? "\(newRecord.amount)" : "" },
                             set: {
                                 if let value = NumberFormatter().number(from: $0) {
                                     newRecord.amount = value.intValue
@@ -75,7 +116,8 @@ struct BabyRecordAddView: View {
 
                 }
                 
-                Spacer().frame(height: 30)
+                Spacer().frame(height: 20)
+                
                 HStack {
                     Button(action: {
                         isTextFieldFocused = false
@@ -102,23 +144,39 @@ struct BabyRecordAddView: View {
                     
                 }
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("Confirm")))
+    
+            .alert(isPresented: $showAmountAlert) {
+                Alert(title: Text("Warning"), message: Text(amountAlertMessage), dismissButton: .default(Text("Confirm")))
+            }
+            
+            .alert(isPresented: $showContainerAlert) {
+                Alert(title: Text("Warning"), message: Text(containerAlertMessage), dismissButton: .default(Text("Confirm")))
             }
             
             Spacer().frame(height: 30)
             
             List {
-                Section(header: Text("Today's amount (\(totalAmountToday)ml)").bold().foregroundColor(Color.blue)) {  
+                Section(header: 
+                    Text("Today's Amount Sum: \(totalAmountToday)")
+                        .foregroundColor(Color.blue)
+                        .font(.system(size: 14))
+                        .textCase(nil)
+                
+                ) {
                     ForEach(amountRecords[Calendar.current.startOfDay(for: Date()), default: []], id: \.time) { record in
                         Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
+                            .font(.system(size: 14))
                     }
                     .onDelete(perform: deleteItems)
                 }
             }
         } 
         .onAppear {
-            loadRecordsFromCloudKit()
+            if containerIdentifier.isEmpty {
+              showContainerAlert = true
+            } else {
+              loadRecordsFromCloudKit()
+            }
         }
        
     }
@@ -128,7 +186,7 @@ struct BabyRecordAddView: View {
         
         withAnimation {
             if newRecord.amount <= 0 {
-                showAlert = true
+                showAmountAlert = true
                 return
             }
             

@@ -9,7 +9,24 @@ import CloudKit
 
 struct CloudKitManager {
     
-    static let container = CKContainer(identifier: "iCloud.com.zitao.li0206.CToolsFavorites")
+//    static let container = CKContainer(identifier: "iCloud.com.zitao.li0206.CToolsFavorites")
+    
+    static var containerIdentifier: String? {
+       get {
+           return UserDefaults.standard.string(forKey: "containerIdentifier")
+       }
+       set {
+           UserDefaults.standard.set(newValue, forKey: "containerIdentifier")
+       }
+    }
+
+    static var container: CKContainer {
+       guard let identifier = containerIdentifier else {
+           return CKContainer.default()
+       }
+       return CKContainer(identifier: identifier)
+    }
+
     static let publicDatabase = container.publicCloudDatabase
     
     static func saveRecord(item: AmountRecord) {

@@ -1,6 +1,6 @@
 //
-//  BabyRecordHistoryView.swift
-//  BabyDailyRecord
+//  AmountRecordHistoryView.swift
+//  AmountRecord
 //
 //  Created by lizitao on 2024-03-02.
 //
@@ -9,15 +9,17 @@ import SwiftUI
 
 struct BabyRecordHistoryView: View {
     
-//    @Binding var selectedTab: Int
-    
     @State private var amountRecords: [Date: [AmountRecord]] = [:]
     
     var body: some View {
         VStack {
             List {
                 ForEach(sortedFeedings, id: \.key) { date, records in
-                    Section(header: Text("\(DateUtillity.formattedDateToMMDD(date))    Amount：\(totalAmountToday)").bold().foregroundColor(Color.blue)) {
+                    Section(header: 
+                        Text("\(DateUtillity.formattedDateToMMDD(date)) Amount Sum: \(totalAmountToday)").bold()
+                            .foregroundColor(Color.blue)
+                            .textCase(nil)
+                    ) {
                         ForEach(records, id: \.time) { record in
                             Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
                         }

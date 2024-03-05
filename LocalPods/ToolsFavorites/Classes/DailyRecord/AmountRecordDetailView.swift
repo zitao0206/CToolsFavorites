@@ -1,13 +1,13 @@
 //
-//  BabyRecordDetailView.swift
-//  BabyRecord
+//  AmountRecordDetailView.swift
+//  AmountRecord
 //
 //  Created by lizitao on 2024-03-02.
 //
 
 import SwiftUI
 
-public struct BabyRecordDetailView: View {
+public struct AmountRecordDetailView: View {
     
     @State var selectedTab: Int = 0
     
@@ -18,7 +18,7 @@ public struct BabyRecordDetailView: View {
     }
      
     public var body: some View {
-        BabyRecordAddView()
+        AmountRecordAddView()
         .commmonNavigationBar(title: item.title, displayMode: .automatic)
     }
     

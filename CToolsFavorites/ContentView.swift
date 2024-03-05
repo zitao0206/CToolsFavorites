@@ -44,7 +44,7 @@ struct ContentView: View {
           case "Quick Query":
               return AnyView(QuickQueryDetailView(item: toolItem))
           case "Amount Record":
-              return AnyView(BabyRecordDetailView(item: toolItem))
+              return AnyView(AmountRecordDetailView(item: toolItem))
           default:
               return AnyView(DemoDetailView(item: toolItem))
           }
