@@ -46,7 +46,7 @@ struct AmountRecordAddView: View {
                     
                    TextField("Container Identifier", text: $containerIdentifier)
                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .foregroundColor(.white.opacity(0.5))
+                       .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.5))
                        .keyboardType(.default)
                        .padding(.leading, 0)
                        .padding(.trailing, 5)
