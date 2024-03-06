@@ -10,9 +10,16 @@ import ToolsFavorites
 import AKOCommonToolsKit
 
 struct ContentView: View {
-    
-
-    let gridItems = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2) // 创建3列的网格
+  
+    let gridItems: [GridItem] = {
+        if GeneralDevice.isPad {
+            // 1 Columns
+            return Array(repeating: GridItem(.flexible(), spacing: 10), count: 1)
+        } else {
+            // 2 Colums
+            return Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
+        }
+    }()
     
     @State private var toolItems: [ToolItem] = [
         
@@ -24,12 +31,13 @@ struct ContentView: View {
     
   
 //        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
-        ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
         ToolItem(title: "Quick Query", imageType: "q.circle"),
+        ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
       
     ]
 
     private func contentViewForToolItem(_ toolItem: ToolItem) -> some View {
+
           switch toolItem.title {
           case "Base Conversion":
               return AnyView(NumberSystemConversionDetailView(item: toolItem))
@@ -55,10 +63,11 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 15) {
                     ForEach(toolItems.indices, id: \.self) { index in
-                        NavigationLink(destination: contentViewForToolItem(toolItems[index])) {
-                            GridItemView(imageType: toolItems[index].imageType, title: toolItems[index].title)
+                        let toolItem = toolItems[index]
+                        NavigationLink(destination: contentViewForToolItem(toolItem)) {
+                            GridItemView(imageType: toolItem.imageType, title: toolItem.title)
                                 .padding(.horizontal, 20)
-                        }
+                        }.id(toolItem.title)
                     }
                 }
             }
@@ -73,13 +82,7 @@ struct ContentView: View {
     }
     
     private func moveItemToFirst(_ index: Int) {
-        guard index != 0 && index < toolItems.count else { return }
-//        devTools.insert(devTools.remove(at: index), at: 0)
-//        // Update UserDefaults
-//        let titles = devTools.map { $0.title }
-//        let imageTypes = devTools.map { $0.imageType }
-//        UserDefaults.standard.set(titles, forKey: "cachedTitles")
-//        UserDefaults.standard.set(imageTypes, forKey: "cachedImageTypes")
+        
     }
 }
 
@@ -107,23 +110,6 @@ struct GridItemView: View {
         .cornerRadius(10)
     }
 }
-
-
-//private func destinationView(for index: Int, title: String) -> some View {
-//    
-//    switch index {
-//    case 0:
-//        return AnyView(NumberSystemConversionDetailView(text: title, index: index))
-//    case 1:
-//        return AnyView(DateCalculationDetailView(text: title, index: index))
-//    case 2:
-//        return AnyView(QRCodeDetailView(text: title, index: index))
-//    case 3:
-//        return AnyView(ColorPickerDetailView(text: title, index: index))
-//    default:
-//        return AnyView(DemoDetailView(text: title, index: index))
-//    }
-//}
 
 struct DetailView: View {
     let text: String

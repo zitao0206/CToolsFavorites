@@ -28,6 +28,11 @@ public struct DarkMode {
     }
 }
 
+public struct GeneralDevice {
+    public static var isPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+}
 
 
  
