@@ -245,8 +245,6 @@ struct AmountRecordAddView: View {
             }
         }
     }
-
-
     
     private func loadRecordsFromCloudKit() {
         
@@ -280,7 +278,7 @@ struct AmountRecordAddView: View {
         let todayRecords = amountRecords
             .filter { Calendar.current.isDate($0.key, inSameDayAs: Date()) }
             .flatMap { $0.value }
-        return todayRecords.sorted(by: { $0.time < $1.time })
+        return todayRecords.sorted(by: { $0.time > $1.time })
     }
     
     private var totalAmountToday: Int {
