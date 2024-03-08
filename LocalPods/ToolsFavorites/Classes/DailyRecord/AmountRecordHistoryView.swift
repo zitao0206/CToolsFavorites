@@ -65,8 +65,10 @@ struct BabyRecordHistoryView: View {
     }
     
     private var sortedFeedings: [(key: Date, value: [AmountRecord])] {
-        return amountRecords.sorted(by: { $0.key > $1.key })
+        return amountRecords.map { (key: $0.key, value: $0.value.sorted(by: { $0.time < $1.time })) }
+                           .sorted(by: { $0.key > $1.key })
     }
+
     
     private var totalAmountToday: Int {
         let today = Calendar.current.startOfDay(for: Date())

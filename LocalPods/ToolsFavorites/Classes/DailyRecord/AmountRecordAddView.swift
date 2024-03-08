@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct AmountRecord: Identifiable, Codable {
-    let id = UUID().uuidString
     let time: Date
     let amount: Int
+    var id: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let formattedTime = dateFormatter.string(from: time)
+        return "\(formattedTime)-\(amount)"
+    }
 }
 
 struct NewAmountRecord {
@@ -158,7 +163,7 @@ struct AmountRecordAddView: View {
                 Alert(title: Text("Warning"), message: Text(containerAlertMessage), dismissButton: .default(Text("Confirm")))
             }
             
-            Spacer().frame(height: 30)
+            Spacer().frame(height: 20)
             
             List {
                 Section(header: 
@@ -168,11 +173,11 @@ struct AmountRecordAddView: View {
                         .textCase(nil)
                 
                 ) {
-                    ForEach(amountRecords[Calendar.current.startOfDay(for: Date()), default: []], id: \.time) { record in
+                    ForEach(sortedTodayFeedings) { record in
                         Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
-                            .font(.system(size: 14))
                     }
                     .onDelete(perform: deleteItems)
+
                 }
             }
         } 
@@ -215,26 +220,33 @@ struct AmountRecordAddView: View {
     private func deleteItems(offsets: IndexSet) {
         
         withAnimation {
-       
             for index in offsets {
-             
-                let date = Array(amountRecords.keys)[index]
-           
+                let todayFeedings = sortedTodayFeedings
+                guard index < todayFeedings.count else { continue } // Ensure index is within bounds
+                
+                let record = todayFeedings[index]
+                let date = Calendar.current.startOfDay(for: record.time)
+                
                 var records = amountRecords[date] ?? []
-            
-               let item = records.remove(at: index)
-           
+                records.remove(at: index)
+                
                 if records.isEmpty {
                     amountRecords.removeValue(forKey: date)
                 } else {
                     amountRecords[date] = records
+                }       
+                CloudKitManager.deleteRecord(forId: record.id) { error in
+                    if let error = error {
+                        print("Error deleting records: \(error.localizedDescription)")
+                    } else {
+                        print("Records deleted successfully.")
+                    }
                 }
-                
-                CloudKitManager.deleteRecord(recordID: item.id)
             }
-    
         }
     }
+
+
     
     private func loadRecordsFromCloudKit() {
         
@@ -256,7 +268,6 @@ struct AmountRecordAddView: View {
                               groupedRecords[date] = [record]
                           }
                       }
-                      
                       // Update amountRecords state variable with grouped records
                       DispatchQueue.main.async {
                           self.amountRecords = groupedRecords
@@ -265,10 +276,19 @@ struct AmountRecordAddView: View {
          }
     }
     
-    private var totalAmountToday: Int {
-        let today = Calendar.current.startOfDay(for: Date())
-        return amountRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
+    private var sortedTodayFeedings: [AmountRecord] {
+        let todayRecords = amountRecords
+            .filter { Calendar.current.isDate($0.key, inSameDayAs: Date()) }
+            .flatMap { $0.value }
+        return todayRecords.sorted(by: { $0.time < $1.time })
     }
+    
+    private var totalAmountToday: Int {
+        let todayFeedings = sortedTodayFeedings
+        return todayFeedings.reduce(0) { $0 + $1.amount }
+    }
+
+
     
     
 }

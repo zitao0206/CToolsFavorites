@@ -40,22 +40,40 @@ struct CloudKitManager {
             if let error = error {
                 print("Error saving feeding record: \(error.localizedDescription)")
             } else {
-                print("Feeding record saved successfully.")
+                print("Feeding record saved successfully.\(item.id)")
             }
+        }
+    }
+  
+    static func deleteRecord(forId recordId: String, completion: @escaping (Error?) -> Void) {
+        // Create a predicate to filter records for the specified amount
+        let recordIdPredicate = NSPredicate(format: "id = %@", recordId)
+        
+        let query = CKQuery(recordType: "AmountRecord", predicate: recordIdPredicate)
+        
+        // Perform the query to fetch records for the specified amount
+        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let records = records, error == nil else {
+                print("Error fetching records for deletion: \(error?.localizedDescription ?? "Unknown error")")
+                completion(error)
+                return
+            }
+            
+            // Delete each fetched record
+            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: records.map { $0.recordID })
+            operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, operationError in
+                if let operationError = operationError {
+                    print("Error deleting records: \(operationError.localizedDescription)")
+                    completion(operationError)
+                } else {
+                    print("Records deleted successfully.")
+                    completion(nil)
+                }
+            }
+            publicDatabase.add(operation)
         }
     }
 
-    
-    static func deleteRecord(recordID: String) {
-        let recordID = CKRecord.ID(recordName: recordID)
-        publicDatabase.delete(withRecordID: recordID) { (recordID, error) in
-            if let error = error {
-                print("Error deleting feeding record: \(error.localizedDescription)")
-            } else {
-                print("Feeding record deleted successfully.")
-            }
-        }
-    }
 
     
     static func fetchRecords(completion: @escaping ([AmountRecord]?, Error?) -> Void) {
