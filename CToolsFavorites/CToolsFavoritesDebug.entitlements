@@ -8,6 +8,7 @@
     <array>
         <string>iCloud.com.zitao.li0206.CToolsFavorites</string>
         <string>iCloud.com.CToolsFavorites.zitao.li0206</string>
+        <string>iCloud.DailyAmountRecord.zitao0206</string>
     </array>
     <key>com.apple.developer.icloud-services</key>
     <array>
@@ -18,6 +19,7 @@
     <array>
         <string>iCloud.com.zitao.li0206.CToolsFavorites</string>
         <string>iCloud.com.CToolsFavorites.zitao.li0206</string>
+        <string>iCloud.DailyAmountRecord.zitao0206</string>
     </array>
     <key>com.apple.developer.ubiquity-kvstore-identifier</key>
     <string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>

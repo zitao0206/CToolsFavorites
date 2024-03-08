@@ -31,7 +31,7 @@ struct AmountRecordAddView: View {
     @State private var showAmountAlert = false
     @State private var showContainerAlert = false
     @State private var amountAlertMessage = "Amount must be greater than 0 ！！！"
-    @State private var containerAlertMessage = "Please configure your data container with the help of the developer before entering this page again, otherwise you will not be able to use this feature."
+    @State private var containerAlertMessage = "Please configure your Database with the help of the developer before entering this page again, otherwise you will not be able to use this feature."
     
     @AppStorage("containerIdentifier") private var containerIdentifier: String = ""
     
@@ -45,11 +45,11 @@ struct AmountRecordAddView: View {
             
             VStack {
                 HStack {
-                   Text("Container:")
+                   Text("Database:")
                         .padding(.leading, 5)
                         .padding(.trailing, 10)
                     
-                   TextField("Container Identifier", text: $containerIdentifier)
+                   TextField("Database identifier", text: $containerIdentifier)
                        .textFieldStyle(RoundedBorderTextFieldStyle())
                        .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.5))
                        .keyboardType(.default)
