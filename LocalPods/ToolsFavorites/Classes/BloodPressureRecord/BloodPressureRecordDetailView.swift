@@ -19,7 +19,7 @@ public struct BloodPressureRecord: Identifiable, Codable {
     let systolic: String
     let diastolic: String
     let pulse: String  
-    let isTakingMedicine: Bool
+    let isTakingMedicine: String
     let notes: String
     
     public var id: String {
@@ -30,30 +30,42 @@ public struct BloodPressureRecord: Identifiable, Codable {
     }
 
     public static var empty: BloodPressureRecord {
-        return BloodPressureRecord(time: Date(), systolic: "", diastolic: "", pulse: "", isTakingMedicine: false, notes: "")
+        return BloodPressureRecord(time: Date(), systolic: "", diastolic: "", pulse: "", isTakingMedicine: "NO", notes: "")
     }
 }
 
 public struct BloodPressureRecordDetailView: View {
-    
-
-    @State private var records: [Date: [BloodPressureRecord]] = [:]
-    
-//    @State private var records: [BloodPressureRecord] = []
-    
-    @State private var showingSettings = false
     
     let item: ToolItem
     
     public init(item: ToolItem) {
         self.item = item
     }
+    
+    @ObservedObject var cloudKitManager = BloodPressureRecordCloudKitManager.shared
+    @ObservedObject var localCacheManager = BloodPressureRecordCacheManager.shared
+    
+    private var dataManager : any BloodPressureRecordProtocol {
+        let databaseName = UserDefaults.standard.string(forKey: "BloodPressureDatabaseName")
+        if let databaseName = databaseName, !databaseName.isEmpty {
+            return cloudKitManager
+          
+        } else {
+            return localCacheManager
+        }
+    }
+    
+    private var records: [Date: [BloodPressureRecord]] {
+       return dataManager.records
+    }
+    
+    @State private var showingSettings = false
 
     public var body: some View {
         ZStack {
             List {
                 ForEach(records.sorted(by: { $0.key > $1.key }), id: \.key) { date, recordsInSameDate in
-                    Section(header: 
+                    Section(header:
                         Text(formattedTitleDate(date: date)).font(.headline)
                             .padding(.leading, -15)
                     ) {
@@ -136,7 +148,7 @@ public struct BloodPressureRecordDetailView: View {
                                                     .font(.system(size: 15))
                                                     .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
                                                     .padding(.bottom, 5)
-                                                Text(record.isTakingMedicine ? "Yes" : "No")
+                                                Text(record.isTakingMedicine)
                                                     .font(.system(size: 20))
                                                     .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.6))
                                                 
@@ -185,17 +197,12 @@ public struct BloodPressureRecordDetailView: View {
                 .foregroundColor(DarkMode.isDarkMode ? .white : .black)
         })
         
-   
-
         .commmonNavigationBar(title: item.title, displayMode: .inline)
         .onAppear() {
-            loadRecords()
+         
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
-        
-    }
     
     func formattedTitleDate(date: Date) -> String {
         let formatter = DateFormatter()
@@ -208,11 +215,6 @@ public struct BloodPressureRecordDetailView: View {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)
     }
-    
-    func loadRecords() {
-        records = BloodPressureRecordCacheManager.shared.records
-    }
- 
 
 }
 

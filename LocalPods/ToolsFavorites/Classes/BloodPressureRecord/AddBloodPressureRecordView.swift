@@ -10,7 +10,7 @@ import SwiftUI
 struct AddBloodPressureRecordView: View {
     
     @Environment(\.presentationMode) var presentationMode // 获取 presentationMode
-       
+        
     var record: BloodPressureRecord
     var action: RecordAction
     
@@ -28,8 +28,33 @@ struct AddBloodPressureRecordView: View {
     @State private var systolic: String = ""
     @State private var diastolic: String = ""
     @State private var pulse: String = ""
-    @State private var isTakingMedicine = false
+    @State private var isTakingMedicine: String = "No"
     @State private var notes: String = ""
+    
+    @ObservedObject var cloudKitManager = BloodPressureRecordCloudKitManager.shared
+    @ObservedObject var localCacheManager = BloodPressureRecordCacheManager.shared
+    
+    private var dataManager : any BloodPressureRecordProtocol {
+        let databaseName = UserDefaults.standard.string(forKey: "BloodPressureDatabaseName")
+        if let databaseName = databaseName, !databaseName.isEmpty {
+            return cloudKitManager
+          
+        } else {
+            return localCacheManager
+        }
+    }
+    
+    private var isTakingMedicationBinding: Binding<Bool> {
+        Binding<Bool>(
+            get: {
+                self.isTakingMedicine == "Yes"
+            },
+            set: {
+                self.isTakingMedicine = $0 ? "Yes" : "No"
+            }
+        )
+    }
+
     
     @State private var showEmptyAlertMessage = false
     @State private var EmptyAlertMessage = "Value can not be Empty or Zero ！！！"
@@ -83,9 +108,10 @@ struct AddBloodPressureRecordView: View {
                             .padding()
                     }
                     
-                    Toggle("Medication : ", isOn: $isTakingMedicine)
+                    Toggle("Medication : ", isOn: isTakingMedicationBinding)
                         .font(.system(size: 14))
                         .padding()
+
                 }
                 
                 VStack(alignment: .leading) {
@@ -144,13 +170,14 @@ struct AddBloodPressureRecordView: View {
     func editRecord() {
         print("edit")
         let record = BloodPressureRecord(time: record.time, systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
-        BloodPressureRecordCacheManager.shared.editRecord(record)
+        dataManager.editRecord(record)
+
         presentationMode.wrappedValue.dismiss()
     }
     
     func deleteRecord() {
         print("dele")
-        BloodPressureRecordCacheManager.shared.deleteRecord(record)
+        dataManager.deleteRecord(record)
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -168,14 +195,12 @@ struct AddBloodPressureRecordView: View {
         }
  
         let record = BloodPressureRecord(time: Date(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
-        print("yes:\(record)")
     
-        BloodPressureRecordCacheManager.shared.addRecord(record)
-        
+        dataManager.addRecord(record)
         systolic = ""
         diastolic = ""
         pulse = ""
-        isTakingMedicine = false
+        isTakingMedicine = "NO"
         notes = ""
         
         presentationMode.wrappedValue.dismiss()

@@ -14,6 +14,18 @@ extension UserDefaults {
 
 struct BloodPressureRecordSettingView: View {
     
+    enum Gender: String, CaseIterable {
+        case male = "Male"
+        case female = "Female"
+        case other = "Other"
+    }
+    
+    enum StorageOption: String, CaseIterable {
+        case local = "Local"
+        case remote = "Remote"
+    }
+
+    
     @State private var selectedAge: Int = 30
     @State private var selectedGender: Gender = .male
       
@@ -23,10 +35,18 @@ struct BloodPressureRecordSettingView: View {
     @State private var showingNormalBloodImage = false
     @State private var showingHighBloodImage = false
 
+    @State private var storageOption: StorageOption = .local
+   
+    @State private var databaseName: String = UserDefaults.standard.string(forKey: "BloodPressureDatabaseName") ?? ""
+
+
     
     var body: some View {
         Form {
-            Section(header: Text("Personal Information")) {
+            Section(header: 
+                Text("Personal Information")
+                    .textCase(nil)
+                ) {
                 Picker("Age", selection: $selectedAge) {
                     ForEach(ageRange, id: \.self) { age in
                         Text("\(age)").tag(age)
@@ -48,7 +68,10 @@ struct BloodPressureRecordSettingView: View {
                 
             }
             
-            Section(header: Text("Blood Pressure Information")) {
+            Section(header: 
+                Text("Blood Pressure Information")
+                    .textCase(nil)
+            ) {
                 Button(action: {
                     self.showingNormalBloodImage = true
                 }) {
@@ -108,20 +131,93 @@ struct BloodPressureRecordSettingView: View {
                     Text("Failed to load image")
                 }
             }
+            
+            Section(header: 
+                Text("Data Storage")
+                    .textCase(nil)
+            ) {
+                HStack {
+                    VStack {
+                        Picker("Storage Option", selection: $storageOption) {
+                            ForEach(StorageOption.allCases, id: \.self) { option in
+                                Text(option.rawValue).tag(option)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        
+                        if storageOption == .remote {
+                            TextField("Database Name", text: $databaseName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .font(.system(size: 13))
+                                .onChange(of: databaseName) { newValue in
+                                    UserDefaults.standard.set(newValue, forKey: "BloodPressureDatabaseName")
+                                }
+                            HStack {
+                                Spacer()
+                                
+                                Button {
+                                    databaseName = ""
+                                    UserDefaults.standard.set("", forKey: "BloodPressureDatabaseName")
+                                } label: {
+                                    Text("Clear")
+                                        .font(.system(size: 10))
+                                             .padding(5)
+                                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                                }
+                                .buttonStyle(.bordered)
+                                
+                                Button {
+                                    if let clipboardContent = UIPasteboard.general.string {
+                                        databaseName = clipboardContent
+                                        UserDefaults.standard.set(clipboardContent, forKey: "BloodPressureDatabaseName")
+                                    }
+                                } label: {
+                                    Text("Pasted")
+                                        .font(.system(size: 10))
+                                        .padding(5)
+                                        .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                            
+                            Text("Note: Please configure your Database with the help of the developer before entering this page again, otherwise you will not be able to use this feature.")
+                                .font(.footnote)
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding()
+                        } else {
+                            Text("Note: If using local storage, data will be lost if the app is deleted.")
+                                .font(.footnote)
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding()
+                        }
+                    }
+                }
+                
+            }
+            
+            
 
         }
         .navigationBarTitle("Settings", displayMode: .inline)
         .onAppear {
             selectedAge = UserDefaults.standard.integer(forKey: UserDefaults.selectedAgeKey) != 0 ? UserDefaults.standard.integer(forKey: UserDefaults.selectedAgeKey) : 30
             selectedGender = Gender(rawValue: UserDefaults.standard.string(forKey: UserDefaults.selectedGenderKey) ?? "Male") ?? .male
+              
+            let savedDatabaseName = UserDefaults.standard.string(forKey: "BloodPressureDatabaseName")
+            if let savedDatabaseName = savedDatabaseName, !savedDatabaseName.isEmpty {
+                // 如果有值，则默认选择Remote选项
+                storageOption = .remote
+                // 并设置databaseName为已保存的值
+                databaseName = savedDatabaseName
+            } else {
+                // 否则保持默认选项或设置为Local
+                storageOption = .local
+            }
         }
+         
     }
     
-    enum Gender: String, CaseIterable {
-        case male = "Male"
-        case female = "Female"
-        case other = "Other"
-    }
+    
     
     private func saveSettings() {
         UserDefaults.standard.set(selectedAge, forKey: UserDefaults.selectedAgeKey)

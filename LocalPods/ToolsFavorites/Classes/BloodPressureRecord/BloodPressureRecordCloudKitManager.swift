@@ -8,7 +8,19 @@
 
 import CloudKit
 
-struct BloodPressureRecordCloudKitManager {
+protocol BloodPressureRecordProtocol : ObservableObject {
+    var records: [Date: [BloodPressureRecord]] { get set }
+    func loadRecords()
+    func addRecord(_ record: BloodPressureRecord)
+    func editRecord(_ record: BloodPressureRecord)
+    func deleteRecord(_ record: BloodPressureRecord)
+}
+ 
+class BloodPressureRecordCloudKitManager : BloodPressureRecordProtocol {
+    
+    static let shared = BloodPressureRecordCloudKitManager()
+    
+    @Published var records: [Date: [BloodPressureRecord]] = [:]
     
     static var containerIdentifier: String? {
         get {
@@ -28,9 +40,15 @@ struct BloodPressureRecordCloudKitManager {
 
     static let publicDatabase = container.publicCloudDatabase
     
-    static func saveRecord(record: BloodPressureRecord) {
-        let recordID = CKRecord.ID(recordName: record.id)
-        let ckRecord = CKRecord(recordType: "BloodPressureRecord", recordID: recordID)
+    private init() {
+        loadRecords()
+    }
+    
+    func addRecord(_ record: BloodPressureRecord) {
+        
+        let ckRecord = CKRecord(recordType: "BloodPressureRecord")
+        
+        ckRecord.setValue(record.id, forKey: "id")
         ckRecord.setValue(record.time, forKey: "time")
         ckRecord.setValue(record.systolic, forKey: "systolic")
         ckRecord.setValue(record.diastolic, forKey: "diastolic")
@@ -38,40 +56,112 @@ struct BloodPressureRecordCloudKitManager {
         ckRecord.setValue(record.isTakingMedicine, forKey: "isTakingMedicine")
         ckRecord.setValue(record.notes, forKey: "notes")
         
-        publicDatabase.save(ckRecord) { (savedRecord, error) in
+        BloodPressureRecordCloudKitManager.publicDatabase.save(ckRecord) { (savedRecord, error) in
             if let error = error {
                 print("Error saving blood pressure record: \(error.localizedDescription)")
             } else {
-                print("Blood pressure record saved successfully.")
+                print("Blood pressure record add successfully.")
+                DispatchQueue.main.async {
+                    let day = record.time.startOfDay()
+                    if var dayRecords = self.records[day] {
+                        dayRecords.append(record)
+                        self.records[day] = dayRecords.sorted(by: { $0.time > $1.time })
+                    } else {
+                        self.records[day] = [record]
+                    }
+                }
             }
         }
     }
     
-    static func deleteRecord(forId recordId: String, completion: @escaping (Error?) -> Void) {
-        let recordID = CKRecord.ID(recordName: recordId)
-        publicDatabase.delete(withRecordID: recordID) { (deletedRecordId, error) in
+    func editRecord(_ record: BloodPressureRecord) {
+        let predicate = NSPredicate(format: "id = %@", record.id)
+        let query = CKQuery(recordType: "BloodPressureRecord", predicate: predicate)
+
+        BloodPressureRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { [weak self] (records, error) in
+            guard let strongSelf = self else { return }
             if let error = error {
-                print("Error deleting blood pressure record: \(error.localizedDescription)")
-                completion(error)
-            } else {
-                print("Blood pressure record deleted successfully.")
-                completion(nil)
+                print("Error fetching record for editing: \(error.localizedDescription)")
+                return
+            }
+
+            guard let fetchedRecord = records?.first else {
+                print("Record not found for editing.")
+                return
+            }
+
+            // 更新CKRecord的字段...
+            
+            BloodPressureRecordCloudKitManager.publicDatabase.save(fetchedRecord) { (savedRecord, saveError) in
+                if let saveError = saveError {
+                    print("Error saving edited record: \(saveError.localizedDescription)")
+                } else {
+                    print("Record edited successfully.")
+                    DispatchQueue.main.async {
+                        let day = record.time.startOfDay()
+                        if var dayRecords = strongSelf.records[day] {
+                            if let index = dayRecords.firstIndex(where: { $0.id == record.id }) {
+                                dayRecords[index] = record
+                                strongSelf.records[day] = dayRecords
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    
+    func deleteRecord(_ record: BloodPressureRecord) {
+        let recordIdPredicate = NSPredicate(format: "id = %@", record.id)
+        let query = CKQuery(recordType: "BloodPressureRecord", predicate: recordIdPredicate)
+        
+        BloodPressureRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { [weak self] (records, error) in
+            guard let strongSelf = self else { return }
+            if let error = error {
+                print("Error fetching records for deletion: \(error.localizedDescription)")
+                return
+            }
+
+            guard let recordsToDelete = records, !recordsToDelete.isEmpty else {
+                print("No records found for deletion.")
+                return
+            }
+
+            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: recordsToDelete.map { $0.recordID })
+            BloodPressureRecordCloudKitManager.publicDatabase.add(operation)
+            
+            operation.modifyRecordsCompletionBlock = { _, deletedRecordIDs, error in
+                if let error = error {
+                    print("Error deleting records: \(error.localizedDescription)")
+                } else {
+                    print("Records deleted successfully.")
+                    DispatchQueue.main.async {
+                        let day = record.time.startOfDay()
+                        print("1Records deleted successfully.\(day)")
+                        if var dayRecords = strongSelf.records[day] {
+                            print("2Records deleted successfully.\(dayRecords.count)")
+                            dayRecords.removeAll(where: { $0.id == record.id })
+                            print("3Records deleted successfully.\(dayRecords.count)")
+                            strongSelf.records[day] = dayRecords.sorted(by: { $0.time > $1.time })
+                        }
+                    }
+                }
             }
         }
     }
     
-    static func fetchRecords(completion: @escaping ([BloodPressureRecord]?, Error?) -> Void) {
+    func loadRecords() {
         let query = CKQuery(recordType: "BloodPressureRecord", predicate: NSPredicate(value: true))
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        BloodPressureRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching blood pressure records: \(error.localizedDescription)")
-                completion(nil, error)
                 return
             }
             
             guard let records = records else {
                 print("No blood pressure records found.")
-                completion([], nil)
                 return
             }
             
@@ -79,119 +169,25 @@ struct BloodPressureRecordCloudKitManager {
             for record in records {
                 if let time = record.object(forKey: "time") as? Date,
                    let systolic = record.object(forKey: "systolic") as? String,
-                   let diastolic = record.object(forKey: "diastolic") as? String,
-                   let pulse = record.object(forKey: "pulse") as? String,
-                   let isTakingMedicine = record.object(forKey: "isTakingMedicine") as? Bool,
-                   let notes = record.object(forKey: "notes") as? String {
+                   let diastolic = record.object(forKey: "diastolic") as? String {
+                    
+                    let pulse = record.object(forKey: "pulse") as? String ?? ""
+                    let isTakingMedicine = record.object(forKey: "isTakingMedicine") as? String ?? "No"
+                    let notes = record.object(forKey: "notes") as? String ?? ""
+
                     let itemRecord = BloodPressureRecord(time: time, systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
                     bloodPressureRecords.append(itemRecord)
                 }
             }
-            
-            completion(bloodPressureRecords, nil)
+
+            let resultRecords = Dictionary(grouping: bloodPressureRecords, by: { $0.time.startOfDay() }).mapValues { $0.sorted(by: { $0.time > $1.time }) }
+            self.records = resultRecords
         }
     }
 }
 
 
-import Foundation
 
-class BloodPressureRecordCacheManager {
-    
-    static let shared = BloodPressureRecordCacheManager()
-    
-    private static let userDefaultsKey = "UserDefaults.BloodPressureRecord.zitao0206"
-    var records: [Date: [BloodPressureRecord]] = [:]
-    
-    private init() {
-        loadRecordsFromUserDefaults()
-    }
-    
-    private func loadRecordsFromUserDefaults() {
-        guard let data = UserDefaults.standard.data(forKey: Self.userDefaultsKey) else {
-            return
-        }
-        do {
-            let decodedRecords = try JSONDecoder().decode([BloodPressureRecord].self, from: data)
-            // Group by day and sort each group
-            self.records = Dictionary(grouping: decodedRecords, by: { $0.time.startOfDay() }).mapValues { $0.sorted(by: { $0.time > $1.time }) }
-        } catch {
-            print("Error decoding blood pressure records: \(error.localizedDescription)")
-        }
-    }
-    
-    private func saveRecordsToUserDefaults() {
-        let flatRecords = records.values.flatMap { $0 }
-        do {
-            let data = try JSONEncoder().encode(flatRecords)
-            UserDefaults.standard.set(data, forKey: Self.userDefaultsKey)
-        } catch {
-            print("Error encoding blood pressure records: \(error.localizedDescription)")
-        }
-    }
-    
-    func editRecord(_ editedRecord: BloodPressureRecord) {
-        print("editedRecord: \(editedRecord)")
-        
-        let day = editedRecord.time.startOfDay()
-        
-        
-        if var dayRecords = records[day] {
-            if let index = dayRecords.firstIndex(where: { $0.id == editedRecord.id }) {
-                dayRecords[index] = editedRecord
-
-                dayRecords.sort(by: { $0.time > $1.time })
-                records[day] = dayRecords
-                saveRecordsToUserDefaults()
-            } else {
-                addRecord(editedRecord)
-            }
-        } else {
-            addRecord(editedRecord)
-        }
-    }
-
-    
-    func addRecord(_ record: BloodPressureRecord) {
-        let day = record.time.startOfDay()
-        var dayRecords = records[day] ?? []
-        
-        // Find the correct insertion point to keep the array sorted
-        let index = dayRecords.firstIndex { $0.time < record.time } ?? dayRecords.endIndex
-        dayRecords.insert(record, at: index)
-        
-        records[day] = dayRecords
-        saveRecordsToUserDefaults()
-    }
-    
-    func deleteRecord(_ recordToDelete: BloodPressureRecord) {
-        for (day, dayRecords) in records {
-            if let index = dayRecords.firstIndex(where: { $0.id == recordToDelete.id }) {
-                var updatedRecords = dayRecords
-                updatedRecords.remove(at: index)
-                records[day] = updatedRecords
-                break
-            }
-        }
-        saveRecordsToUserDefaults()
-    }
-    
-    func clearRecords() {
-        records = [:]
-        UserDefaults.standard.removeObject(forKey: Self.userDefaultsKey)
-    }
-    
-    func recordsForDate(_ date: Date) -> [BloodPressureRecord] {
-        let day = date.startOfDay()
-        return records[day] ?? []
-    }
-}
-
-extension Date {
-    func startOfDay() -> Date {
-        Calendar.current.startOfDay(for: self)
-    }
-}
 
 
 

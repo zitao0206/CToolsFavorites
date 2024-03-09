@@ -98,6 +98,7 @@
 		CF3B99EEC195FAD11B7EED5BA50FC034 /* EFColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C3687AA1D287224129AB8A41462B2 /* EFColorSelectionView.swift */; };
 		D0B3461A46495F8F0BFB570A7F873A80 /* EFColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0354D37C1530BA2D496E8BA04544769 /* EFColorSelectionViewController.swift */; };
 		D52C88E09C0089A9AC76C81F1BC0A026 /* alliphonedevicesinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42014FFCFC91FBA083DB881D2EC95ABB /* alliphonedevicesinfo.png */; };
+		D820EC432B9CAE9D0056D28E /* BloodPressureRecordCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D820EC422B9CAE9D0056D28E /* BloodPressureRecordCacheManager.swift */; };
 		D98BEF97224D34E9FDE943BC27A4223E /* ToolsFavorites-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 148DB468326771CF71B30C65A79939D0 /* ToolsFavorites-dummy.m */; };
 		DAED04702DFE98035A092101EBCBF154 /* NSString+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A88FCCE17F759F343A2B1ECD5D1D67 /* NSString+Ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB55AA15041A79DA15ABF8FC129F3E7B /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D610C3F3FA98A62EFB2140B24D1668FB /* ImageUtility.swift */; };
@@ -195,20 +196,20 @@
 		3A864B64719B4C3BA119BBF9EDEEDF61 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		3AF421CEFDF11A8CD7F70F323AF8FB83 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		3B58751980C4CD1AF4CAF8319B041FB5 /* Pods-CToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CToolsFavorites.debug.xcconfig"; sourceTree = "<group>"; };
-		3C88A6BC6B54F7B8AECAA045F95426CB /* highbloodpressure.jpg */ = {isa = PBXFileReference; includeInIndex = 1; path = highbloodpressure.jpg; sourceTree = "<group>"; };
+		3C88A6BC6B54F7B8AECAA045F95426CB /* highbloodpressure.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = highbloodpressure.jpg; sourceTree = "<group>"; };
 		3E2C707C5386E6FE93E9872DC2E6B33E /* EFControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFControl.swift; sourceTree = "<group>"; };
 		42014FFCFC91FBA083DB881D2EC95ABB /* alliphonedevicesinfo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alliphonedevicesinfo.png; sourceTree = "<group>"; };
-		4311CB25DCD267C8EDE6E66CA14BB4B8 /* ToolsFavorites.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ToolsFavorites.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4311CB25DCD267C8EDE6E66CA14BB4B8 /* ToolsFavorites.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ToolsFavorites.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		45706A48FF820BDA90249F82F4B56519 /* ToolsFavorites-CToolsFavorites */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ToolsFavorites-CToolsFavorites"; path = CToolsFavorites.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B1A2DFDC36A46C24E6A61DFB9FC6EE /* NumberSystemConversionDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberSystemConversionDetailView.swift; sourceTree = "<group>"; };
 		4AE064B51985F7769B878E0D39528291 /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
-		4C553DEEBB93B7580B52AE654C93BFF1 /* normalbloodpressurestandard.jpg */ = {isa = PBXFileReference; includeInIndex = 1; path = normalbloodpressurestandard.jpg; sourceTree = "<group>"; };
+		4C553DEEBB93B7580B52AE654C93BFF1 /* normalbloodpressurestandard.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = normalbloodpressurestandard.jpg; sourceTree = "<group>"; };
 		4C553FC5F2FC4D816D3F7717DEEA6BE4 /* EFColorComponentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorComponentView.swift; sourceTree = "<group>"; };
 		4D8C597696CA51016D0E645A2F2E3490 /* CommmonNavigationBarModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommmonNavigationBarModifier.swift; sourceTree = "<group>"; };
 		4E44EA20ECB9C1B6019DB6EC37BDC171 /* Pods-CToolsFavorites-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CToolsFavorites-umbrella.h"; sourceTree = "<group>"; };
 		4F629202EA3B3AD6A9C56493EA0809EB /* DateCaculationDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateCaculationDetailView.swift; sourceTree = "<group>"; };
 		54D6E33B1482CD4C2A9529DCBAE6FDE3 /* Pods-CToolsFavorites-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CToolsFavorites-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5803B8F68FF8C9C062203DDD06324AB4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5803B8F68FF8C9C062203DDD06324AB4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5D86AC75D09690091CB2FADDBA1C56CE /* poweroftwotable.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = poweroftwotable.png; sourceTree = "<group>"; };
 		5E058A9D68257DFCD66ECA1E0F12535C /* Pods-CToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		60B9392BFABC1E76AB9AAB2DB4D5AE6A /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
@@ -237,7 +238,7 @@
 		8DDEF30FD05CBEE8A2E5269FAD4959D5 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		9A7C0BF99DF5D607E4AB084F455210A1 /* AKOCommonToolsKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AKOCommonToolsKit-prefix.pch"; sourceTree = "<group>"; };
 		9B0341A9B7ED552793412BDCC010BF16 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9ED530879C8FE3DCB33C33F2AEBADB3D /* EFColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorUtils.swift; sourceTree = "<group>"; };
 		9F1A54D2D2AD9A2555179F5D337DD24D /* NSString+Ext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ext.m"; sourceTree = "<group>"; };
 		A0354D37C1530BA2D496E8BA04544769 /* EFColorSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorSelectionViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		D2529038E8BD105EA1C245CC9DBF67CF /* AKOCommonToolsKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AKOCommonToolsKit-dummy.m"; sourceTree = "<group>"; };
 		D293949E6E8B88738153072FA81A66D5 /* ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		D610C3F3FA98A62EFB2140B24D1668FB /* ImageUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
+		D820EC422B9CAE9D0056D28E /* BloodPressureRecordCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordCacheManager.swift; sourceTree = "<group>"; };
 		D8E5E07337883D9200209F0115892661 /* NSArray+functional.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+functional.m"; sourceTree = "<group>"; };
 		D8FB555682A28310EC1B0D89A5F12A16 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		DA02B7F9DA65F259345C90D1FC815A25 /* UIImage+AKOKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AKOKit.m"; sourceTree = "<group>"; };
@@ -452,7 +454,6 @@
 			children = (
 				F81BD715489A66216CADB921030A2244 /* Images */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -503,7 +504,6 @@
 				D0EC84A55B3F5612774E797B92D1E739 /* ViewController+MASAdditions.m */,
 				149C6FE773F4F5EC02AD424EF69C7286 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -595,7 +595,6 @@
 				16C7200299D1986DDF2E5ACEEE51602F /* EFSliderView.swift */,
 				E0D7E403D8ABFC609A56FD1653026F27 /* EFThumbView.swift */,
 			);
-			name = EFColorPicker;
 			path = EFColorPicker;
 			sourceTree = "<group>";
 		};
@@ -663,6 +662,7 @@
 			children = (
 				22BE059546123AA682B8874EBA7EB53A /* AddBloodPressureRecordView.swift */,
 				B631CEFBF9CA6503D86686443411AA0B /* BloodPressureRecordCloudKitManager.swift */,
+				D820EC422B9CAE9D0056D28E /* BloodPressureRecordCacheManager.swift */,
 				84858973B2C281B60C213427A9596B57 /* BloodPressureRecordDetailView.swift */,
 				E96DE7BA4266A2E13C333A0C2CEF31B6 /* BloodPressureRecordSettingView.swift */,
 			);
@@ -708,7 +708,6 @@
 				E41A3D9C68E83D89D66B07B40EE38071 /* UIColor */,
 				CDE7A87F92239641D9EDA119FCB25958 /* UIImage */,
 			);
-			name = AKOCommonToolsKit;
 			path = AKOCommonToolsKit;
 			sourceTree = "<group>";
 		};
@@ -757,7 +756,6 @@
 			children = (
 				2A125CD9213AD18A4C49BB756143986D /* Images.xcassets */,
 			);
-			name = Assets;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -769,7 +767,6 @@
 				4C553DEEBB93B7580B52AE654C93BFF1 /* normalbloodpressurestandard.jpg */,
 				5D86AC75D09690091CB2FADDBA1C56CE /* poweroftwotable.png */,
 			);
-			name = Images;
 			path = Images;
 			sourceTree = "<group>";
 		};
@@ -1120,6 +1117,7 @@
 				1961FD9A5EBED6BDC0F48C752CCC5FE9 /* AmountRecordHistoryView.swift in Sources */,
 				558E25B5A1F844A0B226F249EA6C013D /* BloodPressureRecordCloudKitManager.swift in Sources */,
 				644925E578D5F223E5572823CA7C9F88 /* BloodPressureRecordDetailView.swift in Sources */,
+				D820EC432B9CAE9D0056D28E /* BloodPressureRecordCacheManager.swift in Sources */,
 				391E0DD4A39B9E3132EAF5E28C1EED66 /* BloodPressureRecordSettingView.swift in Sources */,
 				5BDE4F16E5D11AF053F03725F49CEAEE /* ColorPickerDetailView.swift in Sources */,
 				042C7B7BD5551BCB3E54B3E797E7481A /* CommmonNavigationBarModifier.swift in Sources */,
