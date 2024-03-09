@@ -22,16 +22,17 @@ class ImageUtility {
         }
     }
     
-    static func loadImage(named imageName: String) -> UIImage? {
+    static func loadImage(named imageName: String, withExtension fileExtension: String) -> UIImage? {
         guard let imageBundlePath = Bundle.main.path(forResource: "CToolsFavorites-Images", ofType: "bundle"),
               let imageBundle = Bundle(path: imageBundlePath),
-              let imageURL = imageBundle.url(forResource: imageName, withExtension: "png"),
+              let imageURL = imageBundle.url(forResource: imageName, withExtension: fileExtension),
               let imageData = try? Data(contentsOf: imageURL),
               let uiImage = UIImage(data: imageData) else {
             return nil
         }
         return uiImage
     }
+
 }
 
 

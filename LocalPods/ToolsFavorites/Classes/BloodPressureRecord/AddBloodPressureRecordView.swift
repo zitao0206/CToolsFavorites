@@ -156,8 +156,6 @@ struct AddBloodPressureRecordView: View {
     
     func addRecord() {
         
-        print("yes:\(getYesterdaysDate())")
-        
         guard let systolicValue = Int(systolic),
               let diastolicValue = Int(diastolic) else {
             showEmptyAlertMessage = true
@@ -169,7 +167,7 @@ struct AddBloodPressureRecordView: View {
             return
         }
  
-        let record = BloodPressureRecord(time: getYesterdaysDate(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
+        let record = BloodPressureRecord(time: Date(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
         print("yes:\(record)")
     
         BloodPressureRecordCacheManager.shared.addRecord(record)

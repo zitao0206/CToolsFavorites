@@ -88,15 +88,13 @@ public struct ColorComparisonTableDetailView: View {
     public var body: some View {
         ScrollView {
             VStack {
-                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo") {
+                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo", withExtension: "png") {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .contextMenu {
                             Button(action: {
-                                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo") {
-                                    ImageUtility.saveImageToAlbum(image)
-                                }
+                                ImageUtility.saveImageToAlbum(image)
                             }) {
                                 Text("Save to Photos")
                                 Image(systemName: "square.and.arrow.down")
@@ -124,15 +122,13 @@ public struct AlliPhoneDevicesInfoDetailView: View {
     public var body: some View {
         ScrollView {
             VStack {
-                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo") {
+                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo", withExtension: "png") {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .contextMenu {
                             Button(action: {
-                                if let image = ImageUtility.loadImage(named: "alliphonedevicesinfo") {
-                                    ImageUtility.saveImageToAlbum(image)
-                                }
+                                ImageUtility.saveImageToAlbum(image)
                             }) {
                                 Text("Save to Photos")
                                 Image(systemName: "square.and.arrow.down")
@@ -162,15 +158,13 @@ public struct PowerOfTwoTableDetailView: View {
         
         ScrollView {
             VStack {
-                if let image = ImageUtility.loadImage(named: "poweroftwotable") {
+                if let image = ImageUtility.loadImage(named: "poweroftwotable", withExtension: "png") {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .contextMenu {
                             Button(action: {
-                                if let image = ImageUtility.loadImage(named: "poweroftwotable") {
-                                    ImageUtility.saveImageToAlbum(image)
-                                }
+                                ImageUtility.saveImageToAlbum(image)
                             }) {
                                 Text("Save to Photos")
                                 Image(systemName: "square.and.arrow.down")
