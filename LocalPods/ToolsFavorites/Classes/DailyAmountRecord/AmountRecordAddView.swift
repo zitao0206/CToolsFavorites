@@ -208,7 +208,7 @@ struct AmountRecordAddView: View {
                 amountRecords[date] = [recordItem]
             }
             
-            CloudKitManager.saveRecord(item: recordItem)
+            AmountRecordCloudKitManager.saveRecord(item: recordItem)
         }
 
         // reset
@@ -233,7 +233,7 @@ struct AmountRecordAddView: View {
                 } else {
                     amountRecords[date] = records
                 }       
-                CloudKitManager.deleteRecord(forId: record.id) { error in
+                AmountRecordCloudKitManager.deleteRecord(forId: record.id) { error in
                     if let error = error {
                         print("Error deleting records: \(error.localizedDescription)")
                     } else {
@@ -246,7 +246,7 @@ struct AmountRecordAddView: View {
     
     private func loadRecordsFromCloudKit() {
         
-        CloudKitManager.fetchRecords { records, error in
+        AmountRecordCloudKitManager.fetchRecords { records, error in
              if let error = error {
                  print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
              } else if let records = records {

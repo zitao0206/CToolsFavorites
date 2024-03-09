@@ -6,9 +6,9 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.com.CToolsFavorites.zitao.li0206</string>
+		<string>iCloud.BloodPressureRecord.zitao0206</string>
+		<string>iCloud.DailyAmountRecord.zitao0206</string>
 		<string>iCloud.com.zitao.li0206.CToolsFavorites</string>
-        <string>iCloud.DailyAmountRecord.zitao0206</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>
@@ -17,9 +17,9 @@
 	</array>
 	<key>com.apple.developer.ubiquity-container-identifiers</key>
 	<array>
-		<string>iCloud.com.CToolsFavorites.zitao.li0206</string>
+		<string>iCloud.BloodPressureRecord.zitao0206</string>
+		<string>iCloud.DailyAmountRecord.zitao0206</string>
 		<string>iCloud.com.zitao.li0206.CToolsFavorites</string>
-        <string>iCloud.DailyAmountRecord.zitao0206</string>
 	</array>
 	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
 	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>

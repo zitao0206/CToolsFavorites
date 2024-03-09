@@ -1,11 +1,30 @@
+//
+//  AddBloodPressureRecordView.swift
+//  ToolsFavorites
+//
+//  Created by lizitao on 2024-03-09.
+//
+
 import SwiftUI
 
 struct AddBloodPressureRecordView: View {
     
     @Environment(\.presentationMode) var presentationMode // 获取 presentationMode
        
+    var record: BloodPressureRecord
+    var action: RecordAction
     
-    @Binding var records: [BloodPressureRecord]
+    init(record: BloodPressureRecord, action: RecordAction) {
+        self.action = action
+        self.record = record
+        // 使用 record 的属性值为初始值
+        _systolic = State(initialValue: record.systolic)
+        _diastolic = State(initialValue: record.diastolic)
+        _pulse = State(initialValue: record.pulse)
+        _isTakingMedicine = State(initialValue: record.isTakingMedicine)
+        _notes = State(initialValue: record.notes)
+    }
+    
     @State private var systolic: String = ""
     @State private var diastolic: String = ""
     @State private var pulse: String = ""
@@ -35,7 +54,7 @@ struct AddBloodPressureRecordView: View {
                             .keyboardType(.decimalPad)
                             .padding()
                     }
-      
+                    
                     VStack(alignment: .leading) {
                         Text("Diastolic (mmHg):")
                             .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
@@ -49,7 +68,7 @@ struct AddBloodPressureRecordView: View {
                             .padding()
                     }
                 }
-     
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Pulse (bmp):")
@@ -80,11 +99,11 @@ struct AddBloodPressureRecordView: View {
                         .font(.system(size: 16))
                         .keyboardType(.decimalPad)
                         .padding()
-
+                    
                 }
                 
-                Button(action: addRecord) {
-                    Text("Add")
+                Button(action: action == .edit ? editRecord : addRecord) {
+                    Text(action == .edit ? "Edit" : "Add")
                         .font(.system(size: 16))
                         .frame(maxWidth: .infinity, maxHeight: 60)
                         .padding()
@@ -92,8 +111,23 @@ struct AddBloodPressureRecordView: View {
                         .foregroundColor(.white)
                         .cornerRadius(8)
                         .padding(.horizontal, 20)
-                    
+                
                 }
+                
+                if action == .edit {
+                    Button(action: deleteRecord) {
+                        Text("Delete")
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity, maxHeight: 60)
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 10) // Add top padding
+                    }
+                }
+                
 
             }
             .alert(isPresented: $showEmptyAlertMessage) {
@@ -104,11 +138,26 @@ struct AddBloodPressureRecordView: View {
             }
             
         }
-        .commmonNavigationBar(title: "Add Blood Pressure", displayMode: .inline)
+        .commmonNavigationBar(title: self.action == .edit ? "Edit Blood Pressure" : "Add Blood Pressure", displayMode: .inline)
+    }
+
+    func editRecord() {
+        print("edit")
+        let record = BloodPressureRecord(time: record.time, systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
+        BloodPressureRecordCacheManager.shared.editRecord(record)
+        presentationMode.wrappedValue.dismiss()
+    }
+    
+    func deleteRecord() {
+        print("dele")
+        BloodPressureRecordCacheManager.shared.deleteRecord(record)
+        presentationMode.wrappedValue.dismiss()
     }
     
     func addRecord() {
- 
+        
+        print("yes:\(getYesterdaysDate())")
+        
         guard let systolicValue = Int(systolic),
               let diastolicValue = Int(diastolic) else {
             showEmptyAlertMessage = true
@@ -120,11 +169,10 @@ struct AddBloodPressureRecordView: View {
             return
         }
  
-        let record = BloodPressureRecord(time: Date(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
+        let record = BloodPressureRecord(time: getYesterdaysDate(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
+        print("yes:\(record)")
     
-        records.append(record)
- 
-        saveRecords()
+        BloodPressureRecordCacheManager.shared.addRecord(record)
         
         systolic = ""
         diastolic = ""
@@ -136,12 +184,13 @@ struct AddBloodPressureRecordView: View {
     }
 
     
-    func saveRecords() {
-        do {
-            let data = try JSONEncoder().encode(records)
-            UserDefaults.standard.set(data, forKey: "bloodPressureRecords")
-        } catch {
-            print("Error saving records: \(error.localizedDescription)")
+    func getYesterdaysDate() -> Date {
+        let calendar = Calendar.current
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: Date()) {
+            return yesterday
+        } else {
+            fatalError("Failed to calculate yesterday's date.")
         }
     }
+
 }

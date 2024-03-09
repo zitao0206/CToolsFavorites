@@ -1,5 +1,5 @@
 //
-//  CloudKitManager.swift
+//  AmountRecordCloudKitManager.swift
 //  ToolsFavorites
 //
 //  Created by lizitao on 2024-03-05.
@@ -7,7 +7,7 @@
 
 import CloudKit
 
-struct CloudKitManager {
+struct AmountRecordCloudKitManager {
     
 //    static let container = CKContainer(identifier: "iCloud.com.zitao.li0206.CToolsFavorites")
     

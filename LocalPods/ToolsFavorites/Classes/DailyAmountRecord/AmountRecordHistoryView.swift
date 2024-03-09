@@ -37,7 +37,7 @@ struct BabyRecordHistoryView: View {
     
     private func loadRecords() {
         
-        CloudKitManager.fetchRecords { records, error in
+        AmountRecordCloudKitManager.fetchRecords { records, error in
              if let error = error {
                  print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
              } else if let records = records {

@@ -1,34 +1,45 @@
 //
 //  BloodPressureRecordDetailView.swift
-//  AmountRecord
+//  ToolsFavorites
 //
-//  Created by lizitao on 2024-03-08.
+//  Created by lizitao on 2024-03-09.
 //
+
 
 import SwiftUI
 
-struct BloodPressureRecord: Identifiable, Codable {
+enum RecordAction {
+    case add
+    case edit
+}
+
+public struct BloodPressureRecord: Identifiable, Codable {
     
-    let time: Date // 记录日期
-    let systolic: String // 收缩压
-    let diastolic: String //舒张压
-    let pulse: String //脉搏
+    let time: Date
+    let systolic: String
+    let diastolic: String
+    let pulse: String  
     let isTakingMedicine: Bool
     let notes: String
     
-    var id: String {
+    public var id: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let formattedTime = dateFormatter.string(from: time)
-        return "\(formattedTime)-\(systolic)-\(diastolic)"
+        return "\(formattedTime)"
     }
 
+    public static var empty: BloodPressureRecord {
+        return BloodPressureRecord(time: Date(), systolic: "", diastolic: "", pulse: "", isTakingMedicine: false, notes: "")
+    }
 }
 
 public struct BloodPressureRecordDetailView: View {
     
 
-    @State private var records: [BloodPressureRecord] = [] // 血压记录数组
+    @State private var records: [Date: [BloodPressureRecord]] = [:]
+    
+//    @State private var records: [BloodPressureRecord] = []
     
     let item: ToolItem
     
@@ -37,100 +48,117 @@ public struct BloodPressureRecordDetailView: View {
     }
 
     public var body: some View {
-        VStack {
-            List(records) { record in
-                VStack(alignment: .leading) {
-                    
-                    Text(formattedDate(date: record.time))
-                        .font(.system(size: 14))
-                        .padding(.bottom, 5) // 添加底部间距
-                    
-                    HStack {
-                        VStack {
-                            Text("Sys")
-                                .font(.system(size: 15))
-                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
-                                .padding(.bottom, 5)
-                            Text(record.systolic)
-                                .font(.system(size: 20))
+        ZStack {
+            List {
+                ForEach(records.sorted(by: { $0.key > $1.key }), id: \.key) { date, recordsInSameDate in
+                    Section(header: 
+                        Text(formattedTitleDate(date: date)).font(.headline)
+                            .padding(.leading, -15)
+                    ) {
+                        ForEach(recordsInSameDate) { record in
+                            NavigationLink(destination: AddBloodPressureRecordView(record: record, action: .edit)) {
                             
-                        }
-                        Spacer()
-                        VStack {
-                            Text(" ")
-                                .font(.system(size: 15))
-                                .padding(.bottom, 5)
-                            Text("/")
-                                .font(.system(size: 20))
-                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
-                        }
-                        Spacer()
-                        VStack {
-                            Text("Dia")
-                                .font(.system(size: 15))
-                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
-                                .padding(.bottom, 5)
-                            Text(record.systolic)
-                                .font(.system(size: 20))
-                            
-                        }
-                        Spacer()
-                        VStack {
-                            Text(" ")
-                                .font(.system(size: 15))
-                                .padding(.bottom, 5)
-                            Text("/")
-                                .font(.system(size: 20))
-                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
-                        }
-                        Spacer()
-                        VStack {
-                            Text("Pulse")
-                                .font(.system(size: 15))
-                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
-                                .padding(.bottom, 5)
-                            Text(record.pulse.isEmpty ? "-" : record.pulse)
-                                .font(.system(size: 20))
-                        }
-                        Spacer()
-                        VStack {
-                            Text(" ")
-                                .font(.system(size: 15))
-                                .padding(.bottom, 5)
-                            Text("/")
-                                .font(.system(size: 20))
-                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
-                        }
-                        Spacer()
-                        VStack {
-                            Text("Med")
-                                .font(.system(size: 15))
-                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
-                                .padding(.bottom, 5)
-                            Text(record.isTakingMedicine ? "Yes" : "No")
-                                .font(.system(size: 20))
-                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.8))
-                            
+                                VStack(alignment: .leading) {
+                                    
+                                    Text(formattedContentDate(date: record.time))
+                                        .font(.system(size: 14))
+                                        .padding(.bottom, 5)
+                                    
+                                    HStack {
+                                        VStack {
+                                            Text("Sys")
+                                                .font(.system(size: 15))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                                .padding(.bottom, 5)
+                                            Text(record.systolic)
+                                                .font(.system(size: 20))
+                                            
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text(" ")
+                                                .font(.system(size: 15))
+                                                .padding(.bottom, 5)
+                                            Text("/")
+                                                .font(.system(size: 20))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text("Dia")
+                                                .font(.system(size: 15))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                                .padding(.bottom, 5)
+                                            Text(record.diastolic)
+                                                .font(.system(size: 20))
+                                            
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text(" ")
+                                                .font(.system(size: 15))
+                                                .padding(.bottom, 5)
+                                            Text("/")
+                                                .font(.system(size: 20))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text("Pulse")
+                                                .font(.system(size: 15))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                                .padding(.bottom, 5)
+                                            Text(record.pulse.isEmpty ? "-" : record.pulse)
+                                                .font(.system(size: 20))
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text(" ")
+                                                .font(.system(size: 15))
+                                                .padding(.bottom, 5)
+                                            Text("/")
+                                                .font(.system(size: 20))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                                        }
+                                        Spacer()
+                                        VStack {
+                                            Text("Med")
+                                                .font(.system(size: 15))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                                .padding(.bottom, 5)
+                                            Text(record.isTakingMedicine ? "Yes" : "No")
+                                                .font(.system(size: 20))
+                                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.8))
+                                            
+                                        }
+                                    }
+                 
+                                }
+                            }
                         }
                     }
- 
                 }
             }
+            
             .padding()
-            
-            Spacer()
-            
-            NavigationLink(destination: AddBloodPressureRecordView(records: $records)) {
-                Text("添加记录")
-                    .foregroundColor(.white)
-                    .font(.headline)
+
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: AddBloodPressureRecordView(record: BloodPressureRecord.empty, action: .add)) {
+                        Image(systemName: "plus")
+                           .foregroundColor(.white)
+                           .font(.headline)
+                           .padding(20)
+                           .background(Color.blue)
+                           .clipShape(Circle())
+                           .padding(.trailing, 20)
+                           .padding(.bottom, 20)
+                    }
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                    .padding(.horizontal, 20) // Add horizontal padding
+                }
             }
-            .padding()
         }
         .commmonNavigationBar(title: item.title, displayMode: .inline)
         .onAppear() {
@@ -138,21 +166,27 @@ public struct BloodPressureRecordDetailView: View {
         }
     }
     
-    func formattedDate(date: Date) -> String {
+    private func deleteItems(offsets: IndexSet) {
+        
+    }
+    
+    func formattedTitleDate(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd EEEE"
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.string(from: date)
+    }
+    
+    func formattedContentDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)
     }
     
     func loadRecords() {
-        if let data = UserDefaults.standard.data(forKey: "bloodPressureRecords") {
-            do {
-                records = try JSONDecoder().decode([BloodPressureRecord].self, from: data)
-                
-            } catch {
-                print("Error loading records: \(error.localizedDescription)")
-            }
-        }
+        records = BloodPressureRecordCacheManager.shared.records
     }
+ 
+
 }
 
