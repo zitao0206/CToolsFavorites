@@ -12,8 +12,10 @@ struct AddBloodPressureRecordView: View {
     @State private var isTakingMedicine = false
     @State private var notes: String = ""
     
-    @State private var showAlertMessage = false
-    @State private var alertMessage = "Value can not be Empty or Zero ！！！"
+    @State private var showEmptyAlertMessage = false
+    @State private var EmptyAlertMessage = "Value can not be Empty or Zero ！！！"
+    @State private var showCompareAlertMessage = false
+    @State private var CompareAlertMessage = "Systolic must be greater than Diastolic！！！"
     
     var body: some View {
         ScrollView {
@@ -94,8 +96,11 @@ struct AddBloodPressureRecordView: View {
                 }
 
             }
-            .alert(isPresented: $showAlertMessage) {
-                Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("Confirm")))
+            .alert(isPresented: $showEmptyAlertMessage) {
+                Alert(title: Text("Warning"), message: Text(EmptyAlertMessage), dismissButton: .default(Text("Confirm")))
+            }
+            .alert(isPresented: $showCompareAlertMessage) {
+                Alert(title: Text("Warning"), message: Text(CompareAlertMessage), dismissButton: .default(Text("Confirm")))
             }
             
         }
@@ -103,16 +108,24 @@ struct AddBloodPressureRecordView: View {
     }
     
     func addRecord() {
-        
+ 
         guard let systolicValue = Int(systolic),
               let diastolicValue = Int(diastolic) else {
-            showAlertMessage = true
+            showEmptyAlertMessage = true
             return
         }
-        let record = BloodPressureRecord(time: Date(), systolic: Int(systolicValue), diastolic: Int(diastolicValue), pulse: Int(pulseValue), isTakingMedicine: isTakingMedicine, notes: notes)
+        
+        if systolicValue <= diastolicValue {
+            showCompareAlertMessage = true
+            return
+        }
+ 
+        let record = BloodPressureRecord(time: Date(), systolic: systolic, diastolic: diastolic, pulse: pulse, isTakingMedicine: isTakingMedicine, notes: notes)
+    
         records.append(record)
+ 
         saveRecords()
-        // 清空输入
+        
         systolic = ""
         diastolic = ""
         pulse = ""
@@ -121,6 +134,7 @@ struct AddBloodPressureRecordView: View {
         
         presentationMode.wrappedValue.dismiss()
     }
+
     
     func saveRecords() {
         do {

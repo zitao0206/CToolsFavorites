@@ -10,9 +10,9 @@ import SwiftUI
 struct BloodPressureRecord: Identifiable, Codable {
     
     let time: Date // 记录日期
-    let systolic: Int // 收缩压
-    let diastolic: Int //舒张压
-    let pulse: Int //脉搏
+    let systolic: String // 收缩压
+    let diastolic: String //舒张压
+    let pulse: String //脉搏
     let isTakingMedicine: Bool
     let notes: String
     
@@ -40,9 +40,80 @@ public struct BloodPressureRecordDetailView: View {
         VStack {
             List(records) { record in
                 VStack(alignment: .leading) {
-                    Text("收缩压: \(record.systolic)")
-                    Text("舒张压: \(record.diastolic)")
-                    Text("日期: \(formattedDate(date: record.time))")
+                    
+                    Text(formattedDate(date: record.time))
+                        .font(.system(size: 14))
+                        .padding(.bottom, 5) // 添加底部间距
+                    
+                    HStack {
+                        VStack {
+                            Text("Sys")
+                                .font(.system(size: 15))
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding(.bottom, 5)
+                            Text(record.systolic)
+                                .font(.system(size: 20))
+                            
+                        }
+                        Spacer()
+                        VStack {
+                            Text(" ")
+                                .font(.system(size: 15))
+                                .padding(.bottom, 5)
+                            Text("/")
+                                .font(.system(size: 20))
+                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                        }
+                        Spacer()
+                        VStack {
+                            Text("Dia")
+                                .font(.system(size: 15))
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding(.bottom, 5)
+                            Text(record.systolic)
+                                .font(.system(size: 20))
+                            
+                        }
+                        Spacer()
+                        VStack {
+                            Text(" ")
+                                .font(.system(size: 15))
+                                .padding(.bottom, 5)
+                            Text("/")
+                                .font(.system(size: 20))
+                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                        }
+                        Spacer()
+                        VStack {
+                            Text("Pulse")
+                                .font(.system(size: 15))
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding(.bottom, 5)
+                            Text(record.pulse.isEmpty ? "-" : record.pulse)
+                                .font(.system(size: 20))
+                        }
+                        Spacer()
+                        VStack {
+                            Text(" ")
+                                .font(.system(size: 15))
+                                .padding(.bottom, 5)
+                            Text("/")
+                                .font(.system(size: 20))
+                                .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.3))
+                        }
+                        Spacer()
+                        VStack {
+                            Text("Med")
+                                .font(.system(size: 15))
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
+                                .padding(.bottom, 5)
+                            Text(record.isTakingMedicine ? "Yes" : "No")
+                                .font(.system(size: 20))
+                                .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.8))
+                            
+                        }
+                    }
+ 
                 }
             }
             .padding()
