@@ -22,6 +22,10 @@ struct ContentView: View {
     }()
     
     @State private var toolItems: [ToolItem] = [
+        ToolItem(title: "Blood Pressure Record", imageType: "person.crop.circle.badge.plus"),
+        
+        ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+
         
         ToolItem(title: "Base Conversion", imageType: "number.square.fill"),
         ToolItem(title: "Date Calculation", imageType: "calendar.badge.plus"),
@@ -32,7 +36,7 @@ struct ContentView: View {
   
 //        ToolItem(title: "Online Program", imageType: "keyboard.badge.eye"),
         ToolItem(title: "Quick Query", imageType: "q.circle"),
-        ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+ 
       
     ]
 
@@ -53,6 +57,8 @@ struct ContentView: View {
               return AnyView(QuickQueryDetailView(item: toolItem))
           case "Daily Amount Record":
               return AnyView(AmountRecordDetailView(item: toolItem))
+          case "Blood Pressure Record":
+              return AnyView(BloodPressureRecordDetailView(item: toolItem))
           default:
               return AnyView(DemoDetailView(item: toolItem))
           }

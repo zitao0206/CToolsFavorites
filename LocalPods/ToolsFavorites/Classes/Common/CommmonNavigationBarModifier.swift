@@ -15,7 +15,6 @@ struct NavigationBarModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationBarTitle(title, displayMode: displayMode)
-            .font(.system(size: 10))
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                 Button(action: {
@@ -25,6 +24,7 @@ struct NavigationBarModifier: ViewModifier {
                         .foregroundColor(DarkMode.isDarkMode ? .white : .black)
                 }
             )
+            .font(.system(size: 10))
     }
 }
 
