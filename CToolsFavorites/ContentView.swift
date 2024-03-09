@@ -22,9 +22,10 @@ struct ContentView: View {
     }()
     
     @State private var toolItems: [ToolItem] = [
-        ToolItem(title: "Blood Pressure Record", imageType: "person.crop.circle.badge.plus"),
         
         ToolItem(title: "Daily Amount Record", imageType: "pencil.tip.crop.circle.badge.plus"),
+        
+        ToolItem(title: "Blood Pressure Record", imageType: "person.crop.circle.badge.plus"),
 
         
         ToolItem(title: "Base Conversion", imageType: "number.square.fill"),

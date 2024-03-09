@@ -19,7 +19,7 @@ public struct AmountRecordDetailView: View {
      
     public var body: some View {
         AmountRecordAddView()
-        .commmonNavigationBar(title: item.title, displayMode: .automatic)
+        .commmonNavigationBar(title: item.title, displayMode: .inline)
     }
     
    
