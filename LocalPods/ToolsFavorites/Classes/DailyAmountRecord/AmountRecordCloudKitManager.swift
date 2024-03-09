@@ -9,8 +9,6 @@ import CloudKit
 
 struct AmountRecordCloudKitManager {
     
-//    static let container = CKContainer(identifier: "iCloud.com.zitao.li0206.CToolsFavorites")
-    
     static var containerIdentifier: String? {
        get {
            return UserDefaults.standard.string(forKey: "containerIdentifier")

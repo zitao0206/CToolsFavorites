@@ -181,7 +181,7 @@
 		17C63B748E2D12AAB3D519CA0498EDC7 /* NSArray+functional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+functional.h"; sourceTree = "<group>"; };
 		1810C72914BF97005D3767DE71BB7732 /* AmountRecordHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordHistoryView.swift; sourceTree = "<group>"; };
 		198AD1F76356ACA85E0808548B495A62 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		1E1493D07342415725401FA1A1EEB410 /* ToolsFavorites-CToolsFavorites-Images */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ToolsFavorites-CToolsFavorites-Images"; path = "CToolsFavorites-Images.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E1493D07342415725401FA1A1EEB410 /* CToolsFavorites-Images.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CToolsFavorites-Images.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ECF4DBC80107C28BE3A088BB91FF9E0 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BE059546123AA682B8874EBA7EB53A /* AddBloodPressureRecordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddBloodPressureRecordView.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		3E2C707C5386E6FE93E9872DC2E6B33E /* EFControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFControl.swift; sourceTree = "<group>"; };
 		42014FFCFC91FBA083DB881D2EC95ABB /* alliphonedevicesinfo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alliphonedevicesinfo.png; sourceTree = "<group>"; };
 		4311CB25DCD267C8EDE6E66CA14BB4B8 /* ToolsFavorites.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ToolsFavorites.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		45706A48FF820BDA90249F82F4B56519 /* ToolsFavorites-CToolsFavorites */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ToolsFavorites-CToolsFavorites"; path = CToolsFavorites.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		45706A48FF820BDA90249F82F4B56519 /* CToolsFavorites.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CToolsFavorites.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B1A2DFDC36A46C24E6A61DFB9FC6EE /* NumberSystemConversionDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberSystemConversionDetailView.swift; sourceTree = "<group>"; };
 		4AE064B51985F7769B878E0D39528291 /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
 		4C553DEEBB93B7580B52AE654C93BFF1 /* normalbloodpressurestandard.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = normalbloodpressurestandard.jpg; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		C069F342CC56A68847EBC42F91AA145D /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		C07DAE24406F9CCCA10A51099172E8D7 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		C199055C8313C0B8657F00DCA435E2EA /* EFColorWheelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorWheelView.swift; sourceTree = "<group>"; };
-		C25AFFC36C0336077A36341182816091 /* ToolsFavorites-CToolsFavorites-Videos */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ToolsFavorites-CToolsFavorites-Videos"; path = "CToolsFavorites-Videos.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25AFFC36C0336077A36341182816091 /* CToolsFavorites-Videos.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CToolsFavorites-Videos.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D49F4657E4825115FD78470B22DB2B /* Collection+General.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+General.swift"; sourceTree = "<group>"; };
 		C622D9E93E55A34F1469288D61985C88 /* OnlineProgramDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnlineProgramDetailView.swift; sourceTree = "<group>"; };
 		CCBC953BBC58A1C7BB244EC0904D2C4E /* CommonModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
@@ -573,9 +573,9 @@
 				1FFED36A657123030ABB700256D73F15 /* Masonry */,
 				8B0378252F16397ABB18131113D5F717 /* Pods-CToolsFavorites */,
 				B657F7CE03A6B20065F4B8360E3FE2BD /* ToolsFavorites */,
-				45706A48FF820BDA90249F82F4B56519 /* ToolsFavorites-CToolsFavorites */,
-				1E1493D07342415725401FA1A1EEB410 /* ToolsFavorites-CToolsFavorites-Images */,
-				C25AFFC36C0336077A36341182816091 /* ToolsFavorites-CToolsFavorites-Videos */,
+				45706A48FF820BDA90249F82F4B56519 /* CToolsFavorites.bundle */,
+				1E1493D07342415725401FA1A1EEB410 /* CToolsFavorites-Images.bundle */,
+				C25AFFC36C0336077A36341182816091 /* CToolsFavorites-Videos.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -847,7 +847,7 @@
 			);
 			name = "ToolsFavorites-CToolsFavorites";
 			productName = CToolsFavorites;
-			productReference = 45706A48FF820BDA90249F82F4B56519 /* ToolsFavorites-CToolsFavorites */;
+			productReference = 45706A48FF820BDA90249F82F4B56519 /* CToolsFavorites.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		55AF53E6C77A10ED4985E04D74A8878E /* Masonry */ = {
@@ -903,7 +903,7 @@
 			);
 			name = "ToolsFavorites-CToolsFavorites-Images";
 			productName = "CToolsFavorites-Images";
-			productReference = 1E1493D07342415725401FA1A1EEB410 /* ToolsFavorites-CToolsFavorites-Images */;
+			productReference = 1E1493D07342415725401FA1A1EEB410 /* CToolsFavorites-Images.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		D0DCDB7812C19B2B1A352DB520D9F6A7 /* ToolsFavorites-CToolsFavorites-Videos */ = {
@@ -920,7 +920,7 @@
 			);
 			name = "ToolsFavorites-CToolsFavorites-Videos";
 			productName = "CToolsFavorites-Videos";
-			productReference = C25AFFC36C0336077A36341182816091 /* ToolsFavorites-CToolsFavorites-Videos */;
+			productReference = C25AFFC36C0336077A36341182816091 /* CToolsFavorites-Videos.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		DF832F384E15469DFE1F9F7E5152A7D3 /* AKOCommonToolsKit */ = {
@@ -1221,6 +1221,7 @@
 			baseConfigurationReference = AB47C11DD0DE6B3BA806D7E99002A7F6 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1409,6 +1410,7 @@
 			baseConfigurationReference = 8910ABA9876B9052E28A0C2A2F3F3396 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1425,6 +1427,7 @@
 			baseConfigurationReference = 8910ABA9876B9052E28A0C2A2F3F3396 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1441,6 +1444,7 @@
 			baseConfigurationReference = AB47C11DD0DE6B3BA806D7E99002A7F6 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1530,6 +1534,7 @@
 			baseConfigurationReference = 8910ABA9876B9052E28A0C2A2F3F3396 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1546,6 +1551,7 @@
 			baseConfigurationReference = AB47C11DD0DE6B3BA806D7E99002A7F6 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
