@@ -16,7 +16,7 @@ struct BabyRecordHistoryView: View {
             List {
                 ForEach(sortedFeedings, id: \.key) { date, records in
                     Section(header: 
-                        Text("\(DateUtillity.formattedDateToMMDD(date)) Amount Sum: \(totalAmountToday)").bold()
+                        Text("\(DateUtillity.formattedDateToMMDD(date)) Amount Sum: \(totalAmount(for:date))").bold()
                             .foregroundColor(Color.blue)
                             .textCase(nil)
                     ) {
@@ -70,10 +70,11 @@ struct BabyRecordHistoryView: View {
     }
 
     
-    private var totalAmountToday: Int {
-        let today = Calendar.current.startOfDay(for: Date())
-        return amountRecords[today]?.reduce(0, { $0 + $1.amount }) ?? 0
+    private func totalAmount(for date: Date) -> Int {
+        let startOfDay = Calendar.current.startOfDay(for: date)
+        return amountRecords[startOfDay]?.reduce(0, { $0 + $1.amount }) ?? 0
     }
+
   
 }
 
