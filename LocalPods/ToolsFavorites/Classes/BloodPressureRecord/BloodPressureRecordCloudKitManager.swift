@@ -91,6 +91,13 @@ class BloodPressureRecordCloudKitManager : BloodPressureRecordProtocol {
             }
 
             // 更新CKRecord的字段...
+            fetchedRecord.setValue(record.id, forKey: "id")
+            fetchedRecord.setValue(record.time, forKey: "time")
+            fetchedRecord.setValue(record.systolic, forKey: "systolic")
+            fetchedRecord.setValue(record.diastolic, forKey: "diastolic")
+            fetchedRecord.setValue(record.pulse, forKey: "pulse")
+            fetchedRecord.setValue(record.isTakingMedicine, forKey: "isTakingMedicine")
+            fetchedRecord.setValue(record.notes, forKey: "notes")
             
             BloodPressureRecordCloudKitManager.publicDatabase.save(fetchedRecord) { (savedRecord, saveError) in
                 if let saveError = saveError {

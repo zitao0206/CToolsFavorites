@@ -27,7 +27,69 @@ struct AmountRecordCloudKitManager {
 
     static let publicDatabase = container.publicCloudDatabase
     
+    
+    
+    static func updateRecord(item: AmountRecord) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = dateFormatter.string(from: item.time)
+        let predicate = NSPredicate(format: "date = %@", currentDate)
+        let query = CKQuery(recordType: "AmountRecordList", predicate: predicate)
+        
+        publicDatabase.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
+            if let error = error {
+                print("888: Error fetching feeding records: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let fetchedRecord = records?.first else {
+                print("Record not found for editing.")
+                return
+            }
+            
+            print("888:---->AmountRecordList: \(fetchedRecord)")
+            var items: [CKRecord.Reference]? = fetchedRecord.object(forKey: "records") as? [CKRecord.Reference]
+            
+          
+            
+            let amountRecord = CKRecord(recordType: "AmountRecord")
+            amountRecord.setValue(item.time, forKey: "time")
+            amountRecord.setValue(item.amount, forKey: "amount")
+            
+            publicDatabase.save(amountRecord) { (record, error) in
+                if let error = error {
+                    print("Error saving feeding record: \(error.localizedDescription)")
+                } else {
+                    
+                    let reference = CKRecord.Reference(record: amountRecord, action: .none)
+                    if items != nil {
+                        items?.append(reference)
+                    } else {
+                        items = [reference]
+                    }
+                    
+                    if let _items = items {
+                        fetchedRecord.setObject(_items as __CKRecordObjCValue, forKey: "records")
+                    }
+                    publicDatabase.save(fetchedRecord) { (record, error) in
+                        if let error = error {
+                            print("999: Error saving AmountRecordList: \(error.localizedDescription)")
+                            return
+                        }
+                        print("999: AmountRecordList saved successfully.")
+                    }
+                }
+            }
+            
+      
+        }
+
+        
+    }
+
     static func saveRecord(item: AmountRecord) {
+        
         let record = CKRecord(recordType: "AmountRecord")
         record.setValue(item.id, forKey: "id")
         record.setValue(item.time, forKey: "time")
@@ -89,6 +151,8 @@ struct AmountRecordCloudKitManager {
                 completion([], nil)
                 return
             }
+            
+            
             
             var amountRecords: [AmountRecord] = []
             for record in records {
