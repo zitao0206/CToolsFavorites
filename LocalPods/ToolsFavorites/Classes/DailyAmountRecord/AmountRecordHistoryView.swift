@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BabyRecordHistoryView: View {
+struct AmountRecordHistoryView: View {
     
     @State private var amountRecords: [Date: [AmountRecord]] = [:]
     

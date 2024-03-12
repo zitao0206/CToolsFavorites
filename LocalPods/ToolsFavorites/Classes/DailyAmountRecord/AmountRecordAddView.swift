@@ -31,9 +31,6 @@ struct AmountRecordAddView: View {
     @State private var showAmountAlert = false
     @State private var showContainerAlert = false
     @State private var amountAlertMessage = "Amount must be greater than 0 ！！！"
-    @State private var containerAlertMessage = "Please configure your Database with the help of the developer before entering this page again, otherwise you will not be able to use this feature."
-    
-    @AppStorage("containerIdentifier") private var containerIdentifier: String = ""
     
     @FocusState private var isTextFieldFocused: Bool
     
@@ -41,43 +38,17 @@ struct AmountRecordAddView: View {
     
         VStack {
             
-            Spacer().frame(height: 10)
-            
             VStack {
-                HStack {
-                   Text("Database:")
-                        .padding(.leading, 5)
-                        .padding(.trailing, 10)
-                    
-                   TextField("Database identifier", text: $containerIdentifier)
-                       .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .foregroundColor(DarkMode.isDarkMode ? .white.opacity(0.5) : .black.opacity(0.5))
-                       .keyboardType(.default)
-                       .padding(.leading, 0)
-                       .padding(.trailing, 5)
-                    
-                    Button {
-                         if let clipboardContent = UIPasteboard.general.string {
-                             containerIdentifier = clipboardContent
-                         }
-                     } label: {
-                         Image(systemName: "doc.on.clipboard")
-                             .foregroundColor(.blue)
-                     }
-                    .padding(.leading, 5)
-                    .padding(.trailing, 45)
-                }
-                
+    
                 Spacer().frame(height: 20)
                 
                 HStack {
                     Spacer().frame(width: 7)
                     
-                    Text("Time:")
-                        .padding(.leading, 20)
+                    Text("Current:")
+                        .padding(.leading, 9)
                         .padding(.trailing, 10)
                      
-                    
                     DatePicker("", selection: $newRecord.time, displayedComponents: .date)
                         .labelsHidden()
                         .padding(.trailing, 20)
@@ -123,42 +94,24 @@ struct AmountRecordAddView: View {
                 
                 Spacer().frame(height: 30)
                 
-                HStack {
-                    
-                    Button(action: {
-                        isTextFieldFocused = false
-                        addFeedingRecord()
-                    }) {
-                        Text("Add Record")
-                            .font(.system(size: 15))
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(newRecord.amount > 0 ? Color.blue : Color.black.opacity(0.3))
-                            .cornerRadius(10)
-                    }
-                    .frame(width: 160, height: 20)
-                    .padding(.leading, 50)
-                    .padding(.trailing, 30)
-                    
-                    NavigationLink(destination: BabyRecordHistoryView()) {
-                        Text("History")
-                            .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                            .padding()
-                            .background(DarkMode.isDarkMode ? .white.opacity(0.3) : .black.opacity(0.2))
-                            .cornerRadius(8)
-                            .padding(.trailing, 60)
-                    }
-                    .buttonStyle(BorderlessButtonStyle())
-                    
+                Button(action: {
+                    isTextFieldFocused = false
+                    addFeedingRecord()
+                }) {
+                    Text("Add")
+                        .font(.system(size: 16))
+                        .padding()
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        .foregroundColor(.white)
+                        .background(newRecord.amount > 0 ? Color.blue : Color.black.opacity(0.3))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 40)
                 }
+
             }
     
             .alert(isPresented: $showAmountAlert) {
                 Alert(title: Text("Warning"), message: Text(amountAlertMessage), dismissButton: .default(Text("Confirm")))
-            }
-            
-            .alert(isPresented: $showContainerAlert) {
-                Alert(title: Text("Warning"), message: Text(containerAlertMessage), dismissButton: .default(Text("Confirm")))
             }
             
             Spacer().frame(height: 20)
@@ -183,11 +136,7 @@ struct AmountRecordAddView: View {
             }
         } 
         .onAppear {
-            if containerIdentifier.isEmpty {
-              showContainerAlert = true
-            } else {
-              loadRecordsFromCloudKit()
-            }
+            loadRecordsFromCloudKit()
             newRecord.time = Date()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in

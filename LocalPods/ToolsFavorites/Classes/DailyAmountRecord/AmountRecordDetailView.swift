@@ -17,8 +17,32 @@ public struct AmountRecordDetailView: View {
         self.item = item
     }
      
+    @State private var showingSettings = false
+    
     public var body: some View {
-        AmountRecordAddView()
+        TabView(selection: $selectedTab) {
+            AmountRecordAddView()
+              .tag(0)
+              .tabItem {
+                  Label("Add", systemImage: "plus.circle.fill")
+              }
+            AmountRecordHistoryView()
+              .tag(1)
+              .tabItem {
+                  Label("History", systemImage: "clock")
+              }
+        }
+   
+        NavigationLink(destination: AmountRecordSettingView(), isActive: $showingSettings) {
+            EmptyView()
+        }
+        .navigationBarItems(trailing: Button(action: {
+            showingSettings = true
+        }) {
+            Image(systemName: "gearshape")
+                .font(.system(size: 16))
+                .foregroundColor(DarkMode.isDarkMode ? .white : .black)
+        })
         .commmonNavigationBar(title: item.title, displayMode: .inline)
     }
     
