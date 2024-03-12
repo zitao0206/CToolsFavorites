@@ -133,7 +133,7 @@ struct AmountRecordAddView: View {
                             .font(.system(size: 15))
                             .padding()
                             .foregroundColor(.white)
-                            .background(Color.blue)
+                            .background(newRecord.amount > 0 ? Color.blue : Color.black.opacity(0.3))
                             .cornerRadius(10)
                     }
                     .frame(width: 160, height: 20)
@@ -167,12 +167,15 @@ struct AmountRecordAddView: View {
                 Section(header: 
                     Text("Today's Amount Sum: \(totalAmountToday)")
                         .foregroundColor(Color.blue)
-                        .font(.system(size: 14))
+                        .font(.system(size: 15))
+                        .fontWeight(.bold)
                         .textCase(nil)
                 
                 ) {
                     ForEach(sortedTodayFeedings) { record in
                         Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
+                            .font(.system(size: 15))
+
                     }
                     .onDelete(perform: deleteItems)
 
@@ -185,6 +188,10 @@ struct AmountRecordAddView: View {
             } else {
               loadRecordsFromCloudKit()
             }
+            newRecord.time = Date()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            newRecord.time = Date()
         }
        
     }
@@ -247,6 +254,7 @@ struct AmountRecordAddView: View {
     private func loadRecordsFromCloudKit() {
         
         AmountRecordCloudKitManager.fetchRecords { records, error in
+            
              if let error = error {
                  print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
              } else if let records = records {

@@ -123,7 +123,6 @@ struct AddBloodPressureRecordView: View {
                     TextField("Your condition in detail.", text: $notes)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.system(size: 16))
-                        .keyboardType(.decimalPad)
                         .padding()
                     
                 }
