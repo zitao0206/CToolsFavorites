@@ -24,10 +24,10 @@ class BloodPressureRecordCloudKitManager : BloodPressureRecordProtocol {
     
     static var containerIdentifier: String? {
         get {
-            return "iCloud.BloodPressureRecord.zitao0206" //UserDefaults.standard.string(forKey: "containerIdentifier")
+            return UserDefaults.standard.string(forKey: "BloodPressureDatabaseName")
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: "containerIdentifier")
+            UserDefaults.standard.set(newValue, forKey: "BloodPressureDatabaseName")
         }
     }
 

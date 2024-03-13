@@ -11,6 +11,12 @@ extension Notification.Name {
     public static let moveItemToFirstNotification = Notification.Name("MoveItemToFirstNotification")
 }
 
+struct UserDefaultsConstants {
+    
+    static let amountRecordDatabaseName = "AmountRecordDatabase"
+    static let amountRecordDataName = "UserDefaults.AmountRecord.zitao0206"
+}
+
 public struct ToolItem {
     public let title: String
     public let imageType: String

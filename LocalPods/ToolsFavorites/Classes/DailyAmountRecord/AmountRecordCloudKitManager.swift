@@ -7,14 +7,17 @@
 
 import CloudKit
 
-struct AmountRecordCloudKitManager {
+class AmountRecordCloudKitManager : AmountRecordProtocol {
+   
+
+    static let shared = AmountRecordCloudKitManager()
     
     static var containerIdentifier: String? {
        get {
-           return UserDefaults.standard.string(forKey: "containerIdentifier")
+           return UserDefaults.standard.string(forKey: "UserDefaultsConstants.amountRecordDatabaseName")
        }
        set {
-           UserDefaults.standard.set(newValue, forKey: "containerIdentifier")
+           UserDefaults.standard.set(newValue, forKey: "UserDefaultsConstants.amountRecordDatabaseName")
        }
     }
 
@@ -27,119 +30,109 @@ struct AmountRecordCloudKitManager {
 
     static let publicDatabase = container.publicCloudDatabase
     
-    
-    
-    static func updateRecord(item: AmountRecord) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let currentDate = dateFormatter.string(from: item.time)
-        let predicate = NSPredicate(format: "date = %@", currentDate)
-        let query = CKQuery(recordType: "AmountRecordList", predicate: predicate)
-        
-        publicDatabase.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
+    func editRecord(_ record: AmountRecord) {
+        let predicate = NSPredicate(format: "date = %@", DateUtillity.formatDateToMMDD(record.time))
+        let query = CKQuery(recordType: "DailyAmountRecord", predicate: predicate)
+
+        AmountRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { [weak self] (records, error) in
+            guard let strongSelf = self else { return }
             if let error = error {
-                print("888: Error fetching feeding records: \(error.localizedDescription)")
+                print("Error fetching record for editing: \(error.localizedDescription)")
                 return
             }
-            
-            guard let fetchedRecord = records?.first else {
-                print("Record not found for editing.")
-                return
-            }
-            
-            print("888:---->AmountRecordList: \(fetchedRecord)")
-            var items: [CKRecord.Reference]? = fetchedRecord.object(forKey: "records") as? [CKRecord.Reference]
-            
-          
-            
-            let amountRecord = CKRecord(recordType: "AmountRecord")
-            amountRecord.setValue(item.time, forKey: "time")
-            amountRecord.setValue(item.amount, forKey: "amount")
-            
-            publicDatabase.save(amountRecord) { (record, error) in
-                if let error = error {
-                    print("Error saving feeding record: \(error.localizedDescription)")
-                } else {
-                    
-                    let reference = CKRecord.Reference(record: amountRecord, action: .none)
-                    if items != nil {
-                        items?.append(reference)
-                    } else {
-                        items = [reference]
-                    }
-                    
-                    if let _items = items {
-                        fetchedRecord.setObject(_items as __CKRecordObjCValue, forKey: "records")
-                    }
-                    publicDatabase.save(fetchedRecord) { (record, error) in
-                        if let error = error {
-                            print("999: Error saving AmountRecordList: \(error.localizedDescription)")
-                            return
-                        }
-                        print("999: AmountRecordList saved successfully.")
-                    }
-                }
-            }
-            
-      
-        }
 
-        
-    }
-
-    static func saveRecord(item: AmountRecord) {
-        
-        let record = CKRecord(recordType: "AmountRecord")
-        record.setValue(item.id, forKey: "id")
-        record.setValue(item.time, forKey: "time")
-        record.setValue(item.amount, forKey: "amount")
-        
-        
-        publicDatabase.save(record) { (record, error) in
-            if let error = error {
-                print("Error saving feeding record: \(error.localizedDescription)")
+            var targetRecord : CKRecord
+            if let fetchedRecord = records?.first {
+                
+                // 2024-03-12 22:00:00|200,2024-03-12 20:00:00|100,2024-03-12 13:00:01|200
+                let recordsString = fetchedRecord.object(forKey: "records") as? String
+                let targetRecordString = ",\(DateUtillity.formatDateToString(record.time))|\(record.amount)"
+                
+                fetchedRecord.setValue((recordsString ?? "") + targetRecordString, forKey: "records")
+                
+                targetRecord = fetchedRecord
+               
             } else {
-                print("Feeding record saved successfully.\(item.id)")
-            }
-        }
-    }
-  
-    static func deleteRecord(forId recordId: String, completion: @escaping (Error?) -> Void) {
-        // Create a predicate to filter records for the specified amount
-        let recordIdPredicate = NSPredicate(format: "id = %@", recordId)
-        
-        let query = CKQuery(recordType: "AmountRecord", predicate: recordIdPredicate)
-        
-        // Perform the query to fetch records for the specified amount
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            guard let records = records, error == nil else {
-                print("Error fetching records for deletion: \(error?.localizedDescription ?? "Unknown error")")
-                completion(error)
-                return
+                print("Record not found for editing.")
+                
+                let addRecord = CKRecord(recordType: "DailyAmountRecord")
+            
+                let targetRecordString = "\(DateUtillity.formatDateToString(record.time))|\(record.amount)"
+                let dateString = "\(DateUtillity.formatDateToMMDD(record.time))"
+                
+                addRecord.setValue(targetRecordString, forKey: "records")
+                addRecord.setValue(dateString, forKey: "date")
+                
+                targetRecord = addRecord
             }
             
-            // Delete each fetched record
-            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: records.map { $0.recordID })
-            operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, operationError in
-                if let operationError = operationError {
-                    print("Error deleting records: \(operationError.localizedDescription)")
-                    completion(operationError)
+            
+            AmountRecordCloudKitManager.publicDatabase.save(targetRecord) { (savedRecord, saveError) in
+                if let saveError = saveError {
+                    print("Error saving edited record: \(saveError.localizedDescription)")
                 } else {
-                    print("Records deleted successfully.")
-                    completion(nil)
+                    print("Record edited successfully.")
+
                 }
             }
-            publicDatabase.add(operation)
         }
+    }
+    
+  
+    func deleRecord(_ record: AmountRecord) {
+        
+        let predicate = NSPredicate(format: "date = %@", DateUtillity.formatDateToMMDD(record.time))
+        let query = CKQuery(recordType: "DailyAmountRecord", predicate: predicate)
+       
+        AmountRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { [weak self] (records, error) in
+            guard let strongSelf = self else { return }
+            if let error = error {
+                print("Error fetching record for editing: \(error.localizedDescription)")
+                return
+            }
+
+            if let fetchedRecord = records?.first {
+                
+                // 2024-03-12 22:00:00|200,2024-03-12 20:00:00|100,2024-03-12 13:00:01|200
+                let originalRecordsString = fetchedRecord.object(forKey: "records") as? String
+                let targetRecordString = "\(DateUtillity.formatDateToString(record.time))|\(record.amount)"
+                
+                let removedString = AmountRecordCloudKitManager.removeItemFromString(originalRecordsString ?? "", targetRecordString)
+                
+                fetchedRecord.setValue(removedString, forKey: "records")
+                
+                AmountRecordCloudKitManager.publicDatabase.save(fetchedRecord) { (savedRecord, saveError) in
+                    if let saveError = saveError {
+                        print("Error saving edited record: \(saveError.localizedDescription)")
+                    } else {
+                        print("Record dele successfully.")
+
+                    }
+                }
+            }
+         
+        }
+    }
+    
+    static func removeItemFromString(_ string: String, _ targetItem: String) -> String {
+        let items = string.components(separatedBy: ",")
+        let filteredItems = items.filter { !$0.contains(targetItem) }
+        return filteredItems.joined(separator: ",")
     }
 
 
-    
-    static func fetchRecords(completion: @escaping ([AmountRecord]?, Error?) -> Void) {
-        let query = CKQuery(recordType: "AmountRecord", predicate: NSPredicate(value: true))
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-           
+    func fetchRecords(forToday onlyToday: Bool, completion: @escaping ([Date: [AmountRecord]]?, Error?) -> Void) {
+        let predicate: NSPredicate
+        
+        if onlyToday {
+            predicate = NSPredicate(format: "date = %@", DateUtillity.formatDateToMMDD(Date()))
+        } else {
+            predicate = NSPredicate(value: true)
+        }
+        
+        let query = CKQuery(recordType: "DailyAmountRecord", predicate: predicate)
+        
+        AmountRecordCloudKitManager.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching feeding records: \(error.localizedDescription)")
                 completion(nil, error)
@@ -148,23 +141,53 @@ struct AmountRecordCloudKitManager {
             
             guard let records = records else {
                 print("No records found.")
-                completion([], nil)
+                completion([:], nil)
                 return
             }
             
+            print("YES fetching feeding records from CloudKit: \(records)")
             
+            var groupedRecords: [Date: [AmountRecord]] = [:]
             
-            var amountRecords: [AmountRecord] = []
             for record in records {
-                if let time = record.object(forKey: "time") as? Date,
-                   let amount = record.object(forKey: "amount") as? Int {
-                    let itemRecord = AmountRecord(time: time, amount: amount)
-                    amountRecords.append(itemRecord)
+                if let dateString = record.object(forKey: "date") as? String,
+                    let recordsString = record.object(forKey: "records") as? String {
+                    
+                    let records = AmountRecordCloudKitManager.convertStringToAmountRecords(recordsString)
+                    
+                    if let date = DateUtillity.formatStringToDateMMDD(dateString) {
+                        groupedRecords[date] = records
+                    }
                 }
             }
             
-            completion(amountRecords, nil)
+            completion(groupedRecords, nil)
         }
     }
+
+    
+    static func convertStringToAmountRecords(_ recordsString: String) -> [AmountRecord] {
+        var results = [AmountRecord]()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+
+        let components = recordsString.components(separatedBy: ",")
+        for component in components {
+            let parts = component.components(separatedBy: "|")
+            if parts.count == 2 {
+                let time = parts[0]
+                let amount = parts[1]
+                if let date = DateUtillity.formatStringToDate(time) {
+                    let item = AmountRecord(time: date, amount: Int(amount) ?? 0)
+                    results.append(item)
+                }
+               
+            }
+        }
+
+        return results
+    }
+    
+
 }
 

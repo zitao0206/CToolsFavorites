@@ -11,17 +11,32 @@ struct AmountRecordHistoryView: View {
     
     @State private var amountRecords: [Date: [AmountRecord]] = [:]
     
+    @ObservedObject var cloudKitManager = AmountRecordCloudKitManager.shared
+    @ObservedObject var localCacheManager = AmountRecordCacheManager.shared
+    
+    private var dataManager : any AmountRecordProtocol {
+        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseName)
+        if let databaseName = databaseName, !databaseName.isEmpty {
+            return cloudKitManager
+          
+        } else {
+            return localCacheManager
+        }
+    }
+    
     var body: some View {
         VStack {
             List {
                 ForEach(sortedFeedings, id: \.key) { date, records in
-                    Section(header: 
-                        Text("\(DateUtillity.formattedDateToMMDD(date)) Amount Sum: \(totalAmount(for:date))").bold()
-                            .foregroundColor(Color.blue)
-                            .textCase(nil)
-                    ) {
-                        ForEach(records, id: \.time) { record in
-                            Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
+                    if !records.isEmpty {
+                        Section(header:
+                            Text("\(DateUtillity.formatDateToMMDD(date)) Amount Sum: \(totalAmount(for: date))").bold()
+                                .foregroundColor(Color.blue)
+                                .textCase(nil)
+                        ) {
+                            ForEach(records, id: \.time) { record in
+                                Text("\(DateUtillity.formatDateToHHMM(record.time)) - \(record.amount)")
+                            }
                         }
                     }
                 }
@@ -37,29 +52,16 @@ struct AmountRecordHistoryView: View {
     
     private func loadRecords() {
         
-        AmountRecordCloudKitManager.fetchRecords { records, error in
+        dataManager.fetchRecords(forToday: false)  { records, error in
              if let error = error {
-                 print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
+                print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
              } else if let records = records {
-                 print("YES fetching feeding records from CloudKit: \(records)")
+                print("YES fetching feeding records from CloudKit: \(records)")
                  
-                 var groupedRecords: [Date: [AmountRecord]] = [:]
-                      
-                      for record in records {
-                          let date = Calendar.current.startOfDay(for: record.time)
-                          
-                          if var existingRecords = groupedRecords[date] {
-                              existingRecords.append(record)
-                              groupedRecords[date] = existingRecords
-                          } else {
-                              groupedRecords[date] = [record]
-                          }
-                      }
-                      
-                      // Update amountRecords state variable with grouped records
-                      DispatchQueue.main.async {
-                          self.amountRecords = groupedRecords
-                      }
+                var groupedRecords: [Date: [AmountRecord]] = [:]
+                DispatchQueue.main.async {
+                  self.amountRecords = records
+                }
              }
          }
     }
@@ -72,7 +74,7 @@ struct AmountRecordHistoryView: View {
     
     private func totalAmount(for date: Date) -> Int {
         let startOfDay = Calendar.current.startOfDay(for: date)
-        return amountRecords[startOfDay]?.reduce(0, { $0 + $1.amount }) ?? 0
+        return amountRecords[startOfDay]?.reduce(0, { $0 + (Int($1.amount) ?? 0) }) ?? 0
     }
 
   

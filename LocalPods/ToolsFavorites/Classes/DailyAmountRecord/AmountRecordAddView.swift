@@ -7,32 +7,29 @@
 
 import SwiftUI
 
-struct AmountRecord: Identifiable, Codable {
-    let time: Date
-    let amount: Int
-    var id: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        let formattedTime = dateFormatter.string(from: time)
-        return "\(formattedTime)-\(amount)"
-    }
-}
-
-struct NewAmountRecord {
-    var time: Date
-    var amount: Int
-}
-
 struct AmountRecordAddView: View {
     
     @State private var amountRecords: [Date: [AmountRecord]] = [:]
-    @State private var newRecord: NewAmountRecord = NewAmountRecord(time: Date(), amount: 0)
+    @State private var recordElement = AmountRecordElement(time: Date(), amount: 0)
     
     @State private var showAmountAlert = false
     @State private var showContainerAlert = false
     @State private var amountAlertMessage = "Amount must be greater than 0 ！！！"
     
     @FocusState private var isTextFieldFocused: Bool
+    
+    @ObservedObject var cloudKitManager = AmountRecordCloudKitManager.shared
+    @ObservedObject var localCacheManager = AmountRecordCacheManager.shared
+    
+    private var dataManager : any AmountRecordProtocol {
+        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseName)
+        if let databaseName = databaseName, !databaseName.isEmpty {
+            return cloudKitManager
+          
+        } else {
+            return localCacheManager
+        }
+    }
     
     var body: some View {
     
@@ -49,19 +46,19 @@ struct AmountRecordAddView: View {
                         .padding(.leading, 9)
                         .padding(.trailing, 10)
                      
-                    DatePicker("", selection: $newRecord.time, displayedComponents: .date)
+                    DatePicker("", selection: $recordElement.time, displayedComponents: .date)
                         .labelsHidden()
                         .padding(.trailing, 20)
                         .onAppear() {
-                            newRecord.time = Date()
+                            recordElement.time = Date()
                         }
                     
                     
-                    DatePicker("", selection: $newRecord.time, displayedComponents: .hourAndMinute)
+                    DatePicker("", selection: $recordElement.time, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .padding(.trailing, 10)
                         .onAppear() {
-                            newRecord.time = Date()
+                            recordElement.time = Date()
                         }
                    
                     Spacer()
@@ -78,10 +75,10 @@ struct AmountRecordAddView: View {
                         .padding(.trailing, 10)
                         .padding(.leading, 5)
                     TextField("amount", text: Binding<String>(
-                        get: { newRecord.amount > 0 ? "\(newRecord.amount)" : "" },
+                        get: { recordElement.amount > 0 ? "\(recordElement.amount)" : "" },
                             set: {
                                 if let value = NumberFormatter().number(from: $0) {
-                                    newRecord.amount = value.intValue
+                                    recordElement.amount = value.intValue
                                 }
                             }
                         ))
@@ -92,7 +89,7 @@ struct AmountRecordAddView: View {
 
                 }
                 
-                Spacer().frame(height: 30)
+                Spacer().frame(height: 20)
                 
                 Button(action: {
                     isTextFieldFocused = false
@@ -103,7 +100,7 @@ struct AmountRecordAddView: View {
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: 50)
                         .foregroundColor(.white)
-                        .background(newRecord.amount > 0 ? Color.blue : Color.black.opacity(0.3))
+                        .background(recordElement.amount > 0 ? Color.blue : Color.black.opacity(0.3))
                         .cornerRadius(8)
                         .padding(.horizontal, 40)
                 }
@@ -126,7 +123,7 @@ struct AmountRecordAddView: View {
                 
                 ) {
                     ForEach(sortedTodayFeedings) { record in
-                        Text("\(DateUtillity.formattedDateToHHMM(record.time)) - \(record.amount)")
+                        Text("\(DateUtillity.formatDateToHHMM(record.time)) - \(record.amount)")
                             .font(.system(size: 15))
 
                     }
@@ -136,11 +133,11 @@ struct AmountRecordAddView: View {
             }
         } 
         .onAppear {
-            loadRecordsFromCloudKit()
-            newRecord.time = Date()
+            loadTodayRecordsFromCloudKit()
+            recordElement.time = Date()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            newRecord.time = Date()
+            recordElement.time = Date()
         }
        
     }
@@ -149,13 +146,13 @@ struct AmountRecordAddView: View {
     private func addFeedingRecord() {
         
         withAnimation {
-            if newRecord.amount <= 0 {
+            if recordElement.amount <= 0 {
                 showAmountAlert = true
                 return
             }
             
-            let recordItem = AmountRecord(time: newRecord.time, amount: newRecord.amount)
-            let date = Calendar.current.startOfDay(for: newRecord.time)
+            let recordItem = AmountRecord(time: recordElement.time, amount: recordElement.amount)
+            let date = Calendar.current.startOfDay(for: recordElement.time)
             
             if var records = amountRecords[date] {
                 records.insert(recordItem, at: 0)
@@ -164,11 +161,11 @@ struct AmountRecordAddView: View {
                 amountRecords[date] = [recordItem]
             }
             
-            AmountRecordCloudKitManager.saveRecord(item: recordItem)
+            dataManager.editRecord(recordItem)
         }
 
         // reset
-        newRecord = NewAmountRecord(time: Date(), amount: 0)
+        recordElement = AmountRecordElement(time: Date(), amount: 0)
     }
     
     private func deleteItems(offsets: IndexSet) {
@@ -180,65 +177,45 @@ struct AmountRecordAddView: View {
                 
                 let record = todayFeedings[index]
                 let date = Calendar.current.startOfDay(for: record.time)
-                
-                var records = amountRecords[date] ?? []
-                records.remove(at: index)
-                
-                if records.isEmpty {
-                    amountRecords.removeValue(forKey: date)
-                } else {
-                    amountRecords[date] = records
-                }       
-                AmountRecordCloudKitManager.deleteRecord(forId: record.id) { error in
-                    if let error = error {
-                        print("Error deleting records: \(error.localizedDescription)")
-                    } else {
-                        print("Records deleted successfully.")
-                    }
-                }
+                 
+                amountRecords.removeRecord(withId: record.id)
+
+                dataManager.deleRecord(record)
             }
         }
     }
     
-    private func loadRecordsFromCloudKit() {
+    private func loadTodayRecordsFromCloudKit() {
         
-        AmountRecordCloudKitManager.fetchRecords { records, error in
-            
-             if let error = error {
-                 print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
-             } else if let records = records {
-                 print("YES fetching feeding records from CloudKit: \(records)")
-                 
-                 var groupedRecords: [Date: [AmountRecord]] = [:]
-                      
-                      for record in records {
-                          let date = Calendar.current.startOfDay(for: record.time)
-                          
-                          if var existingRecords = groupedRecords[date] {
-                              existingRecords.append(record)
-                              groupedRecords[date] = existingRecords
-                          } else {
-                              groupedRecords[date] = [record]
-                          }
-                      }
-                      // Update amountRecords state variable with grouped records
-                      DispatchQueue.main.async {
-                          self.amountRecords = groupedRecords
-                      }
-             }
-         }
+        dataManager.fetchRecords(forToday: true) { records, error in
+            if let error = error {
+                print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
+            } else if let records = records {
+                DispatchQueue.main.async {
+                    self.amountRecords = records
+                    print("YES fetching feeding records from CloudKit: \(self.amountRecords)")
+                }
+            }
+        }
+
     }
     
     private var sortedTodayFeedings: [AmountRecord] {
+        
         let todayRecords = amountRecords
-            .filter { Calendar.current.isDate($0.key, inSameDayAs: Date()) }
-            .flatMap { $0.value }
-        return todayRecords.sorted(by: { $0.time > $1.time })
+        let today = Calendar.current.startOfDay(for: Date())
+        if let recordsForToday = todayRecords[today] {
+            return recordsForToday.sorted(by: { $0.time > $1.time })
+        } else {
+            return []
+        }
+
     }
+
     
     private var totalAmountToday: Int {
         let todayFeedings = sortedTodayFeedings
-        return todayFeedings.reduce(0) { $0 + $1.amount }
+        return todayFeedings.reduce(0) { $0 + (Int($1.amount) ?? 0) }
     }
 
 
