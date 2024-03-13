@@ -12,11 +12,11 @@
 		D85A6D312BA1D2FA00B973C4 /* launch01.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A6D302BA1D2FA00B973C4 /* launch01.png */; };
 		D85A6D332BA1D5E300B973C4 /* launch00.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A6D322BA1D5E300B973C4 /* launch00.png */; };
 		D85A6D392BA1DCB100B973C4 /* launch02.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A6D382BA1DCB100B973C4 /* launch02.png */; };
+		D85A6D3B2BA1E71000B973C4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D85A6D3A2BA1E70F00B973C4 /* icon.png */; };
 		D89BA03F2AAF450E0045D812 /* CToolsFavoritesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */; };
 		D89BA0412AAF450E0045D812 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BA0402AAF450E0045D812 /* ContentView.swift */; };
 		D89BA0432AAF45100045D812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89BA0422AAF45100045D812 /* Assets.xcassets */; };
 		D89BA0462AAF45100045D812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89BA0452AAF45100045D812 /* Preview Assets.xcassets */; };
-		D89BA0552AAF4B5E0045D812 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D89BA0542AAF4B5E0045D812 /* icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +29,13 @@
 		D85A6D302BA1D2FA00B973C4 /* launch01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch01.png; sourceTree = "<group>"; };
 		D85A6D322BA1D5E300B973C4 /* launch00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch00.png; sourceTree = "<group>"; };
 		D85A6D382BA1DCB100B973C4 /* launch02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch02.png; sourceTree = "<group>"; };
+		D85A6D3A2BA1E70F00B973C4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D89BA03B2AAF450E0045D812 /* CToolsFavorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CToolsFavorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CToolsFavoritesApp.swift; sourceTree = "<group>"; };
 		D89BA0402AAF450E0045D812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D89BA0422AAF45100045D812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D89BA0452AAF45100045D812 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D89BA0532AAF458B0045D812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D89BA0542AAF4B5E0045D812 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 		D89BA04C2AAF45640045D812 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D89BA0542AAF4B5E0045D812 /* icon.jpg */,
 				D85A6D302BA1D2FA00B973C4 /* launch01.png */,
+				D85A6D3A2BA1E70F00B973C4 /* icon.png */,
 				D85A6D322BA1D5E300B973C4 /* launch00.png */,
 				D85A6D382BA1DCB100B973C4 /* launch02.png */,
 			);
@@ -181,12 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D85A6D332BA1D5E300B973C4 /* launch00.png in Resources */,
+				D85A6D3B2BA1E71000B973C4 /* icon.png in Resources */,
 				D89BA0462AAF45100045D812 /* Preview Assets.xcassets in Resources */,
 				D89BA0432AAF45100045D812 /* Assets.xcassets in Resources */,
 				D85A6D392BA1DCB100B973C4 /* launch02.png in Resources */,
 				D85A6D312BA1D2FA00B973C4 /* launch01.png in Resources */,
 				D85A6D2F2BA1D09700B973C4 /* LaunchScreen.storyboard in Resources */,
-				D89BA0552AAF4B5E0045D812 /* icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
