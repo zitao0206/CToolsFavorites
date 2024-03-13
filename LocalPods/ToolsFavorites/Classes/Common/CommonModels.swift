@@ -13,7 +13,7 @@ extension Notification.Name {
 
 struct UserDefaultsConstants {
     
-    static let amountRecordDatabaseName = "AmountRecordDatabase"
+    static let amountRecordDatabaseIdentifier = "AmountRecordDatabaseIdentifier"
     static let amountRecordDataName = "UserDefaults.AmountRecord.zitao0206"
 }
 

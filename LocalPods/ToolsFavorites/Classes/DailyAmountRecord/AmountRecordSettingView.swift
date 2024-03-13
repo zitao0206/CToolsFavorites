@@ -16,7 +16,7 @@ struct AmountRecordSettingView: View {
 
     @State private var storageOption: StorageOption = .local
    
-    @State private var databaseName: String = UserDefaults.standard.string(forKey: "UserDefaultsConstants.amountRecordDatabaseName") ?? ""
+    @State private var databaseName: String = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier) ?? ""
 
 
     
@@ -38,18 +38,18 @@ struct AmountRecordSettingView: View {
                         .pickerStyle(SegmentedPickerStyle())
                         
                         if storageOption == .remote {
-                            TextField("Database Name", text: $databaseName)
+                            TextField("Database Identifier", text: $databaseName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .font(.system(size: 13))
                                 .onChange(of: databaseName) { newValue in
-                                    UserDefaults.standard.set(newValue, forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+                                    UserDefaults.standard.set(newValue, forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
                                 }
                             HStack {
                                 Spacer()
                                 
                                 Button {
                                     databaseName = ""
-                                    UserDefaults.standard.set("", forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+                                    UserDefaults.standard.set("", forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
                                 } label: {
                                     Text("Clear")
                                         .font(.system(size: 10))
@@ -61,7 +61,7 @@ struct AmountRecordSettingView: View {
                                 Button {
                                     if let clipboardContent = UIPasteboard.general.string {
                                         databaseName = clipboardContent
-                                        UserDefaults.standard.set(clipboardContent, forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+                                        UserDefaults.standard.set(clipboardContent, forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
                                     }
                                 } label: {
                                     Text("Pasted")
@@ -93,7 +93,7 @@ struct AmountRecordSettingView: View {
         .navigationBarTitle("Settings", displayMode: .inline)
         .onAppear {
               
-            let savedDatabaseName = UserDefaults.standard.string(forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+            let savedDatabaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
             if let savedDatabaseName = savedDatabaseName, !savedDatabaseName.isEmpty {
                 // 如果有值，则默认选择Remote选项
                 storageOption = .remote

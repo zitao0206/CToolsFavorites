@@ -14,10 +14,10 @@ class AmountRecordCloudKitManager : AmountRecordProtocol {
     
     static var containerIdentifier: String? {
        get {
-           return UserDefaults.standard.string(forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+           return UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDataName)
        }
        set {
-           UserDefaults.standard.set(newValue, forKey: "UserDefaultsConstants.amountRecordDatabaseName")
+           UserDefaults.standard.set(newValue, forKey: UserDefaultsConstants.amountRecordDataName)
        }
     }
 
@@ -144,8 +144,6 @@ class AmountRecordCloudKitManager : AmountRecordProtocol {
                 completion([:], nil)
                 return
             }
-            
-            print("YES fetching feeding records from CloudKit: \(records)")
             
             var groupedRecords: [Date: [AmountRecord]] = [:]
             

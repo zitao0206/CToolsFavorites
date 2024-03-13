@@ -15,7 +15,7 @@ struct AmountRecordHistoryView: View {
     @ObservedObject var localCacheManager = AmountRecordCacheManager.shared
     
     private var dataManager : any AmountRecordProtocol {
-        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseName)
+        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
         if let databaseName = databaseName, !databaseName.isEmpty {
             return cloudKitManager
           
@@ -56,8 +56,6 @@ struct AmountRecordHistoryView: View {
              if let error = error {
                 print("Error fetching feeding records from CloudKit: \(error.localizedDescription)")
              } else if let records = records {
-                print("YES fetching feeding records from CloudKit: \(records)")
-                 
                 var groupedRecords: [Date: [AmountRecord]] = [:]
                 DispatchQueue.main.async {
                   self.amountRecords = records

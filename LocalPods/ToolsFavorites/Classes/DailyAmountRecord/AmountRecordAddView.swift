@@ -22,7 +22,8 @@ struct AmountRecordAddView: View {
     @ObservedObject var localCacheManager = AmountRecordCacheManager.shared
     
     private var dataManager : any AmountRecordProtocol {
-        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseName)
+        
+        let databaseName = UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
         if let databaseName = databaseName, !databaseName.isEmpty {
             return cloudKitManager
           
@@ -93,7 +94,10 @@ struct AmountRecordAddView: View {
                 
                 Button(action: {
                     isTextFieldFocused = false
-                    addFeedingRecord()
+                    if recordElement.amount > 0 {
+                        addFeedingRecord()
+                    }
+                    
                 }) {
                     Text("Add")
                         .font(.system(size: 16))
@@ -193,7 +197,6 @@ struct AmountRecordAddView: View {
             } else if let records = records {
                 DispatchQueue.main.async {
                     self.amountRecords = records
-                    print("YES fetching feeding records from CloudKit: \(self.amountRecords)")
                 }
             }
         }
