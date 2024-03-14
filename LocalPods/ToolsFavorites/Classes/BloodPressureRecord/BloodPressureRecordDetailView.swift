@@ -163,7 +163,7 @@ public struct BloodPressureRecordDetailView: View {
                     }
                 }
             }
-            .scrollIndicators(.hidden)
+            .applyAdaptativeScrollIndicators()
             .padding(.leading, -5)
             .padding(.trailing, -5)
 

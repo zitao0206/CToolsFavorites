@@ -102,6 +102,7 @@
 		CB496E705201A627FF1CC19450A1AE95 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7F70B3C6ECAE8170B0802EA32CB0C /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC05610835E35C731346F5CD56ADBADD /* OnlineProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FB6AF416A934A755F0C5036086287 /* OnlineProgramDetailView.swift */; };
 		D60E2BD4F0039FF0B43C11C1071986D5 /* EFColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F007890FD6E8265148686FB7A51A99D /* EFColorSelectionView.swift */; };
+		D85A6D3F2BA3366F00B973C4 /* CommonAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */; };
 		DAED04702DFE98035A092101EBCBF154 /* NSString+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A88FCCE17F759F343A2B1ECD5D1D67 /* NSString+Ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F581F409A25A3D06CE17848151D89863 /* poweroftwotable.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E50D7E2BC3AFB6A4FC642785C287B /* poweroftwotable.png */; };
 		F67207A2600C993B751DC34EDAA0C350 /* AmountRecordCloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C321D5CB4DBADCAE130A2E1AF2DBAD /* AmountRecordCloudKitManager.swift */; };
@@ -279,6 +280,7 @@
 		D0EC84A55B3F5612774E797B92D1E739 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		D2529038E8BD105EA1C245CC9DBF67CF /* AKOCommonToolsKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AKOCommonToolsKit-dummy.m"; sourceTree = "<group>"; };
 		D315AB82FCE13AA4A1C5834FC2AC56F4 /* AddBloodPressureRecordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddBloodPressureRecordView.swift; sourceTree = "<group>"; };
+		D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAdaptation.swift; sourceTree = "<group>"; };
 		D8E4067E9B1B3DE00D16EC85733A9D49 /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
 		D8E5E07337883D9200209F0115892661 /* NSArray+functional.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+functional.m"; sourceTree = "<group>"; };
 		D8FB555682A28310EC1B0D89A5F12A16 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 			children = (
 				07C001F51A2DDF50E97C48D1B99EE609 /* CommmonNavigationBarModifier.swift */,
 				1F6E4C66DC77C65B8A389397CB3C4A36 /* CommonModels.swift */,
+				D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */,
 				3FDBA4D53E170B18D9EF63199D53C160 /* DateUtillity.swift */,
 				2FCB2C2B0FC47FA6A619CD85F38DB50A /* DemoDetailView.swift */,
 				FCD1BE8BE3270AE68CC2CAA0D709CF02 /* ImageUtility.swift */,
@@ -1121,6 +1124,7 @@
 				A1129E40C9892541D2E8E53AB9F1A8A2 /* AmountRecordModels.swift in Sources */,
 				1435209285F98AD543E05F7FE8A293A2 /* AmountRecordSettingView.swift in Sources */,
 				1E2B55C8BAD4D8FA47E8E4FBE64C2A70 /* BloodPressureRecordCacheManager.swift in Sources */,
+				D85A6D3F2BA3366F00B973C4 /* CommonAdaptation.swift in Sources */,
 				43594B4B58C3729C5F861D72F71ABF6D /* BloodPressureRecordCloudKitManager.swift in Sources */,
 				25EB353A0FAB310928681D193D5A2A37 /* BloodPressureRecordDetailView.swift in Sources */,
 				B111C9E9C21DF31E992F4659FEED5A9A /* BloodPressureRecordSettingView.swift in Sources */,
@@ -1228,41 +1232,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		15F7A1BF453B3215CE9E0BF3080DA1FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_NAME = CToolsFavorites;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		1DF5932849F5B2A9D7E44F70ED359BB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_NAME = CToolsFavorites;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */ = {
+		1776C5C4DFA2C8B1990463ED673F7D5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1312,7 +1282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1361,60 +1331,39 @@
 			};
 			name = Release;
 		};
-		5090D69652D5C9B2355680637BAC6B28 /* Release */ = {
+		4A3996A531CBECF08AFBB20651E84836 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC86D7457E2D00D038079035B5F8CDFE /* Pods-CToolsFavorites.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		54F3ECA45C4861986E2B686E53836A3C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
+			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
 				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_NAME = "CToolsFavorites-Images";
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = "CToolsFavorites-Videos";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
+		};
+		50B4EE41008B6CC97FAEB7E7D29128E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = CToolsFavorites;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		60B4B20FBB3E17430A69652B96EC4847 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1451,61 +1400,58 @@
 			};
 			name = Debug;
 		};
-		9377F251EF77ABEA9DF70198740E0B93 /* Debug */ = {
+		845C302E577F8F182400C91226C4A335 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B58751980C4CD1AF4CAF8319B041FB5 /* Pods-CToolsFavorites.debug.xcconfig */;
+			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = "CToolsFavorites-Images";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		9B05FA8AEC731359FCD1576554D88140 /* Debug */ = {
+		BEB9B6CC70CBA9755659D661D562A971 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
+			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
 				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				PRODUCT_NAME = "CToolsFavorites-Videos";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		9C3BF01295E36E74305BEA573D0B28F7 /* Release */ = {
+		C5272E88A6264D348BDDB18039E38CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = CToolsFavorites;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		D3A0330689D3783D3D069A133EC4AF6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
@@ -1521,7 +1467,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1542,24 +1488,7 @@
 			};
 			name = Release;
 		};
-		B384DC6FA6CA7ECD3BB6881E52F3171F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_NAME = "CToolsFavorites-Videos";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		BE7DD9FDA911DC9998077CB1EBE4E96E /* Debug */ = {
+		D99B8CDD2537B47832F905C544D2603D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
@@ -1575,7 +1504,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1595,7 +1524,44 @@
 			};
 			name = Debug;
 		};
-		D4817BC37CAF036786F77F996EF8B8CB /* Debug */ = {
+		DFF9699B31EDAFE7DA21F6711ECE1AAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B58751980C4CD1AF4CAF8319B041FB5 /* Pods-CToolsFavorites.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E906BF83FA0E4054D63686F9E2E48F70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
@@ -1603,7 +1569,7 @@
 				DEVELOPMENT_TEAM = 688B74985L;
 				IBSC_MODULE = ToolsFavorites;
 				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				PRODUCT_NAME = "CToolsFavorites-Images";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1612,7 +1578,45 @@
 			};
 			name = Debug;
 		};
-		F4FF6A0D1970CA9705974E3CB2134802 /* Debug */ = {
+		EC32DC7695C3F5768829E693E3C61F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC86D7457E2D00D038079035B5F8CDFE /* Pods-CToolsFavorites.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CToolsFavorites/Pods-CToolsFavorites.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F37A754C2CE181AAC90D55DF80C2B961 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1665,7 +1669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1756,8 +1760,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4FF6A0D1970CA9705974E3CB2134802 /* Debug */,
-				30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */,
+				F37A754C2CE181AAC90D55DF80C2B961 /* Debug */,
+				1776C5C4DFA2C8B1990463ED673F7D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1774,8 +1778,8 @@
 		A9E44A781371C93A05FE357DAE9E234E /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Images" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4817BC37CAF036786F77F996EF8B8CB /* Debug */,
-				54F3ECA45C4861986E2B686E53836A3C /* Release */,
+				E906BF83FA0E4054D63686F9E2E48F70 /* Debug */,
+				845C302E577F8F182400C91226C4A335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1783,8 +1787,8 @@
 		ADD4C92D1376DB0432CB6F44AC49CFBB /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Videos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B05FA8AEC731359FCD1576554D88140 /* Debug */,
-				B384DC6FA6CA7ECD3BB6881E52F3171F /* Release */,
+				4A3996A531CBECF08AFBB20651E84836 /* Debug */,
+				BEB9B6CC70CBA9755659D661D562A971 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1792,8 +1796,8 @@
 		BB97D793FDFCB00620D8F4264B82A705 /* Build configuration list for PBXNativeTarget "Pods-CToolsFavorites" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9377F251EF77ABEA9DF70198740E0B93 /* Debug */,
-				5090D69652D5C9B2355680637BAC6B28 /* Release */,
+				DFF9699B31EDAFE7DA21F6711ECE1AAF /* Debug */,
+				EC32DC7695C3F5768829E693E3C61F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1801,8 +1805,8 @@
 		DF3ECBB9D1E0AEA0E435F0AB16E7B5DC /* Build configuration list for PBXNativeTarget "ToolsFavorites" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE7DD9FDA911DC9998077CB1EBE4E96E /* Debug */,
-				9C3BF01295E36E74305BEA573D0B28F7 /* Release */,
+				D99B8CDD2537B47832F905C544D2603D /* Debug */,
+				D3A0330689D3783D3D069A133EC4AF6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1810,8 +1814,8 @@
 		E081FD98FD884B3A45899ED3DBA42D2A /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DF5932849F5B2A9D7E44F70ED359BB5 /* Debug */,
-				15F7A1BF453B3215CE9E0BF3080DA1FF /* Release */,
+				50B4EE41008B6CC97FAEB7E7D29128E4 /* Debug */,
+				C5272E88A6264D348BDDB18039E38CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

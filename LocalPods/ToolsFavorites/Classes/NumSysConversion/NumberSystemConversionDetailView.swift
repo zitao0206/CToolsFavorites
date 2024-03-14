@@ -25,12 +25,13 @@ public struct NumberSystemConversionDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     public var body: some View {
+       
         ScrollView {
             VStack {
                 Toggle("Enable Format", isOn: $formatEnabled) // 添加开关
                     .font(.system(size: 15))
                     .foregroundColor(DarkMode.isDarkMode ? .white : .black)
-                    .bold()
+                    .applyAdaptativeBold()
                     .padding()
                     .onChange(of: formatEnabled) { newValue in
                         updateFormattedValues()
