@@ -72,7 +72,7 @@ struct AmountRecordSettingView: View {
                                 .buttonStyle(.bordered)
                             }
                             
-                            Text("Note: Before entering this page again, please configure your database with the help of the developer, otherwise you will not be able to use this feature. Using a remote database, data can be shared by multiple people.")
+                            Text("Note: Using a remote database, data can be shared by multiple people. But before entering this page again, please configure your database with the help of the developer, otherwise you will not be able to use this feature.")
                                 .font(.footnote)
                                 .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
                                 .padding()

@@ -132,7 +132,7 @@ struct AddBloodPressureRecordView: View {
                         .font(.system(size: 16))
                         .frame(maxWidth: .infinity, maxHeight: 60)
                         .padding()
-                        .background((systolic.isEmpty || diastolic.isEmpty) ? Color.black.opacity(0.3) : Color.blue)
+                        .background((systolic.isEmpty || diastolic.isEmpty) ? DarkMode.adaptiveAddDisableColor : DarkMode.adaptiveAddEnableColor)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                         .padding(.horizontal, 20)
@@ -165,6 +165,8 @@ struct AddBloodPressureRecordView: View {
         }
         .commmonNavigationBar(title: self.action == .edit ? "Edit Blood Pressure" : "Add Blood Pressure", displayMode: .inline)
     }
+    
+    
 
     func editRecord() {
         print("edit")

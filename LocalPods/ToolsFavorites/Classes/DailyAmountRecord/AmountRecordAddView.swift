@@ -104,7 +104,7 @@ struct AmountRecordAddView: View {
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: 50)
                         .foregroundColor(.white)
-                        .background(recordElement.amount > 0 ? Color.blue : Color.black.opacity(0.3))
+                        .background(recordElement.amount > 0 ? DarkMode.adaptiveAddEnableColor : DarkMode.adaptiveAddDisableColor)
                         .cornerRadius(8)
                         .padding(.horizontal, 40)
                 }

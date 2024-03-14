@@ -7,311 +7,328 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001B5E1C4F541538057B0D557C38D1AD /* DemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994982CA91F478189AF958F9283482B7 /* DemoDetailView.swift */; };
 		04FA67A96CB9AC999E8FA1E34CDECE5B /* AKOCommonToolsKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F3F2F09CF821A997BA132A8FEFBECC /* AKOCommonToolsKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04FDC135A20813A75845271A4401BB9B /* AmountRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D138F6A5ADA63E50E156857C2016383 /* AmountRecordHistoryView.swift */; };
 		0663F5078C7A987CE58D798A204FB2A5 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FB555682A28310EC1B0D89A5F12A16 /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0796A4ADB51F78AECF8766CBDD02DCB9 /* normalbloodpressurestandard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D857B90E6D043DDE15EC0890B5C38 /* normalbloodpressurestandard.jpg */; };
-		0C03C49DD1CC13311E11E5A70737AA1F /* DemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB2C2B0FC47FA6A619CD85F38DB50A /* DemoDetailView.swift */; };
-		0C752997296BB3DF35EF0330E6FD9B41 /* QRCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135079B02D7E151619B0EAE2D91CE9F /* QRCodeDetailView.swift */; };
-		0F242ACA9B75D856A616AA2640D7D8BB /* NumberSystemConversionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1EBF6EDC1D18911DAA742E300540ED /* NumberSystemConversionDetailView.swift */; };
-		13B4AE5FBFE1C1308984BA8FD59FB7E2 /* alliphonedevicesinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE995812F0B0000AD97A2A5849C6AC48 /* alliphonedevicesinfo.png */; };
-		1435209285F98AD543E05F7FE8A293A2 /* AmountRecordSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930C2C099C769CB5C166492CB8DBFD95 /* AmountRecordSettingView.swift */; };
-		16F568D74C1AF816777AB6807EB3023B /* AmountRecordAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2225FDCFEC2877554E546AB5EF7B0D0 /* AmountRecordAddView.swift */; };
-		18C0391BCC93247CB6FC4C6B9BF6FF83 /* EFControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BF2B361006AD281C77490B650F39C /* EFControl.swift */; };
+		12C8077ACE2A84278A009F2858672D68 /* OnlineProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C449F75A407641988F9C4BA025A7344 /* OnlineProgramDetailView.swift */; };
+		146D11A207A7A4C3F7CF38079F693830 /* AmountRecordCloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05039D811BAE4DA6FFA3467AC5793E45 /* AmountRecordCloudKitManager.swift */; };
+		179A4F6B4676094ADCAED466B9B72817 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18760F077C4879BBEA208E96AC08EB45 /* ImageUtility.swift */; };
+		17DCD5129DC7C817E2E322A76168F00E /* ColorPickerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171F54B65B65FCA2203738A94466EB3 /* ColorPickerDetailView.swift */; };
+		1962E5E94DA2A6C3E7B6B08057C3E6B0 /* BloodPressureRecordCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246160C55E4E3FD8D227BD6B7265FD98 /* BloodPressureRecordCacheManager.swift */; };
+		1B2407E9750F1B2B87E0EBA9B01F198B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		1C2D2FC6C77F7AAAED4B87171CD2FA90 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C6DB7A05F6BD2DDB41616511044BD66 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4F6E62E80F5903FD6CB5A8A54BCEB4 /* ColorPickerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C04C5D599B958222A39EC2A30EDD86 /* ColorPickerDetailView.swift */; };
-		1E2B55C8BAD4D8FA47E8E4FBE64C2A70 /* BloodPressureRecordCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D6513A513D4C55CDFDAF2FAEA99D27 /* BloodPressureRecordCacheManager.swift */; };
 		1EDA1FC87005EF14E125B187B2BE0E40 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D2DFF6FB507B7FCC9304EE722FAD8F9 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBE2B31F0923CC79829D78FC81CD05E /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD6B934D8B7FF670191DC98E02712E3 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20127EFD967E5BE3A351585BB7C0FE33 /* EFHSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D90FA10DB9B3C034FDF259845894E /* EFHSBView.swift */; };
 		201E0335F9BFDCB70488A906625EB953 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DDEF30FD05CBEE8A2E5269FAD4959D5 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		25EB353A0FAB310928681D193D5A2A37 /* BloodPressureRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5C10EDA6F8FA7194C0D6BA0BE2AC1 /* BloodPressureRecordDetailView.swift */; };
-		26B5014858C6371A0C5A48128DCFA592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		328650216A62BDFE6D83D4AC7BD04269 /* EFThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3BCF69809E1145D0B6152E909E57B /* EFThumbView.swift */; };
+		2720A338C337B1186F99E89996887A98 /* DateCaculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56517FBFBFB217173408FEA63CC6376 /* DateCaculationDetailView.swift */; };
+		280067A7604D66DAF29D79DE5FA8D977 /* normalbloodpressurestandard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1E5A2CB39F9DF4AC6ED9C6D8E43F85C /* normalbloodpressurestandard.jpg */; };
 		32B625B27DA49D3638587B2166050CA1 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B9392BFABC1E76AB9AAB2DB4D5AE6A /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34420E04FA63016FC74C233FCF435228 /* EFColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0965B2FBA6BADCF1C2CB0C0280163 /* EFColorView.swift */; };
-		38B97E8F4358246836E8ABC0CF4A3AAC /* EFColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA6F826004D5FF129F9F57485BDD786 /* EFColorUtils.swift */; };
-		3DC174AFE9347CDD166DE3C40C87F9FB /* QRCodeGeneratorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D925CCBF0043452991A094C604492C /* QRCodeGeneratorDetailView.swift */; };
-		43594B4B58C3729C5F861D72F71ABF6D /* BloodPressureRecordCloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695FB3224C568F6399736B41E03EB974 /* BloodPressureRecordCloudKitManager.swift */; };
+		332DEA0E94C8298F4A851FB425D56736 /* AmountRecordSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B5CCB0A331954A08C120DCA909DE00 /* AmountRecordSettingView.swift */; };
+		334B22455737EB56C11BED1BE03BACED /* CommmonNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985D423311BF71CEF239358C04EB144 /* CommmonNavigationBarModifier.swift */; };
+		3B0A8A9F18BCCD4DC32B2855408A6FD6 /* QRCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749CF03909AA8B0CBF4781CA2DC27B /* QRCodeDetailView.swift */; };
+		3B8BE573FD690E5C30B7565AC1D79F42 /* EFSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9FE47C14201D31841CAE4A7509CE3 /* EFSliderView.swift */; };
 		442E189FC808DF5A16E2167E5F17F721 /* NSArray+functional.h in Headers */ = {isa = PBXBuildFile; fileRef = 17C63B748E2D12AAB3D519CA0498EDC7 /* NSArray+functional.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4682AB683E344076DB33F809BE9913A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F8F8EE5E3E7C4ED8BA3237E9737863 /* Images.xcassets */; };
-		489B7D5E290D2C4608E93892F625EDC9 /* DateCaculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66613ED64E1CB0E8E389FA3E0824543 /* DateCaculationDetailView.swift */; };
+		47200BF98BD84AC1BB59FF0BA94381D0 /* EFColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFA7D175FFDBFE6EE05EBFCE19F6CE /* EFColorUtils.swift */; };
+		4731ADB539CFB0BA1E58DC4B7473B418 /* AddBloodPressureRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C043260040E340092ED6635A6F4B22 /* AddBloodPressureRecordView.swift */; };
 		4BBC06A251A5BBE471F588AF0BD61C47 /* UIView+EasyLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 62011C1BE7D4AC9BFEEECB5448867E0C /* UIView+EasyLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C1E25FB82926669EDF52FD7152C9C50 /* EFColorComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5489FD7691D0EE3A30EB6231F1940 /* EFColorComponentView.swift */; };
 		4D079D05B7AA1E98F462A26337443B12 /* NSURL+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FB7278074C2557BD1D71DE4316579C2 /* NSURL+Ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4DD195A3C682DDCE3A9A647B69D0C977 /* NSBundle+AKOBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A44077DE9E59C3A402345EDC4B39E0F7 /* NSBundle+AKOBundle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4E79567379BD5B4A6765F95698D64ED0 /* UIColor+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6FFEC8B343CB5353CF5FEDCCA8E0AF /* UIColor+Ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52C562408175AD311143BB0482A1E5E9 /* UIImage+AKOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3A403DCB21BF821F1D0EC4CBEEEF49 /* UIImage+AKOKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53710F44A12117B05E737C56DF789A40 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0598508CBD6320CB914801C3F8E02821 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54A9DBCF83B07F8D6864B5AD85009578 /* DateUtillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBA4D53E170B18D9EF63199D53C160 /* DateUtillity.swift */; };
-		55EEB4BD1B147A6CDB5AC5E7A78ABDE7 /* EFColorComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB879CBD4A53D58E826B2BD3A8699141 /* EFColorComponentView.swift */; };
+		57C4DC78FBE9D1D439766AFBCCDF611A /* BloodPressureRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0BD25F6445ADB3D01CA1337C11B29 /* BloodPressureRecordDetailView.swift */; };
 		594CCC4C4E15576EDBB474F8BB0B0299 /* UIImage+AKOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA02B7F9DA65F259345C90D1FC815A25 /* UIImage+AKOKit.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5950A247CA411B2E1044D464C034A875 /* QRCodeGeneratorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2595744B2EDBB2DB00B88CC48EEF5 /* QRCodeGeneratorDetailView.swift */; };
 		5A750276797EB17F16175B62A5319376 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A150472626DB5CCF404E99154193BBB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E81513394D6F058478C750D5203A810 /* AmountRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E4067E9B1B3DE00D16EC85733A9D49 /* AmountRecordDetailView.swift */; };
-		5ED024884D54D8504E5782FEEA8D8B6B /* EFColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C4F30032529FC4D88E061361EA83D /* EFColorSelectionViewController.swift */; };
+		5BB847D526AAE7FA3AB67F54C5ADC15D /* CommonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C1DE3B5BEB7702B34B62D5B0DA5F9 /* CommonModels.swift */; };
+		5D0E3942F998974E9DCC2EFD8609CF1C /* AmountRecordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DB03B7C36754D6DABB7DA3287B1EC /* AmountRecordModels.swift */; };
 		5FF283689098689091AE7EC9A850E9FE /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 198AD1F76356ACA85E0808548B495A62 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61E2D6A4D1275B1B5AD99DFDA2EF9D84 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 718B13DBB35651DB5B69CA68A2C43E8F /* MASViewAttribute.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		659E05BD45BB350672EAF2A9B7AF5C5A /* DateUtillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFBE795FF515C27D879DC1737EDAC8 /* DateUtillity.swift */; };
 		681ADE10C62BAA56AE7D7C4CE9131024 /* NSURL+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 179ACB0942AD1268646FB629CFE041FB /* NSURL+Ext.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		69B49B79E0EF24ED57495A919ED4DFB8 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C069F342CC56A68847EBC42F91AA145D /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6A7B1BFA4CAE02EE2A5A5F117C5EF9A3 /* AmountRecordAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00326D56C721D9C8A659948BBB827E3B /* AmountRecordAddView.swift */; };
 		6B246B94E6AA0DE41B3A0CE1E19C6ABE /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 05777DF5A9C49D5D45C8D8D130AA349C /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E3D5E3EB2E965CAB790AD761ADB64DD /* EFSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1DE81F0D4124BFCE1F571600DBF25 /* EFSliderView.swift */; };
-		709F54D096BBBB5C0174A66CE94614D5 /* AddBloodPressureRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315AB82FCE13AA4A1C5834FC2AC56F4 /* AddBloodPressureRecordView.swift */; };
 		710CA96AD26F76BCE6D9689F6731408D /* AKOCommonToolsKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2529038E8BD105EA1C245CC9DBF67CF /* AKOCommonToolsKit-dummy.m */; };
-		73133B7B68F0F9FEB26846BC3BCC9A1D /* EFHSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C62E8F70AFF8EFFF05CD49EA564E638 /* EFHSBView.swift */; };
-		76827C2E2C629FC083E041F0BF527906 /* EFRGBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE4154E2E8BBBFF7C0DEA450415BF9 /* EFRGBView.swift */; };
+		729F902B0E2AE7D02557A805B2C5D70C /* ToolsFavorites-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 775F005B9E7347A0AF53D1E9BB170AAD /* ToolsFavorites-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7499516511DCBD16285F8CBE9048BFB5 /* NumberSystemConversionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827E9B20E58F62E14B6639FF5595355 /* NumberSystemConversionDetailView.swift */; };
+		74D4AF4D23E7063B6EE01C67D3CD5833 /* ToolsFavorites-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8875D31EB05BC42B103A0747B6299A /* ToolsFavorites-dummy.m */; };
+		755F6A7E773F15D9580BDA54E6C5CF08 /* EFRGBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78028BFEFC01CE1D1629F798DDB04FD1 /* EFRGBView.swift */; };
+		76D6D66A535F81E9DD1218BD3166D813 /* EFColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBF2CEC7211448EA35E961EE9986E88 /* EFColorWheelView.swift */; };
 		79897EC6995688D1B0E36F552E2E79E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		7B6A2F89F4C5D1460EA11F21D154C572 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0341A9B7ED552793412BDCC010BF16 /* MASLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7C88D8EF03B9DDDCF327C3A57DBA810A /* BloodPressureRecordCloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D74C95B2612EB2D729328665A79A3 /* BloodPressureRecordCloudKitManager.swift */; };
 		7D7F61B30CBF8ABFD69A1E1D31312930 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BDE939AF2FBB9819B2A7B0CC494DE0 /* Masonry-dummy.m */; };
 		7D97C8C9C122A13534E1903005FC6B26 /* OSFCommonMacroDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D94F55FC6F588887746C5C2B58A20 /* OSFCommonMacroDefines.swift */; };
 		7DE1532DD62B4E8EF68A35102F72CE2F /* NSArray+functional.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E07337883D9200209F0115892661 /* NSArray+functional.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7E145353F57F238055D42315BE76E9A0 /* CommonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E4C66DC77C65B8A389397CB3C4A36 /* CommonModels.swift */; };
 		8288C957D70448B30FC434380C423051 /* NSBundle+AKOBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 12AE8AEC4AB8099470A40829AC99C258 /* NSBundle+AKOBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84D39A8D7FA571ADA652808F9B0AA463 /* UIImage+AKOBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BAFC32C2CC8299E916C15C7078BE1A /* UIImage+AKOBundle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		869527AEE9B3FFA6A1911AB9898B9DD8 /* BloodPressureRecordSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032E951F4185C757D1F0ECDD7B889C7D /* BloodPressureRecordSettingView.swift */; };
+		87D4A6BBACC7FA171D642C4FBA4ED34C /* EFColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D378057D12B93BBF771F8776E5E8B6A /* EFColorSelectionView.swift */; };
 		8A565476521BA4A5E5FA109C7F7FB734 /* UIImage+AKOBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = EE2EE8C235BF09171E2396D97D3858DE /* UIImage+AKOBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BD5755E3DCC56118325B34BCFF19621 /* Pods-CToolsFavorites-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31108B02B11D130121051A35AE91F076 /* Pods-CToolsFavorites-dummy.m */; };
 		8D204ED022BDEAE0DF0F012538535864 /* Collection+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D49F4657E4825115FD78470B22DB2B /* Collection+General.swift */; };
-		8E50FAFC7A053D3D135C96EA8A78D918 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1BE8BE3270AE68CC2CAA0D709CF02 /* ImageUtility.swift */; };
 		8E798B980585491D7861B5741D36BD9B /* AKOCommonToolsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE36DDBB90EE317299B98E11F8C2901 /* AKOCommonToolsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		907B3A240CE4F7C330ABC706436DCA02 /* highbloodpressure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B895CCC040974BF43F9B893AA16B2EB6 /* highbloodpressure.jpg */; };
+		91F8A82F3E2505D9CBD577A752F778DF /* AmountRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1446D92D1BD68DFF2A71BA7583304D /* AmountRecordDetailView.swift */; };
 		92924D361CD5C71CE76707C5A2A66679 /* UIColor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE860EFC4EB5DCAB7AD2916D3DF10F59 /* UIColor+Ext.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		92F7EEDB623A166E71088A0BBC77A4EB /* alliphonedevicesinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5170DFED906A949694E700F9FE6DB84C /* alliphonedevicesinfo.png */; };
 		932909F284288463DDB5245A19797EA2 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EC84A55B3F5612774E797B92D1E739 /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		94ED9455090CFB4EB1D0C598B467B3C7 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = E65795DD81BE5DD20932CBB7C2AD98FE /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		985940E5F8F78CC12A7B29E104D4580C /* NSString+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A54D2D2AD9A2555179F5D337DD24D /* NSString+Ext.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		997B5B70131D0D72C114A323A17060F3 /* CommonDarkModeAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E91AF9D19B1FAFEE637479A652813 /* CommonDarkModeAdaptation.swift */; };
+		9AC129727A28CFE9014FC6A78A93BD6D /* EFControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40101DA80D971558806B327965E9FED2 /* EFControl.swift */; };
 		9AF9EEE035A114E2B04A7A38A0A4E555 /* UIView+EasyLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5ED3E2E8D707E8E984845B7A765955 /* UIView+EasyLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9B0A954BD72533BE06C69B8A00EA258E /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AD3A3E4F8EB55459DC2863C8F385D4 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9E561A03B9BC131FEA2A5F2A20EC108C /* Pods-CToolsFavorites-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E44EA20ECB9C1B6019DB6EC37BDC171 /* Pods-CToolsFavorites-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1129E40C9892541D2E8E53AB9F1A8A2 /* AmountRecordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458A2F3A9E190DE6B12189C65D9FD44C /* AmountRecordModels.swift */; };
 		A1B9596BE1EDAB3A8C05AD0E56073C30 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 699890B5F9FEF56AB20DAB70F7DF7CA8 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACFA435B1D448181B0B6359EFB9B1FDA /* highbloodpressure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37A3051E529271FCE02005633E15AE60 /* highbloodpressure.jpg */; };
 		AD22D45D7D339671F6B0F5DD0B05E76E /* Sequence+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4ABD8FC09547625CE10B7A0B8A15BE /* Sequence+General.swift */; };
+		AED724661A967DB0498F55C7003DB309 /* QuickQueryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C5A2AFB3589770466D7F16864555B1 /* QuickQueryDetailView.swift */; };
 		AF747C984AE49717D3392DFDFE7C6DD8 /* AKOCommonMacroDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E6DB19AD96B4D028F3E667A249012DF6 /* AKOCommonMacroDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B111C9E9C21DF31E992F4659FEED5A9A /* BloodPressureRecordSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649B3A86D6562658C8475D223CD0843 /* BloodPressureRecordSettingView.swift */; };
-		B1FC341E37CBEBE623CF66591F0F4253 /* AmountRecordCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF0F7E3A121DFF6B2ED1C760EE9CE4 /* AmountRecordCacheManager.swift */; };
 		B207253F446085968D4B76A2AC8C743A /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA491715A950774859B7B4CF242F63 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B21768295F4D4305AA34856993628C40 /* QRCodeReaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6C0E26E0F76B04BE98BE6D4D9FCAFD /* QRCodeReaderDetailView.swift */; };
-		B230DC13E651F614FCE34ADE96959223 /* ToolsFavorites-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20146E8886C437C5C5FD369FD241280A /* ToolsFavorites-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B32CF158A673A3EE9FDAD470E0283C45 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0236D7BA2BDB92FFFBDE65B4234CA108 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5517F3C1C686C4BD25D002E3F3759A5 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B320789F348118A5B699BF76E031863D /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6C2DAC27FD22185FB834F5D87BF49F1 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C3FC806D33DBF9E4F2645AC9837895 /* View+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B90A14FC96022A2B8926BC714BC3E572 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C07DAE24406F9CCCA10A51099172E8D7 /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BA5A99C77CC0B847E9C491096EA4E540 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F211181FCC16A3ABE837E25E67BC2FF /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCAF919E9C10AE77A6E5B32458214AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C4DB6442A412A20701835C38F2B51924 /* CommmonNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C001F51A2DDF50E97C48D1B99EE609 /* CommmonNavigationBarModifier.swift */; };
+		BD0E6C5A98FB961988F99B16644084B3 /* QRCodeReaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CB9BC1D314405275B17FB4128A246 /* QRCodeReaderDetailView.swift */; };
 		C52552F60CACB38265DAE00B5E66918A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		C6452280125D233BB1CF4190F58918F4 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF421CEFDF11A8CD7F70F323AF8FB83 /* MASConstraintMaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C6ED80CC7026CD745A93623F32130174 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = CF46FEC1062B19AC70336E67D6671B52 /* MASCompositeConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C86F5C8FCA53A74BB9CFFC0D43CA957E /* EFColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E99BF267524DD605B29AB5AE9990 /* EFColorWheelView.swift */; };
-		CB22E04DC8502E0556E5571358527E35 /* QuickQueryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DC7C9ECE2F082EF9F8EB3FE90D341 /* QuickQueryDetailView.swift */; };
 		CB496E705201A627FF1CC19450A1AE95 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7F70B3C6ECAE8170B0802EA32CB0C /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC05610835E35C731346F5CD56ADBADD /* OnlineProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FB6AF416A934A755F0C5036086287 /* OnlineProgramDetailView.swift */; };
-		D60E2BD4F0039FF0B43C11C1071986D5 /* EFColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F007890FD6E8265148686FB7A51A99D /* EFColorSelectionView.swift */; };
-		D85A6D3F2BA3366F00B973C4 /* CommonAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */; };
+		D96E52FEA1DAD9BC3E2AFA45EDD94624 /* poweroftwotable.png in Resources */ = {isa = PBXBuildFile; fileRef = F18FA07121B21ED5E24ACF3766DB246E /* poweroftwotable.png */; };
 		DAED04702DFE98035A092101EBCBF154 /* NSString+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A88FCCE17F759F343A2B1ECD5D1D67 /* NSString+Ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F581F409A25A3D06CE17848151D89863 /* poweroftwotable.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E50D7E2BC3AFB6A4FC642785C287B /* poweroftwotable.png */; };
-		F67207A2600C993B751DC34EDAA0C350 /* AmountRecordCloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C321D5CB4DBADCAE130A2E1AF2DBAD /* AmountRecordCloudKitManager.swift */; };
-		F8D775138B9C4401B45CDE1931EA45C7 /* ToolsFavorites-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556D108B2F0F70769187DE76B982148 /* ToolsFavorites-dummy.m */; };
+		E3154E728F9417C18455A918D7477A2E /* EFColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA90BBB2E5B4F095596CCBE00D294C /* EFColorSelectionViewController.swift */; };
+		EEA752FAFE569EB490F8C882142E482C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223D3CDA92D817A73064051B467E4B05 /* Images.xcassets */; };
+		F978E2E5726ABB5CC3DBE0A21F882F82 /* AmountRecordCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDB4E89C9B725B6AD3E8D11A20B5B7 /* AmountRecordCacheManager.swift */; };
+		FA68DC2FFBF5F8E3E87431DBB7F1490C /* CommonViewAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068E7E79E86DF734DE5395DC4AC4230 /* CommonViewAdaptation.swift */; };
+		FB90873523F5103494A746279D256E42 /* AmountRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B8D52019E90A433BEDF0F1ED93050 /* AmountRecordHistoryView.swift */; };
+		FBCE2995ED8EF5E8E06BE4BFCBAFDC4F /* EFColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09A3CEAA82C83714352E83FD705B5A /* EFColorView.swift */; };
+		FF076C277D32BE7037C334B318113533 /* EFThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DADE53B3DF19FE1F9B38A3742C5233 /* EFThumbView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		374F3CBC3DDFF06FDCC2F2A8B3913DB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42FF0B0E5CEEECEA02B8E6B80E70954F;
-			remoteInfo = "ToolsFavorites-CToolsFavorites";
-		};
-		97C28A6A4AD79CA3A0FAA2C935783E77 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF832F384E15469DFE1F9F7E5152A7D3;
-			remoteInfo = AKOCommonToolsKit;
-		};
-		A1880E22EF7F837E509C24025D043017 /* PBXContainerItemProxy */ = {
+		0BB30582C07A44F138F5FB6693D0A850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C090833B48182AA641080DC0DB090484;
 			remoteInfo = "ToolsFavorites-CToolsFavorites-Images";
 		};
-		B6C662650B4CAACF277303CE083F2A60 /* PBXContainerItemProxy */ = {
+		357E8E2ACBA8103FB98AF3C8842093E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
 			remoteInfo = Masonry;
 		};
-		BEBAA5DC6BB2E28819D80F55B4E40AAA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF832F384E15469DFE1F9F7E5152A7D3;
-			remoteInfo = AKOCommonToolsKit;
-		};
-		E3A7AACB221DE5549411B410147798AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DCDB7812C19B2B1A352DB520D9F6A7;
-			remoteInfo = "ToolsFavorites-CToolsFavorites-Videos";
-		};
-		EA60611EC91C691BBF36BA0CBE033C4B /* PBXContainerItemProxy */ = {
+		3C5000C90C152FC1C6270AFE5A53936B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EBE7965B6AF891A014BECD8BBB2EC467;
 			remoteInfo = ToolsFavorites;
 		};
-		F4492A843400A90E2E77AD26A9221D45 /* PBXContainerItemProxy */ = {
+		3FBE68B123648DE7C59B686BD5FF2D9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DCDB7812C19B2B1A352DB520D9F6A7;
+			remoteInfo = "ToolsFavorites-CToolsFavorites-Videos";
+		};
+		817511A815D9B63A3A33D00ADEF29ACD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
 			remoteInfo = Masonry;
 		};
+		87A400410B08B03425FAF25F24FA3780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42FF0B0E5CEEECEA02B8E6B80E70954F;
+			remoteInfo = "ToolsFavorites-CToolsFavorites";
+		};
+		E08E60804FAD30B3A21F3E33475130C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF832F384E15469DFE1F9F7E5152A7D3;
+			remoteInfo = AKOCommonToolsKit;
+		};
+		EC8395EFAAE0FD323536486139986406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF832F384E15469DFE1F9F7E5152A7D3;
+			remoteInfo = AKOCommonToolsKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001DB03B7C36754D6DABB7DA3287B1EC /* AmountRecordModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordModels.swift; sourceTree = "<group>"; };
+		00326D56C721D9C8A659948BBB827E3B /* AmountRecordAddView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordAddView.swift; sourceTree = "<group>"; };
 		00B074E984F1ACA3323570C2E1EC0C98 /* AKOCommonToolsKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AKOCommonToolsKit.modulemap; sourceTree = "<group>"; };
 		0236D7BA2BDB92FFFBDE65B4234CA108 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		02F8F8EE5E3E7C4ED8BA3237E9737863 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ToolsFavorites.debug.xcconfig; sourceTree = "<group>"; };
+		02C0BD25F6445ADB3D01CA1337C11B29 /* BloodPressureRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordDetailView.swift; sourceTree = "<group>"; };
+		032E951F4185C757D1F0ECDD7B889C7D /* BloodPressureRecordSettingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordSettingView.swift; sourceTree = "<group>"; };
+		03C88ECBB38831243A59DFADA04D52A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		05039D811BAE4DA6FFA3467AC5793E45 /* AmountRecordCloudKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordCloudKitManager.swift; sourceTree = "<group>"; };
 		05777DF5A9C49D5D45C8D8D130AA349C /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		0598508CBD6320CB914801C3F8E02821 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		05EE90C814D93EB1DFC465E8A4DCFC9F /* AKOCommonToolsKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AKOCommonToolsKit; path = AKOCommonToolsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07C001F51A2DDF50E97C48D1B99EE609 /* CommmonNavigationBarModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommmonNavigationBarModifier.swift; sourceTree = "<group>"; };
-		0F0D857B90E6D043DDE15EC0890B5C38 /* normalbloodpressurestandard.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = normalbloodpressurestandard.jpg; sourceTree = "<group>"; };
+		0C449F75A407641988F9C4BA025A7344 /* OnlineProgramDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnlineProgramDetailView.swift; sourceTree = "<group>"; };
 		12AE8AEC4AB8099470A40829AC99C258 /* NSBundle+AKOBundle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AKOBundle.h"; path = "AKOCommonToolsKit/Classes/NSBundle+AKOBundle.h"; sourceTree = "<group>"; };
 		163D24020784FF396FCFF155E9645494 /* AKOCommonToolsKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AKOCommonToolsKit-Info.plist"; sourceTree = "<group>"; };
 		179ACB0942AD1268646FB629CFE041FB /* NSURL+Ext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Ext.m"; path = "AKOCommonToolsKit/Classes/NSURL+Ext.m"; sourceTree = "<group>"; };
 		17C63B748E2D12AAB3D519CA0498EDC7 /* NSArray+functional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+functional.h"; sourceTree = "<group>"; };
+		1827E9B20E58F62E14B6639FF5595355 /* NumberSystemConversionDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberSystemConversionDetailView.swift; sourceTree = "<group>"; };
+		18760F077C4879BBEA208E96AC08EB45 /* ImageUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 		198AD1F76356ACA85E0808548B495A62 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		1D6C0E26E0F76B04BE98BE6D4D9FCAFD /* QRCodeReaderDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeReaderDetailView.swift; sourceTree = "<group>"; };
+		1CBFBE795FF515C27D879DC1737EDAC8 /* DateUtillity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateUtillity.swift; sourceTree = "<group>"; };
 		1E1493D07342415725401FA1A1EEB410 /* CToolsFavorites-Images.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CToolsFavorites-Images.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ECF4DBC80107C28BE3A088BB91FF9E0 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
-		1F6E4C66DC77C65B8A389397CB3C4A36 /* CommonModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
+		1F1446D92D1BD68DFF2A71BA7583304D /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20146E8886C437C5C5FD369FD241280A /* ToolsFavorites-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ToolsFavorites-umbrella.h"; sourceTree = "<group>"; };
-		2135079B02D7E151619B0EAE2D91CE9F /* QRCodeDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeDetailView.swift; sourceTree = "<group>"; };
+		223D3CDA92D817A73064051B467E4B05 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		23C3FC806D33DBF9E4F2645AC9837895 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		246160C55E4E3FD8D227BD6B7265FD98 /* BloodPressureRecordCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordCacheManager.swift; sourceTree = "<group>"; };
+		249E91AF9D19B1FAFEE637479A652813 /* CommonDarkModeAdaptation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommonDarkModeAdaptation.swift; sourceTree = "<group>"; };
 		24B7F70B3C6ECAE8170B0802EA32CB0C /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
-		26A1DE81F0D4124BFCE1F571600DBF25 /* EFSliderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFSliderView.swift; sourceTree = "<group>"; };
-		26C4F0E9C4B5E0E8F58C460CAEB4B51D /* ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
+		256D90FA10DB9B3C034FDF259845894E /* EFHSBView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFHSBView.swift; sourceTree = "<group>"; };
 		28BAFC32C2CC8299E916C15C7078BE1A /* UIImage+AKOBundle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AKOBundle.m"; sourceTree = "<group>"; };
-		2C62E8F70AFF8EFFF05CD49EA564E638 /* EFHSBView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFHSBView.swift; sourceTree = "<group>"; };
-		2D138F6A5ADA63E50E156857C2016383 /* AmountRecordHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordHistoryView.swift; sourceTree = "<group>"; };
 		2F211181FCC16A3ABE837E25E67BC2FF /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		2FA6F826004D5FF129F9F57485BDD786 /* EFColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorUtils.swift; sourceTree = "<group>"; };
-		2FCB2C2B0FC47FA6A619CD85F38DB50A /* DemoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemoDetailView.swift; sourceTree = "<group>"; };
-		2FD5E06E03620D722B7AFA915B7593BC /* ToolsFavorites.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ToolsFavorites.modulemap; sourceTree = "<group>"; };
 		31108B02B11D130121051A35AE91F076 /* Pods-CToolsFavorites-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CToolsFavorites-dummy.m"; sourceTree = "<group>"; };
 		32CA491715A950774859B7B4CF242F63 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
-		35C04C5D599B958222A39EC2A30EDD86 /* ColorPickerDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorPickerDetailView.swift; sourceTree = "<group>"; };
-		35FE4154E2E8BBBFF7C0DEA450415BF9 /* EFRGBView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFRGBView.swift; sourceTree = "<group>"; };
-		3903F2C4A33DD8E7D6397BA26EB3E4CF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		37A3051E529271FCE02005633E15AE60 /* highbloodpressure.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = highbloodpressure.jpg; sourceTree = "<group>"; };
 		3A864B64719B4C3BA119BBF9EDEEDF61 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		3AF421CEFDF11A8CD7F70F323AF8FB83 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		3B58751980C4CD1AF4CAF8319B041FB5 /* Pods-CToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CToolsFavorites.debug.xcconfig"; sourceTree = "<group>"; };
-		3F7C4F30032529FC4D88E061361EA83D /* EFColorSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorSelectionViewController.swift; sourceTree = "<group>"; };
-		3FDBA4D53E170B18D9EF63199D53C160 /* DateUtillity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateUtillity.swift; sourceTree = "<group>"; };
+		40101DA80D971558806B327965E9FED2 /* EFControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFControl.swift; sourceTree = "<group>"; };
+		42B5CCB0A331954A08C120DCA909DE00 /* AmountRecordSettingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordSettingView.swift; sourceTree = "<group>"; };
 		45706A48FF820BDA90249F82F4B56519 /* CToolsFavorites.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CToolsFavorites.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		458A2F3A9E190DE6B12189C65D9FD44C /* AmountRecordModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordModels.swift; sourceTree = "<group>"; };
+		491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ToolsFavorites.debug.xcconfig; sourceTree = "<group>"; };
 		4E44EA20ECB9C1B6019DB6EC37BDC171 /* Pods-CToolsFavorites-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CToolsFavorites-umbrella.h"; sourceTree = "<group>"; };
-		4F007890FD6E8265148686FB7A51A99D /* EFColorSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorSelectionView.swift; sourceTree = "<group>"; };
+		4FC5489FD7691D0EE3A30EB6231F1940 /* EFColorComponentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorComponentView.swift; sourceTree = "<group>"; };
+		5068E7E79E86DF734DE5395DC4AC4230 /* CommonViewAdaptation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommonViewAdaptation.swift; sourceTree = "<group>"; };
+		5170DFED906A949694E700F9FE6DB84C /* alliphonedevicesinfo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alliphonedevicesinfo.png; sourceTree = "<group>"; };
 		54D6E33B1482CD4C2A9529DCBAE6FDE3 /* Pods-CToolsFavorites-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CToolsFavorites-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5556D108B2F0F70769187DE76B982148 /* ToolsFavorites-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ToolsFavorites-dummy.m"; sourceTree = "<group>"; };
-		5582E99BF267524DD605B29AB5AE9990 /* EFColorWheelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorWheelView.swift; sourceTree = "<group>"; };
+		54DDB4E89C9B725B6AD3E8D11A20B5B7 /* AmountRecordCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordCacheManager.swift; sourceTree = "<group>"; };
+		55BA90BBB2E5B4F095596CCBE00D294C /* EFColorSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorSelectionViewController.swift; sourceTree = "<group>"; };
+		57AADBC887BB52F60216219A372E3594 /* ToolsFavorites.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ToolsFavorites.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5E058A9D68257DFCD66ECA1E0F12535C /* Pods-CToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		60B9392BFABC1E76AB9AAB2DB4D5AE6A /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		61D925CCBF0043452991A094C604492C /* QRCodeGeneratorDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorDetailView.swift; sourceTree = "<group>"; };
+		60F2595744B2EDBB2DB00B88CC48EEF5 /* QRCodeGeneratorDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorDetailView.swift; sourceTree = "<group>"; };
 		62011C1BE7D4AC9BFEEECB5448867E0C /* UIView+EasyLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+EasyLayout.h"; path = "AKOCommonToolsKit/Classes/UIView+EasyLayout.h"; sourceTree = "<group>"; };
 		65AD3A3E4F8EB55459DC2863C8F385D4 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		68C321D5CB4DBADCAE130A2E1AF2DBAD /* AmountRecordCloudKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordCloudKitManager.swift; sourceTree = "<group>"; };
-		695FB3224C568F6399736B41E03EB974 /* BloodPressureRecordCloudKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordCloudKitManager.swift; sourceTree = "<group>"; };
 		699890B5F9FEF56AB20DAB70F7DF7CA8 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		6B1EBF6EDC1D18911DAA742E300540ED /* NumberSystemConversionDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberSystemConversionDetailView.swift; sourceTree = "<group>"; };
-		6B2DC7C9ECE2F082EF9F8EB3FE90D341 /* QuickQueryDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickQueryDetailView.swift; sourceTree = "<group>"; };
 		6BE36DDBB90EE317299B98E11F8C2901 /* AKOCommonToolsKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOCommonToolsKit.h; path = AKOCommonToolsKit/Classes/AKOCommonToolsKit.h; sourceTree = "<group>"; };
 		6C6DB7A05F6BD2DDB41616511044BD66 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		6D6FFEC8B343CB5353CF5FEDCCA8E0AF /* UIColor+Ext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+Ext.h"; sourceTree = "<group>"; };
-		6F2E50D7E2BC3AFB6A4FC642785C287B /* poweroftwotable.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = poweroftwotable.png; sourceTree = "<group>"; };
-		6F786A292011E4F6AA4ED29A78818C80 /* ToolsFavorites.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ToolsFavorites.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		718B13DBB35651DB5B69CA68A2C43E8F /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		775F005B9E7347A0AF53D1E9BB170AAD /* ToolsFavorites-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ToolsFavorites-umbrella.h"; sourceTree = "<group>"; };
+		78028BFEFC01CE1D1629F798DDB04FD1 /* EFRGBView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFRGBView.swift; sourceTree = "<group>"; };
+		78AC07F5A270AE7D730A16BEEE1A40ED /* ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		78D84FED0CC01D046B7CC504CF39C179 /* Pods-CToolsFavorites-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CToolsFavorites-acknowledgements.plist"; sourceTree = "<group>"; };
 		79F682D529C838495516ED90B2E18ACE /* AKOCommonToolsKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AKOCommonToolsKit.release.xcconfig; sourceTree = "<group>"; };
 		7A150472626DB5CCF404E99154193BBB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		7A8875D31EB05BC42B103A0747B6299A /* ToolsFavorites-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ToolsFavorites-dummy.m"; sourceTree = "<group>"; };
 		7FB7278074C2557BD1D71DE4316579C2 /* NSURL+Ext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+Ext.h"; path = "AKOCommonToolsKit/Classes/NSURL+Ext.h"; sourceTree = "<group>"; };
+		85D5921C37B7F8D8C33E26AE60B9E308 /* ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		8B0378252F16397ABB18131113D5F717 /* Pods-CToolsFavorites */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CToolsFavorites"; path = Pods_CToolsFavorites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2DFF6FB507B7FCC9304EE722FAD8F9 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		8DDEF30FD05CBEE8A2E5269FAD4959D5 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		930C2C099C769CB5C166492CB8DBFD95 /* AmountRecordSettingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordSettingView.swift; sourceTree = "<group>"; };
+		994982CA91F478189AF958F9283482B7 /* DemoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemoDetailView.swift; sourceTree = "<group>"; };
 		9A7C0BF99DF5D607E4AB084F455210A1 /* AKOCommonToolsKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AKOCommonToolsKit-prefix.pch"; sourceTree = "<group>"; };
 		9B0341A9B7ED552793412BDCC010BF16 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		9D378057D12B93BBF771F8776E5E8B6A /* EFColorSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorSelectionView.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DFFA7D175FFDBFE6EE05EBFCE19F6CE /* EFColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorUtils.swift; sourceTree = "<group>"; };
 		9F1A54D2D2AD9A2555179F5D337DD24D /* NSString+Ext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ext.m"; sourceTree = "<group>"; };
-		A2225FDCFEC2877554E546AB5EF7B0D0 /* AmountRecordAddView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordAddView.swift; sourceTree = "<group>"; };
+		A1DADE53B3DF19FE1F9B38A3742C5233 /* EFThumbView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFThumbView.swift; sourceTree = "<group>"; };
 		A44077DE9E59C3A402345EDC4B39E0F7 /* NSBundle+AKOBundle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+AKOBundle.m"; path = "AKOCommonToolsKit/Classes/NSBundle+AKOBundle.m"; sourceTree = "<group>"; };
-		A4D7B816F8862F425735D4D43F6F3481 /* ToolsFavorites-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ToolsFavorites-prefix.pch"; sourceTree = "<group>"; };
+		A48CB9BC1D314405275B17FB4128A246 /* QRCodeReaderDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeReaderDetailView.swift; sourceTree = "<group>"; };
 		A526D478B9ECA09348A0B3A41AE38FC5 /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
 		A5BDE939AF2FBB9819B2A7B0CC494DE0 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		A68D94F55FC6F588887746C5C2B58A20 /* OSFCommonMacroDefines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OSFCommonMacroDefines.swift; sourceTree = "<group>"; };
-		ADB3BCF69809E1145D0B6152E909E57B /* EFThumbView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFThumbView.swift; sourceTree = "<group>"; };
-		AE995812F0B0000AD97A2A5849C6AC48 /* alliphonedevicesinfo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alliphonedevicesinfo.png; sourceTree = "<group>"; };
 		AF4ABD8FC09547625CE10B7A0B8A15BE /* Sequence+General.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Sequence+General.swift"; sourceTree = "<group>"; };
+		AFF773AB86C27582CD1A66EFE310AB2C /* ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
+		B280C7A6334AB1A447486F28DB2A9170 /* ToolsFavorites.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ToolsFavorites.modulemap; sourceTree = "<group>"; };
 		B320789F348118A5B699BF76E031863D /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
-		B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ToolsFavorites.release.xcconfig; sourceTree = "<group>"; };
-		B4CF0F7E3A121DFF6B2ED1C760EE9CE4 /* AmountRecordCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordCacheManager.swift; sourceTree = "<group>"; };
-		B649B3A86D6562658C8475D223CD0843 /* BloodPressureRecordSettingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordSettingView.swift; sourceTree = "<group>"; };
 		B657F7CE03A6B20065F4B8360E3FE2BD /* ToolsFavorites */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ToolsFavorites; path = ToolsFavorites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80C0012E3582860C2FAA4F48A0F53A9 /* AKOCommonToolsKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AKOCommonToolsKit.debug.xcconfig; sourceTree = "<group>"; };
-		B895CCC040974BF43F9B893AA16B2EB6 /* highbloodpressure.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = highbloodpressure.jpg; sourceTree = "<group>"; };
-		B97FB6AF416A934A755F0C5036086287 /* OnlineProgramDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnlineProgramDetailView.swift; sourceTree = "<group>"; };
-		B993D2E16C5F0936B1F190BB82A8CE85 /* ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
+		B83C1DE3B5BEB7702B34B62D5B0DA5F9 /* CommonModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
+		B985D423311BF71CEF239358C04EB144 /* CommmonNavigationBarModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommmonNavigationBarModifier.swift; sourceTree = "<group>"; };
+		BA09A3CEAA82C83714352E83FD705B5A /* EFColorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorView.swift; sourceTree = "<group>"; };
+		BA6B8D52019E90A433BEDF0F1ED93050 /* AmountRecordHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordHistoryView.swift; sourceTree = "<group>"; };
 		BAC344DEABECF7AECA2C28FD3D71E887 /* Pods-CToolsFavorites-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CToolsFavorites-resources.sh"; sourceTree = "<group>"; };
+		BBD9FE47C14201D31841CAE4A7509CE3 /* EFSliderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFSliderView.swift; sourceTree = "<group>"; };
+		BCBF2CEC7211448EA35E961EE9986E88 /* EFColorWheelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorWheelView.swift; sourceTree = "<group>"; };
 		BF3A403DCB21BF821F1D0EC4CBEEEF49 /* UIImage+AKOKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+AKOKit.h"; sourceTree = "<group>"; };
 		C069F342CC56A68847EBC42F91AA145D /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		C07DAE24406F9CCCA10A51099172E8D7 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		C25AFFC36C0336077A36341182816091 /* CToolsFavorites-Videos.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CToolsFavorites-Videos.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D49F4657E4825115FD78470B22DB2B /* Collection+General.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+General.swift"; sourceTree = "<group>"; };
-		C6DF585971E5F50ECB9247AD99E9F162 /* ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
-		C8D6513A513D4C55CDFDAF2FAEA99D27 /* BloodPressureRecordCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordCacheManager.swift; sourceTree = "<group>"; };
-		CCA0965B2FBA6BADCF1C2CB0C0280163 /* EFColorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorView.swift; sourceTree = "<group>"; };
+		C56517FBFBFB217173408FEA63CC6376 /* DateCaculationDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateCaculationDetailView.swift; sourceTree = "<group>"; };
+		C72D74C95B2612EB2D729328665A79A3 /* BloodPressureRecordCloudKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordCloudKitManager.swift; sourceTree = "<group>"; };
+		CCCA600022E5F5C2023EAFC2B30718DC /* ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		CDD6B934D8B7FF670191DC98E02712E3 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		CE860EFC4EB5DCAB7AD2916D3DF10F59 /* UIColor+Ext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Ext.m"; sourceTree = "<group>"; };
+		CF0C8C8A50B712DC47532BCD0DD2C123 /* ToolsFavorites-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ToolsFavorites-prefix.pch"; sourceTree = "<group>"; };
 		CF46FEC1062B19AC70336E67D6671B52 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		D0EC84A55B3F5612774E797B92D1E739 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		D2529038E8BD105EA1C245CC9DBF67CF /* AKOCommonToolsKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AKOCommonToolsKit-dummy.m"; sourceTree = "<group>"; };
-		D315AB82FCE13AA4A1C5834FC2AC56F4 /* AddBloodPressureRecordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddBloodPressureRecordView.swift; sourceTree = "<group>"; };
-		D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAdaptation.swift; sourceTree = "<group>"; };
-		D8E4067E9B1B3DE00D16EC85733A9D49 /* AmountRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AmountRecordDetailView.swift; sourceTree = "<group>"; };
+		D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ToolsFavorites.release.xcconfig; sourceTree = "<group>"; };
 		D8E5E07337883D9200209F0115892661 /* NSArray+functional.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+functional.m"; sourceTree = "<group>"; };
 		D8FB555682A28310EC1B0D89A5F12A16 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		D92BF2B361006AD281C77490B650F39C /* EFControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFControl.swift; sourceTree = "<group>"; };
 		DA02B7F9DA65F259345C90D1FC815A25 /* UIImage+AKOKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AKOKit.m"; sourceTree = "<group>"; };
 		E146DC7C639CDFB0A8181E9B028F075B /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		E2A88FCCE17F759F343A2B1ECD5D1D67 /* NSString+Ext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Ext.h"; sourceTree = "<group>"; };
+		E4749CF03909AA8B0CBF4781CA2DC27B /* QRCodeDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeDetailView.swift; sourceTree = "<group>"; };
 		E65795DD81BE5DD20932CBB7C2AD98FE /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		E6DB19AD96B4D028F3E667A249012DF6 /* AKOCommonMacroDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AKOCommonMacroDefines.h; sourceTree = "<group>"; };
-		EB3A70E4CF94113DB52EC1F91DD17D3E /* ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist"; sourceTree = "<group>"; };
 		EC86D7457E2D00D038079035B5F8CDFE /* Pods-CToolsFavorites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CToolsFavorites.release.xcconfig"; sourceTree = "<group>"; };
 		EE2EE8C235BF09171E2396D97D3858DE /* UIImage+AKOBundle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+AKOBundle.h"; sourceTree = "<group>"; };
 		EF598EE18F35640A5AF3A14A069A7EDC /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
+		F171F54B65B65FCA2203738A94466EB3 /* ColorPickerDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorPickerDetailView.swift; sourceTree = "<group>"; };
+		F18FA07121B21ED5E24ACF3766DB246E /* poweroftwotable.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = poweroftwotable.png; sourceTree = "<group>"; };
+		F1E5A2CB39F9DF4AC6ED9C6D8E43F85C /* normalbloodpressurestandard.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; path = normalbloodpressurestandard.jpg; sourceTree = "<group>"; };
 		F1F3F2F09CF821A997BA132A8FEFBECC /* AKOCommonToolsKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AKOCommonToolsKit-umbrella.h"; sourceTree = "<group>"; };
-		F66613ED64E1CB0E8E389FA3E0824543 /* DateCaculationDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateCaculationDetailView.swift; sourceTree = "<group>"; };
-		FB879CBD4A53D58E826B2BD3A8699141 /* EFColorComponentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFColorComponentView.swift; sourceTree = "<group>"; };
-		FCD1BE8BE3270AE68CC2CAA0D709CF02 /* ImageUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
-		FCD5C10EDA6F8FA7194C0D6BA0BE2AC1 /* BloodPressureRecordDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BloodPressureRecordDetailView.swift; sourceTree = "<group>"; };
+		F3C043260040E340092ED6635A6F4B22 /* AddBloodPressureRecordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddBloodPressureRecordView.swift; sourceTree = "<group>"; };
+		F5C5A2AFB3589770466D7F16864555B1 /* QuickQueryDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickQueryDetailView.swift; sourceTree = "<group>"; };
 		FE5ED3E2E8D707E8E984845B7A765955 /* UIView+EasyLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+EasyLayout.m"; path = "AKOCommonToolsKit/Classes/UIView+EasyLayout.m"; sourceTree = "<group>"; };
 		FF76328CFF7808DB640CD127EAF2BE1C /* Pods-CToolsFavorites.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CToolsFavorites.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2041B2F228C9D527D9EB207764805274 /* Frameworks */ = {
+		57A02F3FB3BC3B5E4B2022508A12871B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2407E9750F1B2B87E0EBA9B01F198B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8942720F9A2739A83FF28EFD6766B8B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0E58442099815FFEA214500A45CC865 /* Frameworks */ = {
+		9493D6BCEE60034E0FD5083ED500C687 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2C625828A7C214AE421EEA4A9D34680 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,13 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				79897EC6995688D1B0E36F552E2E79E2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B581C660007C7BB50A691AAD496A93F8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,43 +359,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6A1C47B38A64121A9415423C0E4C438 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26B5014858C6371A0C5A48128DCFA592 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		007A604E2F4E3710BEC7DDFEC3EA22F6 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				AE995812F0B0000AD97A2A5849C6AC48 /* alliphonedevicesinfo.png */,
-				B895CCC040974BF43F9B893AA16B2EB6 /* highbloodpressure.jpg */,
-				0F0D857B90E6D043DDE15EC0890B5C38 /* normalbloodpressurestandard.jpg */,
-				6F2E50D7E2BC3AFB6A4FC642785C287B /* poweroftwotable.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		00C8BDBFA0C5F40AA8F8F0420BD86B5B /* DailyAmountRecord */ = {
-			isa = PBXGroup;
-			children = (
-				A2225FDCFEC2877554E546AB5EF7B0D0 /* AmountRecordAddView.swift */,
-				B4CF0F7E3A121DFF6B2ED1C760EE9CE4 /* AmountRecordCacheManager.swift */,
-				68C321D5CB4DBADCAE130A2E1AF2DBAD /* AmountRecordCloudKitManager.swift */,
-				D8E4067E9B1B3DE00D16EC85733A9D49 /* AmountRecordDetailView.swift */,
-				2D138F6A5ADA63E50E156857C2016383 /* AmountRecordHistoryView.swift */,
-				458A2F3A9E190DE6B12189C65D9FD44C /* AmountRecordModels.swift */,
-				930C2C099C769CB5C166492CB8DBFD95 /* AmountRecordSettingView.swift */,
-			);
-			name = DailyAmountRecord;
-			path = Classes/DailyAmountRecord;
-			sourceTree = "<group>";
-		};
 		0EE6A66F40B711D120FEA49FF2E2C2DA /* Pods-CToolsFavorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,22 +419,46 @@
 			path = "../Target Support Files/Masonry";
 			sourceTree = "<group>";
 		};
-		272C55D37BB59BB6A5544A735BDBB823 /* Support Files */ = {
+		157145DA4A145A2195311958539893EB /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				EB3A70E4CF94113DB52EC1F91DD17D3E /* ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist */,
-				B993D2E16C5F0936B1F190BB82A8CE85 /* ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist */,
-				26C4F0E9C4B5E0E8F58C460CAEB4B51D /* ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist */,
-				2FD5E06E03620D722B7AFA915B7593BC /* ToolsFavorites.modulemap */,
-				5556D108B2F0F70769187DE76B982148 /* ToolsFavorites-dummy.m */,
-				C6DF585971E5F50ECB9247AD99E9F162 /* ToolsFavorites-Info.plist */,
-				A4D7B816F8862F425735D4D43F6F3481 /* ToolsFavorites-prefix.pch */,
-				20146E8886C437C5C5FD369FD241280A /* ToolsFavorites-umbrella.h */,
-				0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */,
-				B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */,
+				F171F54B65B65FCA2203738A94466EB3 /* ColorPickerDetailView.swift */,
+				8438DB1E05B9A29A884901A6653E2F33 /* EFColorPicker */,
 			);
-			name = "Support Files";
-			path = "../../Pods/Target Support Files/ToolsFavorites";
+			name = ColorPicker;
+			path = Classes/ColorPicker;
+			sourceTree = "<group>";
+		};
+		188EDB2FE042F9FCCA423DF586191798 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5170DFED906A949694E700F9FE6DB84C /* alliphonedevicesinfo.png */,
+				37A3051E529271FCE02005633E15AE60 /* highbloodpressure.jpg */,
+				F1E5A2CB39F9DF4AC6ED9C6D8E43F85C /* normalbloodpressurestandard.jpg */,
+				F18FA07121B21ED5E24ACF3766DB246E /* poweroftwotable.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2391DA0EFA19CE2901A61427C12FD73F /* ToolsFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				C95FB1E42EC40AB4C03AE06DCEAC0A7F /* Assets */,
+				36F4FE7F612BF8E33D909F055BD15F92 /* BloodPressureRecord */,
+				157145DA4A145A2195311958539893EB /* ColorPicker */,
+				4D823D84AB9B73F914F91E348D933EF0 /* Common */,
+				3F88F3EA7E86F955C6BB2A66B6B7B45E /* DailyAmountRecord */,
+				C755CD9E7081A5CA4542F22149F88536 /* DateCaculation */,
+				CD9E1144DC77CC2AE790CC524C534A03 /* NumSysConversion */,
+				AA6CB080AFA45FB0870CA796C2E8D8E1 /* OnlinePrograme */,
+				FCF510445B3FA88B4888A810B13A0C40 /* Pod */,
+				2EA4BCF44212A9F7DE9E65C0A48603B9 /* QRCode */,
+				B41663404DE9BF486E17D94FF2FDCA50 /* QuickQuery */,
+				382ADD5ACC367CCCA7ACF7E9CDA93864 /* Resources */,
+				FDAA43C264B6C5098B0AC3524F83B8CB /* Support Files */,
+			);
+			name = ToolsFavorites;
+			path = ../LocalPods/ToolsFavorites;
 			sourceTree = "<group>";
 		};
 		2826B6629814B9499C6D295B173C4B62 /* MacroDefine */ = {
@@ -471,12 +471,36 @@
 			path = AKOCommonToolsKit/Classes/MacroDefine;
 			sourceTree = "<group>";
 		};
-		3BA1F4A079687E7104572EB3AEDA6CF8 /* Assets */ = {
+		2EA4BCF44212A9F7DE9E65C0A48603B9 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				02F8F8EE5E3E7C4ED8BA3237E9737863 /* Images.xcassets */,
+				E4749CF03909AA8B0CBF4781CA2DC27B /* QRCodeDetailView.swift */,
+				60F2595744B2EDBB2DB00B88CC48EEF5 /* QRCodeGeneratorDetailView.swift */,
+				A48CB9BC1D314405275B17FB4128A246 /* QRCodeReaderDetailView.swift */,
 			);
-			path = Assets;
+			name = QRCode;
+			path = Classes/QRCode;
+			sourceTree = "<group>";
+		};
+		36F4FE7F612BF8E33D909F055BD15F92 /* BloodPressureRecord */ = {
+			isa = PBXGroup;
+			children = (
+				F3C043260040E340092ED6635A6F4B22 /* AddBloodPressureRecordView.swift */,
+				246160C55E4E3FD8D227BD6B7265FD98 /* BloodPressureRecordCacheManager.swift */,
+				C72D74C95B2612EB2D729328665A79A3 /* BloodPressureRecordCloudKitManager.swift */,
+				02C0BD25F6445ADB3D01CA1337C11B29 /* BloodPressureRecordDetailView.swift */,
+				032E951F4185C757D1F0ECDD7B889C7D /* BloodPressureRecordSettingView.swift */,
+			);
+			name = BloodPressureRecord;
+			path = Classes/BloodPressureRecord;
+			sourceTree = "<group>";
+		};
+		382ADD5ACC367CCCA7ACF7E9CDA93864 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				188EDB2FE042F9FCCA423DF586191798 /* Images */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3F73DF3B775C42233C53A23EF68458B4 /* Pods */ = {
@@ -488,24 +512,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4B6D9A054627A53A77CB51549E7A0625 /* QRCode */ = {
+		3F88F3EA7E86F955C6BB2A66B6B7B45E /* DailyAmountRecord */ = {
 			isa = PBXGroup;
 			children = (
-				2135079B02D7E151619B0EAE2D91CE9F /* QRCodeDetailView.swift */,
-				61D925CCBF0043452991A094C604492C /* QRCodeGeneratorDetailView.swift */,
-				1D6C0E26E0F76B04BE98BE6D4D9FCAFD /* QRCodeReaderDetailView.swift */,
+				00326D56C721D9C8A659948BBB827E3B /* AmountRecordAddView.swift */,
+				54DDB4E89C9B725B6AD3E8D11A20B5B7 /* AmountRecordCacheManager.swift */,
+				05039D811BAE4DA6FFA3467AC5793E45 /* AmountRecordCloudKitManager.swift */,
+				1F1446D92D1BD68DFF2A71BA7583304D /* AmountRecordDetailView.swift */,
+				BA6B8D52019E90A433BEDF0F1ED93050 /* AmountRecordHistoryView.swift */,
+				001DB03B7C36754D6DABB7DA3287B1EC /* AmountRecordModels.swift */,
+				42B5CCB0A331954A08C120DCA909DE00 /* AmountRecordSettingView.swift */,
 			);
-			name = QRCode;
-			path = Classes/QRCode;
+			name = DailyAmountRecord;
+			path = Classes/DailyAmountRecord;
 			sourceTree = "<group>";
 		};
-		53370ED377FAAD3B40E14C6D2CBDA067 /* OnlinePrograme */ = {
+		4D823D84AB9B73F914F91E348D933EF0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B97FB6AF416A934A755F0C5036086287 /* OnlineProgramDetailView.swift */,
+				B985D423311BF71CEF239358C04EB144 /* CommmonNavigationBarModifier.swift */,
+				249E91AF9D19B1FAFEE637479A652813 /* CommonDarkModeAdaptation.swift */,
+				B83C1DE3B5BEB7702B34B62D5B0DA5F9 /* CommonModels.swift */,
+				5068E7E79E86DF734DE5395DC4AC4230 /* CommonViewAdaptation.swift */,
+				1CBFBE795FF515C27D879DC1737EDAC8 /* DateUtillity.swift */,
+				994982CA91F478189AF958F9283482B7 /* DemoDetailView.swift */,
+				18760F077C4879BBEA208E96AC08EB45 /* ImageUtility.swift */,
 			);
-			name = OnlinePrograme;
-			path = Classes/OnlinePrograme;
+			name = Common;
+			path = Classes/Common;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -549,42 +583,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		60CDC9354E10C5682BB9648A700F8A3A /* NumSysConversion */ = {
-			isa = PBXGroup;
-			children = (
-				6B1EBF6EDC1D18911DAA742E300540ED /* NumberSystemConversionDetailView.swift */,
-			);
-			name = NumSysConversion;
-			path = Classes/NumSysConversion;
-			sourceTree = "<group>";
-		};
-		61D2D097E523F2FDC78DCBBA1C444812 /* EFColorPicker */ = {
-			isa = PBXGroup;
-			children = (
-				FB879CBD4A53D58E826B2BD3A8699141 /* EFColorComponentView.swift */,
-				4F007890FD6E8265148686FB7A51A99D /* EFColorSelectionView.swift */,
-				3F7C4F30032529FC4D88E061361EA83D /* EFColorSelectionViewController.swift */,
-				2FA6F826004D5FF129F9F57485BDD786 /* EFColorUtils.swift */,
-				CCA0965B2FBA6BADCF1C2CB0C0280163 /* EFColorView.swift */,
-				5582E99BF267524DD605B29AB5AE9990 /* EFColorWheelView.swift */,
-				D92BF2B361006AD281C77490B650F39C /* EFControl.swift */,
-				2C62E8F70AFF8EFFF05CD49EA564E638 /* EFHSBView.swift */,
-				35FE4154E2E8BBBFF7C0DEA450415BF9 /* EFRGBView.swift */,
-				26A1DE81F0D4124BFCE1F571600DBF25 /* EFSliderView.swift */,
-				ADB3BCF69809E1145D0B6152E909E57B /* EFThumbView.swift */,
-			);
-			path = EFColorPicker;
-			sourceTree = "<group>";
-		};
-		668487E7898CFF1C8C261CA5729367EF /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				3903F2C4A33DD8E7D6397BA26EB3E4CF /* LICENSE */,
-				6F786A292011E4F6AA4ED29A78818C80 /* ToolsFavorites.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		6A8A7385E5CB17B45E8C3EA785F2708F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,18 +591,28 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6DFC1FD85280F5C5A01CA7B9E006E559 /* Resources */ = {
+		8438DB1E05B9A29A884901A6653E2F33 /* EFColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				007A604E2F4E3710BEC7DDFEC3EA22F6 /* Images */,
+				4FC5489FD7691D0EE3A30EB6231F1940 /* EFColorComponentView.swift */,
+				9D378057D12B93BBF771F8776E5E8B6A /* EFColorSelectionView.swift */,
+				55BA90BBB2E5B4F095596CCBE00D294C /* EFColorSelectionViewController.swift */,
+				9DFFA7D175FFDBFE6EE05EBFCE19F6CE /* EFColorUtils.swift */,
+				BA09A3CEAA82C83714352E83FD705B5A /* EFColorView.swift */,
+				BCBF2CEC7211448EA35E961EE9986E88 /* EFColorWheelView.swift */,
+				40101DA80D971558806B327965E9FED2 /* EFControl.swift */,
+				256D90FA10DB9B3C034FDF259845894E /* EFHSBView.swift */,
+				78028BFEFC01CE1D1629F798DDB04FD1 /* EFRGBView.swift */,
+				BBD9FE47C14201D31841CAE4A7509CE3 /* EFSliderView.swift */,
+				A1DADE53B3DF19FE1F9B38A3742C5233 /* EFThumbView.swift */,
 			);
-			path = Resources;
+			path = EFColorPicker;
 			sourceTree = "<group>";
 		};
 		84B9419921106AD872BFD6B255C1EF70 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9CCE4AAC559073CBB4DBA7B5B67C112E /* ToolsFavorites */,
+				2391DA0EFA19CE2901A61427C12FD73F /* ToolsFavorites */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -623,27 +631,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9CCE4AAC559073CBB4DBA7B5B67C112E /* ToolsFavorites */ = {
-			isa = PBXGroup;
-			children = (
-				3BA1F4A079687E7104572EB3AEDA6CF8 /* Assets */,
-				B7C250AB77A37F7364C51CA3B52F7CCB /* BloodPressureRecord */,
-				BCE961EBEC82A56EBC7972E2CE6D30F2 /* ColorPicker */,
-				A4704B97D540D97AF19AB6C1C342EE90 /* Common */,
-				00C8BDBFA0C5F40AA8F8F0420BD86B5B /* DailyAmountRecord */,
-				D255D92C7F4C8D4748586D8063A7C1DA /* DateCaculation */,
-				60CDC9354E10C5682BB9648A700F8A3A /* NumSysConversion */,
-				53370ED377FAAD3B40E14C6D2CBDA067 /* OnlinePrograme */,
-				668487E7898CFF1C8C261CA5729367EF /* Pod */,
-				4B6D9A054627A53A77CB51549E7A0625 /* QRCode */,
-				A80970C5059C4CBFFB075825E438E992 /* QuickQuery */,
-				6DFC1FD85280F5C5A01CA7B9E006E559 /* Resources */,
-				272C55D37BB59BB6A5544A735BDBB823 /* Support Files */,
-			);
-			name = ToolsFavorites;
-			path = ../LocalPods/ToolsFavorites;
-			sourceTree = "<group>";
-		};
 		A212B3AA0C6FBB28930DC2DEA532FEA7 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,50 +641,31 @@
 			path = AKOCommonToolsKit/Classes/NSArray;
 			sourceTree = "<group>";
 		};
-		A4704B97D540D97AF19AB6C1C342EE90 /* Common */ = {
+		AA6CB080AFA45FB0870CA796C2E8D8E1 /* OnlinePrograme */ = {
 			isa = PBXGroup;
 			children = (
-				07C001F51A2DDF50E97C48D1B99EE609 /* CommmonNavigationBarModifier.swift */,
-				1F6E4C66DC77C65B8A389397CB3C4A36 /* CommonModels.swift */,
-				D85A6D3E2BA3366F00B973C4 /* CommonAdaptation.swift */,
-				3FDBA4D53E170B18D9EF63199D53C160 /* DateUtillity.swift */,
-				2FCB2C2B0FC47FA6A619CD85F38DB50A /* DemoDetailView.swift */,
-				FCD1BE8BE3270AE68CC2CAA0D709CF02 /* ImageUtility.swift */,
+				0C449F75A407641988F9C4BA025A7344 /* OnlineProgramDetailView.swift */,
 			);
-			name = Common;
-			path = Classes/Common;
+			name = OnlinePrograme;
+			path = Classes/OnlinePrograme;
 			sourceTree = "<group>";
 		};
-		A80970C5059C4CBFFB075825E438E992 /* QuickQuery */ = {
+		B41663404DE9BF486E17D94FF2FDCA50 /* QuickQuery */ = {
 			isa = PBXGroup;
 			children = (
-				6B2DC7C9ECE2F082EF9F8EB3FE90D341 /* QuickQueryDetailView.swift */,
+				F5C5A2AFB3589770466D7F16864555B1 /* QuickQueryDetailView.swift */,
 			);
 			name = QuickQuery;
 			path = Classes/QuickQuery;
 			sourceTree = "<group>";
 		};
-		B7C250AB77A37F7364C51CA3B52F7CCB /* BloodPressureRecord */ = {
+		C755CD9E7081A5CA4542F22149F88536 /* DateCaculation */ = {
 			isa = PBXGroup;
 			children = (
-				D315AB82FCE13AA4A1C5834FC2AC56F4 /* AddBloodPressureRecordView.swift */,
-				C8D6513A513D4C55CDFDAF2FAEA99D27 /* BloodPressureRecordCacheManager.swift */,
-				695FB3224C568F6399736B41E03EB974 /* BloodPressureRecordCloudKitManager.swift */,
-				FCD5C10EDA6F8FA7194C0D6BA0BE2AC1 /* BloodPressureRecordDetailView.swift */,
-				B649B3A86D6562658C8475D223CD0843 /* BloodPressureRecordSettingView.swift */,
+				C56517FBFBFB217173408FEA63CC6376 /* DateCaculationDetailView.swift */,
 			);
-			name = BloodPressureRecord;
-			path = Classes/BloodPressureRecord;
-			sourceTree = "<group>";
-		};
-		BCE961EBEC82A56EBC7972E2CE6D30F2 /* ColorPicker */ = {
-			isa = PBXGroup;
-			children = (
-				35C04C5D599B958222A39EC2A30EDD86 /* ColorPickerDetailView.swift */,
-				61D2D097E523F2FDC78DCBBA1C444812 /* EFColorPicker */,
-			);
-			name = ColorPicker;
-			path = Classes/ColorPicker;
+			name = DateCaculation;
+			path = Classes/DateCaculation;
 			sourceTree = "<group>";
 		};
 		C87E0F8EB44CE1D29282056D30258268 /* Collections */ = {
@@ -708,6 +676,23 @@
 			);
 			name = Collections;
 			path = AKOCommonToolsKit/Classes/Collections;
+			sourceTree = "<group>";
+		};
+		C95FB1E42EC40AB4C03AE06DCEAC0A7F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				223D3CDA92D817A73064051B467E4B05 /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CD9E1144DC77CC2AE790CC524C534A03 /* NumSysConversion */ = {
+			isa = PBXGroup;
+			children = (
+				1827E9B20E58F62E14B6639FF5595355 /* NumberSystemConversionDetailView.swift */,
+			);
+			name = NumSysConversion;
+			path = Classes/NumSysConversion;
 			sourceTree = "<group>";
 		};
 		CDE7A87F92239641D9EDA119FCB25958 /* UIImage */ = {
@@ -742,15 +727,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D255D92C7F4C8D4748586D8063A7C1DA /* DateCaculation */ = {
-			isa = PBXGroup;
-			children = (
-				F66613ED64E1CB0E8E389FA3E0824543 /* DateCaculationDetailView.swift */,
-			);
-			name = DateCaculation;
-			path = Classes/DateCaculation;
-			sourceTree = "<group>";
-		};
 		DCF5F00E8C1E287C8646A8414B54DFE9 /* AKOCommonToolsKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +756,33 @@
 			);
 			name = UIColor;
 			path = AKOCommonToolsKit/Classes/UIColor;
+			sourceTree = "<group>";
+		};
+		FCF510445B3FA88B4888A810B13A0C40 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				03C88ECBB38831243A59DFADA04D52A6 /* LICENSE */,
+				57AADBC887BB52F60216219A372E3594 /* ToolsFavorites.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		FDAA43C264B6C5098B0AC3524F83B8CB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA600022E5F5C2023EAFC2B30718DC /* ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist */,
+				78AC07F5A270AE7D730A16BEEE1A40ED /* ResourceBundle-CToolsFavorites-ToolsFavorites-Info.plist */,
+				AFF773AB86C27582CD1A66EFE310AB2C /* ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist */,
+				B280C7A6334AB1A447486F28DB2A9170 /* ToolsFavorites.modulemap */,
+				7A8875D31EB05BC42B103A0747B6299A /* ToolsFavorites-dummy.m */,
+				85D5921C37B7F8D8C33E26AE60B9E308 /* ToolsFavorites-Info.plist */,
+				CF0C8C8A50B712DC47532BCD0DD2C123 /* ToolsFavorites-prefix.pch */,
+				775F005B9E7347A0AF53D1E9BB170AAD /* ToolsFavorites-umbrella.h */,
+				491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */,
+				D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/ToolsFavorites";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -826,11 +829,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9171D3FFDFBFD76795C5540996FFB44 /* Headers */ = {
+		9020C3FDA0AEE1105848DE89CD508555 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B230DC13E651F614FCE34ADE96959223 /* ToolsFavorites-umbrella.h in Headers */,
+				729F902B0E2AE7D02557A805B2C5D70C /* ToolsFavorites-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,11 +850,11 @@
 /* Begin PBXNativeTarget section */
 		42FF0B0E5CEEECEA02B8E6B80E70954F /* ToolsFavorites-CToolsFavorites */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E081FD98FD884B3A45899ED3DBA42D2A /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites" */;
+			buildConfigurationList = EFF3ED8C9FBDCE904233CB3594D1CE45 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites" */;
 			buildPhases = (
-				577A98C3C4A4E6D52C666F225F97DAB0 /* Sources */,
-				2041B2F228C9D527D9EB207764805274 /* Frameworks */,
-				FECE588E7C049D3F3DAF87E5F0A4C17E /* Resources */,
+				FAFD93C2143AD4AF9792DD9E58CA43D1 /* Sources */,
+				8942720F9A2739A83FF28EFD6766B8B7 /* Frameworks */,
+				685C7536B7858DDF4571200B3D8AF6E3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -892,9 +895,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				071247C38ABA90E57FDEEB64DFB82EE8 /* PBXTargetDependency */,
-				1FAB25A6F502AAC8124E636C1D659386 /* PBXTargetDependency */,
-				2A5EB91BEE65BEDA20EF697D80778732 /* PBXTargetDependency */,
+				D433D176BCD087E6DF0C199ED7B5B870 /* PBXTargetDependency */,
+				89557FCA4D1E97D37A3727700790720A /* PBXTargetDependency */,
+				3196B07D98AE5388AA30866195CABC54 /* PBXTargetDependency */,
 			);
 			name = "Pods-CToolsFavorites";
 			productName = Pods_CToolsFavorites;
@@ -903,11 +906,11 @@
 		};
 		C090833B48182AA641080DC0DB090484 /* ToolsFavorites-CToolsFavorites-Images */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9E44A781371C93A05FE357DAE9E234E /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Images" */;
+			buildConfigurationList = 3269C75777A7F4616DE6E47DCE1FBB51 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Images" */;
 			buildPhases = (
-				EC710F62D214406A97B0FEC0A54C97DD /* Sources */,
-				B581C660007C7BB50A691AAD496A93F8 /* Frameworks */,
-				759A587EB6931454FAB64A491B23C9BF /* Resources */,
+				C7EF4805FA259AF8F43D83038A07706D /* Sources */,
+				A2C625828A7C214AE421EEA4A9D34680 /* Frameworks */,
+				4CB701C8CE0595434771471F3F920807 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -920,11 +923,11 @@
 		};
 		D0DCDB7812C19B2B1A352DB520D9F6A7 /* ToolsFavorites-CToolsFavorites-Videos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADD4C92D1376DB0432CB6F44AC49CFBB /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Videos" */;
+			buildConfigurationList = FCE3D43661E5AB7E9C08B98F56F56F49 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Videos" */;
 			buildPhases = (
-				DBAB3CFC9118800F7DEA2487F6174F66 /* Sources */,
-				A0E58442099815FFEA214500A45CC865 /* Frameworks */,
-				83245A870D2E3BDAA97C01F1CC040039 /* Resources */,
+				2E94B5685DB5DC1DD4166CB66EC17F7B /* Sources */,
+				9493D6BCEE60034E0FD5083ED500C687 /* Frameworks */,
+				7BA5B4E4387C3063D6C38C8C336FA4B4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -955,21 +958,21 @@
 		};
 		EBE7965B6AF891A014BECD8BBB2EC467 /* ToolsFavorites */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF3ECBB9D1E0AEA0E435F0AB16E7B5DC /* Build configuration list for PBXNativeTarget "ToolsFavorites" */;
+			buildConfigurationList = FEC2C70B89134618CDFBE2FE2C202A1E /* Build configuration list for PBXNativeTarget "ToolsFavorites" */;
 			buildPhases = (
-				A9171D3FFDFBFD76795C5540996FFB44 /* Headers */,
-				72D206989F3E5B64E4D7A522634BAA2D /* Sources */,
-				D6A1C47B38A64121A9415423C0E4C438 /* Frameworks */,
-				F985CC99E663CE87BCF7090C63CF7099 /* Resources */,
+				9020C3FDA0AEE1105848DE89CD508555 /* Headers */,
+				9A07EE62BEE7637131F1BBAE3C6674BB /* Sources */,
+				57A02F3FB3BC3B5E4B2022508A12871B /* Frameworks */,
+				91ED4F79B2CC136BF7064C6A8B7671D7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				733B6E673279DE503B5FA5193DDD5503 /* PBXTargetDependency */,
-				21C1ED8577DD7AC5F468EB19ABF76351 /* PBXTargetDependency */,
-				8937DB76335B9AE18FC9E92B143041D5 /* PBXTargetDependency */,
-				1B8243339B3FC81DE96E1B1116944A4F /* PBXTargetDependency */,
-				A3BCFE017053B8F3A5101BB61B3192DA /* PBXTargetDependency */,
+				16DDE76632726A0B030EDDCD9167E133 /* PBXTargetDependency */,
+				5FA85C53CE9FF640409AD40EE3BD0406 /* PBXTargetDependency */,
+				80B9F3B0DDAD90BBB52EB7D75DF94E35 /* PBXTargetDependency */,
+				E6D479478371D1EA0C661A9B81F8AB05 /* PBXTargetDependency */,
+				B41FE7AC8E66410BEBA710DDF542AD20 /* PBXTargetDependency */,
 			);
 			name = ToolsFavorites;
 			productName = ToolsFavorites;
@@ -1017,6 +1020,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CB701C8CE0595434771471F3F920807 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F7EEDB623A166E71088A0BBC77A4EB /* alliphonedevicesinfo.png in Resources */,
+				ACFA435B1D448181B0B6359EFB9B1FDA /* highbloodpressure.jpg in Resources */,
+				280067A7604D66DAF29D79DE5FA8D977 /* normalbloodpressurestandard.jpg in Resources */,
+				D96E52FEA1DAD9BC3E2AFA45EDD94624 /* poweroftwotable.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5139D6B936F8C307CB5CA54B33053D0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,14 +1038,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		759A587EB6931454FAB64A491B23C9BF /* Resources */ = {
+		685C7536B7858DDF4571200B3D8AF6E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B4AE5FBFE1C1308984BA8FD59FB7E2 /* alliphonedevicesinfo.png in Resources */,
-				907B3A240CE4F7C330ABC706436DCA02 /* highbloodpressure.jpg in Resources */,
-				0796A4ADB51F78AECF8766CBDD02DCB9 /* normalbloodpressurestandard.jpg in Resources */,
-				F581F409A25A3D06CE17848151D89863 /* poweroftwotable.png in Resources */,
+				EEA752FAFE569EB490F8C882142E482C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,31 +1053,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83245A870D2E3BDAA97C01F1CC040039 /* Resources */ = {
+		7BA5B4E4387C3063D6C38C8C336FA4B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F985CC99E663CE87BCF7090C63CF7099 /* Resources */ = {
+		91ED4F79B2CC136BF7064C6A8B7671D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FECE588E7C049D3F3DAF87E5F0A4C17E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4682AB683E344076DB33F809BE9913A5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E94B5685DB5DC1DD4166CB66EC17F7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30574065FE88501DA58E571C6BF304B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1104,55 +1114,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		577A98C3C4A4E6D52C666F225F97DAB0 /* Sources */ = {
+		9A07EE62BEE7637131F1BBAE3C6674BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4731ADB539CFB0BA1E58DC4B7473B418 /* AddBloodPressureRecordView.swift in Sources */,
+				6A7B1BFA4CAE02EE2A5A5F117C5EF9A3 /* AmountRecordAddView.swift in Sources */,
+				F978E2E5726ABB5CC3DBE0A21F882F82 /* AmountRecordCacheManager.swift in Sources */,
+				146D11A207A7A4C3F7CF38079F693830 /* AmountRecordCloudKitManager.swift in Sources */,
+				91F8A82F3E2505D9CBD577A752F778DF /* AmountRecordDetailView.swift in Sources */,
+				FB90873523F5103494A746279D256E42 /* AmountRecordHistoryView.swift in Sources */,
+				5D0E3942F998974E9DCC2EFD8609CF1C /* AmountRecordModels.swift in Sources */,
+				332DEA0E94C8298F4A851FB425D56736 /* AmountRecordSettingView.swift in Sources */,
+				1962E5E94DA2A6C3E7B6B08057C3E6B0 /* BloodPressureRecordCacheManager.swift in Sources */,
+				7C88D8EF03B9DDDCF327C3A57DBA810A /* BloodPressureRecordCloudKitManager.swift in Sources */,
+				57C4DC78FBE9D1D439766AFBCCDF611A /* BloodPressureRecordDetailView.swift in Sources */,
+				869527AEE9B3FFA6A1911AB9898B9DD8 /* BloodPressureRecordSettingView.swift in Sources */,
+				17DCD5129DC7C817E2E322A76168F00E /* ColorPickerDetailView.swift in Sources */,
+				334B22455737EB56C11BED1BE03BACED /* CommmonNavigationBarModifier.swift in Sources */,
+				997B5B70131D0D72C114A323A17060F3 /* CommonDarkModeAdaptation.swift in Sources */,
+				5BB847D526AAE7FA3AB67F54C5ADC15D /* CommonModels.swift in Sources */,
+				FA68DC2FFBF5F8E3E87431DBB7F1490C /* CommonViewAdaptation.swift in Sources */,
+				2720A338C337B1186F99E89996887A98 /* DateCaculationDetailView.swift in Sources */,
+				659E05BD45BB350672EAF2A9B7AF5C5A /* DateUtillity.swift in Sources */,
+				001B5E1C4F541538057B0D557C38D1AD /* DemoDetailView.swift in Sources */,
+				4C1E25FB82926669EDF52FD7152C9C50 /* EFColorComponentView.swift in Sources */,
+				87D4A6BBACC7FA171D642C4FBA4ED34C /* EFColorSelectionView.swift in Sources */,
+				E3154E728F9417C18455A918D7477A2E /* EFColorSelectionViewController.swift in Sources */,
+				47200BF98BD84AC1BB59FF0BA94381D0 /* EFColorUtils.swift in Sources */,
+				FBCE2995ED8EF5E8E06BE4BFCBAFDC4F /* EFColorView.swift in Sources */,
+				76D6D66A535F81E9DD1218BD3166D813 /* EFColorWheelView.swift in Sources */,
+				9AC129727A28CFE9014FC6A78A93BD6D /* EFControl.swift in Sources */,
+				20127EFD967E5BE3A351585BB7C0FE33 /* EFHSBView.swift in Sources */,
+				755F6A7E773F15D9580BDA54E6C5CF08 /* EFRGBView.swift in Sources */,
+				3B8BE573FD690E5C30B7565AC1D79F42 /* EFSliderView.swift in Sources */,
+				FF076C277D32BE7037C334B318113533 /* EFThumbView.swift in Sources */,
+				179A4F6B4676094ADCAED466B9B72817 /* ImageUtility.swift in Sources */,
+				7499516511DCBD16285F8CBE9048BFB5 /* NumberSystemConversionDetailView.swift in Sources */,
+				12C8077ACE2A84278A009F2858672D68 /* OnlineProgramDetailView.swift in Sources */,
+				3B0A8A9F18BCCD4DC32B2855408A6FD6 /* QRCodeDetailView.swift in Sources */,
+				5950A247CA411B2E1044D464C034A875 /* QRCodeGeneratorDetailView.swift in Sources */,
+				BD0E6C5A98FB961988F99B16644084B3 /* QRCodeReaderDetailView.swift in Sources */,
+				AED724661A967DB0498F55C7003DB309 /* QuickQueryDetailView.swift in Sources */,
+				74D4AF4D23E7063B6EE01C67D3CD5833 /* ToolsFavorites-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72D206989F3E5B64E4D7A522634BAA2D /* Sources */ = {
+		C7EF4805FA259AF8F43D83038A07706D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709F54D096BBBB5C0174A66CE94614D5 /* AddBloodPressureRecordView.swift in Sources */,
-				16F568D74C1AF816777AB6807EB3023B /* AmountRecordAddView.swift in Sources */,
-				B1FC341E37CBEBE623CF66591F0F4253 /* AmountRecordCacheManager.swift in Sources */,
-				F67207A2600C993B751DC34EDAA0C350 /* AmountRecordCloudKitManager.swift in Sources */,
-				5E81513394D6F058478C750D5203A810 /* AmountRecordDetailView.swift in Sources */,
-				04FDC135A20813A75845271A4401BB9B /* AmountRecordHistoryView.swift in Sources */,
-				A1129E40C9892541D2E8E53AB9F1A8A2 /* AmountRecordModels.swift in Sources */,
-				1435209285F98AD543E05F7FE8A293A2 /* AmountRecordSettingView.swift in Sources */,
-				1E2B55C8BAD4D8FA47E8E4FBE64C2A70 /* BloodPressureRecordCacheManager.swift in Sources */,
-				D85A6D3F2BA3366F00B973C4 /* CommonAdaptation.swift in Sources */,
-				43594B4B58C3729C5F861D72F71ABF6D /* BloodPressureRecordCloudKitManager.swift in Sources */,
-				25EB353A0FAB310928681D193D5A2A37 /* BloodPressureRecordDetailView.swift in Sources */,
-				B111C9E9C21DF31E992F4659FEED5A9A /* BloodPressureRecordSettingView.swift in Sources */,
-				1C4F6E62E80F5903FD6CB5A8A54BCEB4 /* ColorPickerDetailView.swift in Sources */,
-				C4DB6442A412A20701835C38F2B51924 /* CommmonNavigationBarModifier.swift in Sources */,
-				7E145353F57F238055D42315BE76E9A0 /* CommonModels.swift in Sources */,
-				489B7D5E290D2C4608E93892F625EDC9 /* DateCaculationDetailView.swift in Sources */,
-				54A9DBCF83B07F8D6864B5AD85009578 /* DateUtillity.swift in Sources */,
-				0C03C49DD1CC13311E11E5A70737AA1F /* DemoDetailView.swift in Sources */,
-				55EEB4BD1B147A6CDB5AC5E7A78ABDE7 /* EFColorComponentView.swift in Sources */,
-				D60E2BD4F0039FF0B43C11C1071986D5 /* EFColorSelectionView.swift in Sources */,
-				5ED024884D54D8504E5782FEEA8D8B6B /* EFColorSelectionViewController.swift in Sources */,
-				38B97E8F4358246836E8ABC0CF4A3AAC /* EFColorUtils.swift in Sources */,
-				34420E04FA63016FC74C233FCF435228 /* EFColorView.swift in Sources */,
-				C86F5C8FCA53A74BB9CFFC0D43CA957E /* EFColorWheelView.swift in Sources */,
-				18C0391BCC93247CB6FC4C6B9BF6FF83 /* EFControl.swift in Sources */,
-				73133B7B68F0F9FEB26846BC3BCC9A1D /* EFHSBView.swift in Sources */,
-				76827C2E2C629FC083E041F0BF527906 /* EFRGBView.swift in Sources */,
-				6E3D5E3EB2E965CAB790AD761ADB64DD /* EFSliderView.swift in Sources */,
-				328650216A62BDFE6D83D4AC7BD04269 /* EFThumbView.swift in Sources */,
-				8E50FAFC7A053D3D135C96EA8A78D918 /* ImageUtility.swift in Sources */,
-				0F242ACA9B75D856A616AA2640D7D8BB /* NumberSystemConversionDetailView.swift in Sources */,
-				CC05610835E35C731346F5CD56ADBADD /* OnlineProgramDetailView.swift in Sources */,
-				0C752997296BB3DF35EF0330E6FD9B41 /* QRCodeDetailView.swift in Sources */,
-				3DC174AFE9347CDD166DE3C40C87F9FB /* QRCodeGeneratorDetailView.swift in Sources */,
-				B21768295F4D4305AA34856993628C40 /* QRCodeReaderDetailView.swift in Sources */,
-				CB22E04DC8502E0556E5571358527E35 /* QuickQueryDetailView.swift in Sources */,
-				F8D775138B9C4401B45CDE1931EA45C7 /* ToolsFavorites-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1164,14 +1175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBAB3CFC9118800F7DEA2487F6174F66 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC710F62D214406A97B0FEC0A54C97DD /* Sources */ = {
+		FAFD93C2143AD4AF9792DD9E58CA43D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1181,53 +1185,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		071247C38ABA90E57FDEEB64DFB82EE8 /* PBXTargetDependency */ = {
+		16DDE76632726A0B030EDDCD9167E133 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AKOCommonToolsKit;
 			target = DF832F384E15469DFE1F9F7E5152A7D3 /* AKOCommonToolsKit */;
-			targetProxy = BEBAA5DC6BB2E28819D80F55B4E40AAA /* PBXContainerItemProxy */;
+			targetProxy = E08E60804FAD30B3A21F3E33475130C0 /* PBXContainerItemProxy */;
 		};
-		1B8243339B3FC81DE96E1B1116944A4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ToolsFavorites-CToolsFavorites-Images";
-			target = C090833B48182AA641080DC0DB090484 /* ToolsFavorites-CToolsFavorites-Images */;
-			targetProxy = A1880E22EF7F837E509C24025D043017 /* PBXContainerItemProxy */;
-		};
-		1FAB25A6F502AAC8124E636C1D659386 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = B6C662650B4CAACF277303CE083F2A60 /* PBXContainerItemProxy */;
-		};
-		21C1ED8577DD7AC5F468EB19ABF76351 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = F4492A843400A90E2E77AD26A9221D45 /* PBXContainerItemProxy */;
-		};
-		2A5EB91BEE65BEDA20EF697D80778732 /* PBXTargetDependency */ = {
+		3196B07D98AE5388AA30866195CABC54 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ToolsFavorites;
 			target = EBE7965B6AF891A014BECD8BBB2EC467 /* ToolsFavorites */;
-			targetProxy = EA60611EC91C691BBF36BA0CBE033C4B /* PBXContainerItemProxy */;
+			targetProxy = 3C5000C90C152FC1C6270AFE5A53936B /* PBXContainerItemProxy */;
 		};
-		733B6E673279DE503B5FA5193DDD5503 /* PBXTargetDependency */ = {
+		5FA85C53CE9FF640409AD40EE3BD0406 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = AKOCommonToolsKit;
-			target = DF832F384E15469DFE1F9F7E5152A7D3 /* AKOCommonToolsKit */;
-			targetProxy = 97C28A6A4AD79CA3A0FAA2C935783E77 /* PBXContainerItemProxy */;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 817511A815D9B63A3A33D00ADEF29ACD /* PBXContainerItemProxy */;
 		};
-		8937DB76335B9AE18FC9E92B143041D5 /* PBXTargetDependency */ = {
+		80B9F3B0DDAD90BBB52EB7D75DF94E35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ToolsFavorites-CToolsFavorites";
 			target = 42FF0B0E5CEEECEA02B8E6B80E70954F /* ToolsFavorites-CToolsFavorites */;
-			targetProxy = 374F3CBC3DDFF06FDCC2F2A8B3913DB5 /* PBXContainerItemProxy */;
+			targetProxy = 87A400410B08B03425FAF25F24FA3780 /* PBXContainerItemProxy */;
 		};
-		A3BCFE017053B8F3A5101BB61B3192DA /* PBXTargetDependency */ = {
+		89557FCA4D1E97D37A3727700790720A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 357E8E2ACBA8103FB98AF3C8842093E8 /* PBXContainerItemProxy */;
+		};
+		B41FE7AC8E66410BEBA710DDF542AD20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ToolsFavorites-CToolsFavorites-Videos";
 			target = D0DCDB7812C19B2B1A352DB520D9F6A7 /* ToolsFavorites-CToolsFavorites-Videos */;
-			targetProxy = E3A7AACB221DE5549411B410147798AB /* PBXContainerItemProxy */;
+			targetProxy = 3FBE68B123648DE7C59B686BD5FF2D9A /* PBXContainerItemProxy */;
+		};
+		D433D176BCD087E6DF0C199ED7B5B870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AKOCommonToolsKit;
+			target = DF832F384E15469DFE1F9F7E5152A7D3 /* AKOCommonToolsKit */;
+			targetProxy = EC8395EFAAE0FD323536486139986406 /* PBXContainerItemProxy */;
+		};
+		E6D479478371D1EA0C661A9B81F8AB05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ToolsFavorites-CToolsFavorites-Images";
+			target = C090833B48182AA641080DC0DB090484 /* ToolsFavorites-CToolsFavorites-Images */;
+			targetProxy = 0BB30582C07A44F138F5FB6693D0A850 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1331,26 +1335,9 @@
 			};
 			name = Release;
 		};
-		4A3996A531CBECF08AFBB20651E84836 /* Debug */ = {
+		5066F1E2AC898D516F42B433F7702789 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
-				PRODUCT_NAME = "CToolsFavorites-Videos";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		50B4EE41008B6CC97FAEB7E7D29128E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
+			baseConfigurationReference = D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
 				DEVELOPMENT_TEAM = 688B74985L;
@@ -1363,7 +1350,24 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
+		};
+		5EC456F04F8F068D6DC30CDFBFA33FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = "CToolsFavorites-Videos";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		60B4B20FBB3E17430A69652B96EC4847 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1400,9 +1404,43 @@
 			};
 			name = Debug;
 		};
-		845C302E577F8F182400C91226C4A335 /* Release */ = {
+		72EB6AFFFF030BAABD44C79E9BBCE591 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
+			baseConfigurationReference = 491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = "CToolsFavorites-Videos";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		7D874EF0BBB6BA7D1381702A7E9589B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
+				DEVELOPMENT_TEAM = 688B74985L;
+				IBSC_MODULE = ToolsFavorites;
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				PRODUCT_NAME = "CToolsFavorites-Images";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		BA525AACD130596B02E8D2D0CCD5AA58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
 				DEVELOPMENT_TEAM = 688B74985L;
@@ -1417,26 +1455,9 @@
 			};
 			name = Release;
 		};
-		BEB9B6CC70CBA9755659D661D562A971 /* Release */ = {
+		C83BBE58C67F5D14BA301AAA40A99C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Videos-ToolsFavorites-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
-				PRODUCT_NAME = "CToolsFavorites-Videos";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		C5272E88A6264D348BDDB18039E38CEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
+			baseConfigurationReference = 491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
 				DEVELOPMENT_TEAM = 688B74985L;
@@ -1448,79 +1469,6 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		D3A0330689D3783D3D069A133EC4AF6D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F8F01ACCD4754DD390E63BAEF5AA36 /* ToolsFavorites.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites.modulemap";
-				PRODUCT_MODULE_NAME = ToolsFavorites;
-				PRODUCT_NAME = ToolsFavorites;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D99B8CDD2537B47832F905C544D2603D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites.modulemap";
-				PRODUCT_MODULE_NAME = ToolsFavorites;
-				PRODUCT_NAME = ToolsFavorites;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -1561,22 +1509,42 @@
 			};
 			name = Debug;
 		};
-		E906BF83FA0E4054D63686F9E2E48F70 /* Debug */ = {
+		E1CF64FB9709793961725505B97E1599 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0530F54315D9FA35695504397CCF5C14 /* ToolsFavorites.debug.xcconfig */;
+			baseConfigurationReference = D8722EB95F070F0B6A10319F269396E3 /* ToolsFavorites.release.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ToolsFavorites";
-				DEVELOPMENT_TEAM = 688B74985L;
-				IBSC_MODULE = ToolsFavorites;
-				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ResourceBundle-CToolsFavorites-Images-ToolsFavorites-Info.plist";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
-				PRODUCT_NAME = "CToolsFavorites-Images";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites.modulemap";
+				PRODUCT_MODULE_NAME = ToolsFavorites;
+				PRODUCT_NAME = ToolsFavorites;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		EC32DC7695C3F5768829E693E3C61F0B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1615,6 +1583,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		F3089E578A3F91B749E9B88DD5035EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491EAB67CE2078D866BA575A1C1438B7 /* ToolsFavorites.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ToolsFavorites/ToolsFavorites-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.8;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/ToolsFavorites/ToolsFavorites.modulemap";
+				PRODUCT_MODULE_NAME = ToolsFavorites;
+				PRODUCT_NAME = ToolsFavorites;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F37A754C2CE181AAC90D55DF80C2B961 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1757,6 +1761,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3269C75777A7F4616DE6E47DCE1FBB51 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Images" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D874EF0BBB6BA7D1381702A7E9589B5 /* Debug */,
+				BA525AACD130596B02E8D2D0CCD5AA58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1775,24 +1788,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9E44A781371C93A05FE357DAE9E234E /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Images" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E906BF83FA0E4054D63686F9E2E48F70 /* Debug */,
-				845C302E577F8F182400C91226C4A335 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ADD4C92D1376DB0432CB6F44AC49CFBB /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Videos" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A3996A531CBECF08AFBB20651E84836 /* Debug */,
-				BEB9B6CC70CBA9755659D661D562A971 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BB97D793FDFCB00620D8F4264B82A705 /* Build configuration list for PBXNativeTarget "Pods-CToolsFavorites" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1802,20 +1797,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF3ECBB9D1E0AEA0E435F0AB16E7B5DC /* Build configuration list for PBXNativeTarget "ToolsFavorites" */ = {
+		EFF3ED8C9FBDCE904233CB3594D1CE45 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D99B8CDD2537B47832F905C544D2603D /* Debug */,
-				D3A0330689D3783D3D069A133EC4AF6D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E081FD98FD884B3A45899ED3DBA42D2A /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50B4EE41008B6CC97FAEB7E7D29128E4 /* Debug */,
-				C5272E88A6264D348BDDB18039E38CEA /* Release */,
+				C83BBE58C67F5D14BA301AAA40A99C3F /* Debug */,
+				5066F1E2AC898D516F42B433F7702789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1825,6 +1811,24 @@
 			buildConfigurations = (
 				60B4B20FBB3E17430A69652B96EC4847 /* Debug */,
 				FF2F0148E393E7217A0E0B6F4FB5C59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE3D43661E5AB7E9C08B98F56F56F49 /* Build configuration list for PBXNativeTarget "ToolsFavorites-CToolsFavorites-Videos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72EB6AFFFF030BAABD44C79E9BBCE591 /* Debug */,
+				5EC456F04F8F068D6DC30CDFBFA33FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC2C70B89134618CDFBE2FE2C202A1E /* Build configuration list for PBXNativeTarget "ToolsFavorites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3089E578A3F91B749E9B88DD5035EE6 /* Debug */,
+				E1CF64FB9709793961725505B97E1599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

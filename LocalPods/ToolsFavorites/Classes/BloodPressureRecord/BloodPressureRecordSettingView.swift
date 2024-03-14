@@ -180,12 +180,12 @@ struct BloodPressureRecordSettingView: View {
                                 .buttonStyle(.bordered)
                             }
                             
-                            Text("Note: Please configure your Database with the help of the developer before entering this page again, otherwise you will not be able to use this feature.")
+                            Text("Note: Using a remote database, data can be shared by multiple people. But before entering this page again, please configure your database with the help of the developer, otherwise you will not be able to use this feature.")
                                 .font(.footnote)
                                 .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
                                 .padding()
                         } else {
-                            Text("Note: If using local storage, data will be lost if the app is deleted.")
+                            Text("Note: The default option is to store data locally. If local storage is used, it is for personal use only and the data cannot be shared. If you delete the application, the data will be lost.")
                                 .font(.footnote)
                                 .foregroundColor(DarkMode.isDarkMode ? .white : .black.opacity(0.5))
                                 .padding()

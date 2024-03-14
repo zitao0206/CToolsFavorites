@@ -14,10 +14,10 @@ class AmountRecordCloudKitManager : AmountRecordProtocol {
     
     static var containerIdentifier: String? {
        get {
-           return UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDataName)
+           return UserDefaults.standard.string(forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
        }
        set {
-           UserDefaults.standard.set(newValue, forKey: UserDefaultsConstants.amountRecordDataName)
+           UserDefaults.standard.set(newValue, forKey: UserDefaultsConstants.amountRecordDatabaseIdentifier)
        }
     }
 

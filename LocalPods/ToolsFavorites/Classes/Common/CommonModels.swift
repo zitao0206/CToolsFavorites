@@ -14,7 +14,7 @@ extension Notification.Name {
 struct UserDefaultsConstants {
     
     static let amountRecordDatabaseIdentifier = "AmountRecordDatabaseIdentifier"
-    static let amountRecordDataName = "UserDefaults.AmountRecord.zitao0206"
+    static let amountRecordDataName = "Local.AmountRecord.zitao0206"
 }
 
 public struct ToolItem {
@@ -27,12 +27,7 @@ public struct ToolItem {
     }
 }
 
-public struct DarkMode {
-    public static var isDarkMode: Bool {
-        let dark = UIApplication.shared.windows.first?.rootViewController?.traitCollection.userInterfaceStyle == .dark
-        return dark
-    }
-}
+
 
 public struct GeneralDevice {
     public static var isPad: Bool {
