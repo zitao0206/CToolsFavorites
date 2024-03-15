@@ -32,6 +32,7 @@
 		D85A6D382BA1DCB100B973C4 /* launch02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch02.png; sourceTree = "<group>"; };
 		D85A6D3A2BA1E70F00B973C4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D85A6D3C2BA1EE6000B973C4 /* icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_small.png; sourceTree = "<group>"; };
+		D86ACC3B2BA49D1200004684 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D89BA03B2AAF450E0045D812 /* CToolsFavorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CToolsFavorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CToolsFavoritesApp.swift; sourceTree = "<group>"; };
 		D89BA0402AAF450E0045D812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 				D8026B2D2B8CD13E0070C541 /* CToolsFavorites.entitlements */,
 				D85A6D2E2BA1D09700B973C4 /* LaunchScreen.storyboard */,
 				D89BA0532AAF458B0045D812 /* Info.plist */,
+				D86ACC3B2BA49D1200004684 /* PrivacyInfo.xcprivacy */,
 				D89BA03E2AAF450E0045D812 /* CToolsFavoritesApp.swift */,
 				D89BA04C2AAF45640045D812 /* Resource */,
 				D89BA0402AAF450E0045D812 /* ContentView.swift */,
@@ -374,7 +376,7 @@
 				CODE_SIGN_ENTITLEMENTS = CToolsFavorites/CToolsFavoritesDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5.0;
+				CURRENT_PROJECT_VERSION = 1.3.4.3;
 				DEVELOPMENT_ASSET_PATHS = "\"CToolsFavorites/Preview Content\"";
 				DEVELOPMENT_TEAM = 688B74985L;
 				ENABLE_PREVIEWS = YES;
@@ -392,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zitao.li0206.CToolsFavorites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -415,7 +417,7 @@
 				CODE_SIGN_ENTITLEMENTS = CToolsFavorites/CToolsFavorites.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5.0;
+				CURRENT_PROJECT_VERSION = 1.3.4.3;
 				DEVELOPMENT_ASSET_PATHS = "\"CToolsFavorites/Preview Content\"";
 				DEVELOPMENT_TEAM = 688B74985L;
 				ENABLE_PREVIEWS = YES;
@@ -433,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zitao.li0206.CToolsFavorites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
