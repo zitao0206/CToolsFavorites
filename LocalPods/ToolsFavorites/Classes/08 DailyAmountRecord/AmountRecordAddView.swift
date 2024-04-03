@@ -61,6 +61,12 @@ struct AmountRecordAddView: View {
                         .onAppear() {
                             recordElement.time = Date()
                         }
+                    
+                    Spacer()
+                    
+                    Button("Now", action: {
+                        recordElement.time = Date()
+                    })
                    
                     Spacer()
                 }
@@ -169,7 +175,7 @@ struct AmountRecordAddView: View {
         }
 
         // reset
-        recordElement = AmountRecordElement(time: Date(), amount: 0)
+        recordElement = AmountRecordElement(time: recordElement.time, amount: 0)
     }
     
     private func deleteItems(offsets: IndexSet) {

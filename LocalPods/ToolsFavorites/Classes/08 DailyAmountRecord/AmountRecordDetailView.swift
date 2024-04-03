@@ -31,6 +31,12 @@ public struct AmountRecordDetailView: View {
               .tabItem {
                   Label("History", systemImage: "clock")
               }
+            AmountRecordAnalysisView()
+              .tag(2)
+              .tabItem {
+                  Label("Analysis", systemImage: "clock")
+              }
+            
         }
    
         NavigationLink(destination: AmountRecordSettingView(), isActive: $showingSettings) {
