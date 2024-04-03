@@ -68,7 +68,6 @@ struct AmountRecordHistoryView: View {
         return amountRecords.map { (key: $0.key, value: $0.value.sorted(by: { $0.time < $1.time })) }
                            .sorted(by: { $0.key > $1.key })
     }
-
     
     private func totalAmount(for date: Date) -> Int {
         let startOfDay = Calendar.current.startOfDay(for: date)

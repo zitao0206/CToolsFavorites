@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct BarChartView: View {
-    let data: [CGFloat]
+    let data: [Double]
     
-    let barWidth: CGFloat = 10
-    let barSpacing: CGFloat = 10  
-
+    let barWidth: Double = 10
+    let barSpacing: Double = 10
+    let offsetSpace: Double = 35
+    let viewContentHeight: Double = 400
+    let viewHeight: Double = 400 + 30
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 Path { path in
                     // 绘制Y轴
-                    path.move(to: CGPoint(x: 30, y: 0))
-                    path.addLine(to: CGPoint(x: 30, y: geometry.size.height - 30))
+                    path.move(to: CGPoint(x: offsetSpace, y: 0))
+                    path.addLine(to: CGPoint(x: offsetSpace, y: viewContentHeight))
                     
                     // 绘制X轴
-                    path.move(to: CGPoint(x: 30, y: geometry.size.height - 30))
-                    path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height - 30))
+                    path.move(to: CGPoint(x: offsetSpace, y: viewContentHeight))
+                    path.addLine(to: CGPoint(x: geometry.size.width, y: viewContentHeight))
                 }
                 .stroke(Color.black, style: StrokeStyle(lineWidth: 2))
 
@@ -31,8 +34,13 @@ struct BarChartView: View {
                 ForEach(yAxisLabels(), id: \.self) { label in
                     Text(label)
                         .font(.caption)
-                        .position(x: 15, y: geometry.size.height - 30 - self.yLabelPosition(label: CGFloat(Int(label)!), maxHeight: geometry.size.height - 30))
+                        .position(x: 15, y: geometry.size.height - 30 - self.yLabelPosition(label: Double(Int(label)!), maxHeight: viewContentHeight))
                 }
+                
+                // X轴标签
+                Text("Days")
+                    .font(.caption)
+                    .position(x: (geometry.size.width + offsetSpace) / 2.0, y: viewContentHeight + 15)
                 
                 VStack {
                     // 柱状图部分
@@ -45,34 +53,30 @@ struct BarChartView: View {
                             }
                         }
                     }
-                    .padding(.leading, 35)
-                    .padding(.bottom, 5)
-                    
-                    // X轴标签
-                    Text("Days")
-                        .font(.caption)
-                        .padding(.top, 5)
+                    .padding(.leading, 40)
+                    .padding(.bottom, 30)
+                
                 }
             }
             
         }
-        .frame(height: 300)
+        .frame(height: viewHeight)
     }
     
     // 根据数据值和图表最大高度计算柱状图高度
-    func normalizedHeight(index: Int) -> CGFloat {
-        return data[index] - data[index] / 50 * 5
+    func normalizedHeight(index: Int) -> Double {
+        return data[index] * viewContentHeight / 2000.0 //- data[index] / viewHeight * 10
     }
     
     // 计算Y轴标签的位置
-    func yLabelPosition(label: CGFloat, maxHeight: CGFloat) -> CGFloat {
-        let maxValue: CGFloat = 300 // 假设Y轴最大值为300
-        return (label / maxValue) * maxHeight
+    func yLabelPosition(label: Double, maxHeight: Double) -> Double {
+        let maxValue: Double = 2000
+        return (label / maxValue) * viewContentHeight
     }
     
     // 生成Y轴标签
     func yAxisLabels() -> [String] {
-        stride(from: 50, through: 300, by: 50).map { "\($0)" }
+        stride(from: 500, through: 2000, by: 500).map { "\($0)" }
     }
 }
 
@@ -97,9 +101,9 @@ struct AmountRecordAnalysisView: View {
 
     var body: some View {
         VStack {
-     
-            BarChartView(data: [50, 100, 150, 200, 250, 300, 60, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250, 50, 100, 200, 150, 200, 250])
-                .frame(height: 300)
+            let barChartData = dailyAmount()
+            BarChartView(data: barChartData)
+                .frame(height: 530)
 
         }
         .onAppear {
@@ -130,6 +134,17 @@ struct AmountRecordAnalysisView: View {
                            .sorted(by: { $0.key > $1.key })
     }
 
+    private func dailyAmount() -> [Double] {
+        var amounts: [Double] = []
+        
+        // 遍历 sortedFeedings，计算每一天的总金额并将其添加到 amounts 中
+        for (date, records) in sortedFeedings {
+            let total = Double(totalAmount(for: date)) // 将整数金额转换为双精度浮点数
+            amounts.append(total)
+        }
+        
+        return amounts
+    }
     
     private func totalAmount(for date: Date) -> Int {
         let startOfDay = Calendar.current.startOfDay(for: date)

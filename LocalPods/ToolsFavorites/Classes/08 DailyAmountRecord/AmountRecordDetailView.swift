@@ -29,12 +29,12 @@ public struct AmountRecordDetailView: View {
             AmountRecordHistoryView()
               .tag(1)
               .tabItem {
-                  Label("History", systemImage: "clock")
+                  Label("Details", systemImage: "list.clipboard")
               }
             AmountRecordAnalysisView()
               .tag(2)
               .tabItem {
-                  Label("Analysis", systemImage: "clock")
+                  Label("Trend", systemImage: "waveform.path.ecg")
               }
             
         }
