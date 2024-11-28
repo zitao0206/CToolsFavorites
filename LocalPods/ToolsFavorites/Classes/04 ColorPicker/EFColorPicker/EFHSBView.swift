@@ -110,6 +110,7 @@ public class EFHSBView: UIView, EFColorView, UITextFieldDelegate {
         colorWheel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(colorWheel)
         addSubview(brightnessView)
+        brightnessView.isHidden = true
 
         colorWheel.addTarget(
             self, action: #selector(ef_colorDidChangeValue(sender:)), for: UIControl.Event.valueChanged
